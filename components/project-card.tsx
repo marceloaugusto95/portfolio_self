@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Lock } from "lucide-react";
 import { GithubIcon } from "./icons";
 import type { Project } from "@/content/projects";
 
@@ -52,20 +52,28 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
           ))}
         </div>
 
-        <div className="mt-6 flex items-center gap-4 border-t border-border pt-4">
-          {project.links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-accent"
-            >
-              {link.type === "github" ? <GithubIcon size={15} /> : <ArrowUpRight size={15} />}
-              {link.label}
-            </a>
-          ))}
-        </div>
+        {(project.links.length > 0 || project.note) && (
+          <div className="mt-6 flex flex-wrap items-center gap-4 border-t border-border pt-4">
+            {project.links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-accent"
+              >
+                {link.type === "github" ? <GithubIcon size={15} /> : <ArrowUpRight size={15} />}
+                {link.label}
+              </a>
+            ))}
+            {project.note && (
+              <span className="inline-flex items-center gap-1.5 text-sm text-muted">
+                <Lock size={14} className="text-accent" />
+                {project.note}
+              </span>
+            )}
+          </div>
+        )}
       </div>
     </article>
   );

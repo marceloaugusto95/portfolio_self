@@ -14,6 +14,8 @@ export type Project = {
   tags: string[];
   highlights: string[];
   links: ProjectLink[];
+  /** Optional footer note, e.g. for confidential / NDA projects with no public link. */
+  note?: string;
   /** Path under /public — add screenshots later. */
   image?: string;
   featured?: boolean;

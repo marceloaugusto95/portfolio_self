@@ -1,4 +1,4 @@
-import type { Project } from "./projects";
+import type { Project, ProjectLink } from "./projects";
 
 export type Lang = "en" | "pt";
 
@@ -58,7 +58,8 @@ const supportChatbot = {
   slug: "support-chatbot",
   status: "Live" as const,
   tags: ["n8n", "WhatsApp Cloud API", "LLMs", "Docker"],
-  links: [{ label: "Live Demo", href: "#", type: "demo" as const }],
+  // Confidential client (government health service) — no public link, see per-language `note`.
+  links: [] as ProjectLink[],
   featured: true,
 };
 
@@ -123,15 +124,16 @@ export const dictionary: Record<Lang, Dict> = {
         {
           ...supportChatbot,
           title: "Omnichannel Support Chatbot",
-          tagline: "AI-assisted customer support across WhatsApp and beyond.",
+          tagline: "AI-assisted citizen support for a public health service.",
           description:
-            "An omnichannel customer-support solution built end-to-end, integrating an open-source helpdesk with n8n workflow automation and the WhatsApp Business Cloud API for unified, multi-agent conversation handling.",
+            "An omnichannel support solution built end-to-end for a government public-health service, integrating an open-source helpdesk with n8n workflow automation and the WhatsApp Business Cloud API for unified, multi-agent conversation handling.",
           year: "2026",
           highlights: [
             "Automated conversation triage and routing with template-based outbound notifications",
             "Compliant messaging (approved templates, opt-in handling) and LGPD data-privacy",
             "Deployed on self-managed, containerized cloud infrastructure",
           ],
+          note: "Confidential — under NDA",
         },
       ],
     },
@@ -231,15 +233,16 @@ export const dictionary: Record<Lang, Dict> = {
         {
           ...supportChatbot,
           title: "Chatbot de Suporte Omnichannel",
-          tagline: "Suporte ao cliente assistido por IA no WhatsApp e além.",
+          tagline: "Atendimento ao cidadão assistido por IA para um serviço público de saúde.",
           description:
-            "Uma solução de suporte ao cliente omnichannel construída de ponta a ponta, integrando um helpdesk open-source com automação de fluxos no n8n e a API WhatsApp Business Cloud para atendimento unificado e multi-atendente.",
+            "Uma solução de suporte omnichannel construída de ponta a ponta para um serviço público de saúde governamental, integrando um helpdesk open-source com automação de fluxos no n8n e a API WhatsApp Business Cloud para atendimento unificado e multi-atendente.",
           year: "2026",
           highlights: [
             "Triagem e roteamento automáticos de conversas, com notificações ativas baseadas em templates",
             "Mensageria em conformidade (templates aprovados, gestão de opt-in) e privacidade de dados conforme a LGPD",
             "Implantado em infraestrutura de nuvem containerizada e autogerenciada",
           ],
+          note: "Confidencial — sob NDA",
         },
       ],
     },
