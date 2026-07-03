@@ -8,13 +8,13 @@ const statusStyles: Record<Project["status"], string> = {
   Completed: "text-muted border-border bg-surface-2",
 };
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project, statusLabel }: { project: Project; statusLabel: string }) {
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-colors duration-300 hover:border-border-strong">
       {/* Preview area — swap for a screenshot once available */}
       <div className="relative flex h-44 items-center justify-center overflow-hidden border-b border-border bg-surface-2">
         <div className="bg-glow absolute inset-0 opacity-60" />
-        <span className="relative font-mono text-2xl font-semibold tracking-tight text-foreground/80">
+        <span className="relative px-4 text-center font-mono text-2xl font-semibold tracking-tight text-foreground/80">
           {project.title}
         </span>
       </div>
@@ -25,7 +25,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <span
             className={`shrink-0 rounded-full border px-2.5 py-0.5 text-xs font-medium ${statusStyles[project.status]}`}
           >
-            {project.status}
+            {statusLabel}
           </span>
         </div>
 

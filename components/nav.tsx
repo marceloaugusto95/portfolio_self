@@ -3,17 +3,20 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { site } from "@/content/site";
-
-const links = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#contact", label: "Contact" },
-];
+import { useLanguage } from "./language-provider";
+import { LanguageToggle } from "./language-toggle";
 
 export function Nav() {
+  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const links = [
+    { href: "#about", label: t.nav.about },
+    { href: "#projects", label: t.nav.projects },
+    { href: "#skills", label: t.nav.skills },
+    { href: "#contact", label: t.nav.contact },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -30,7 +33,7 @@ export function Nav() {
     >
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         <a href="#top" className="text-sm font-semibold tracking-tight">
-          Marcelo<span className="text-accent">.</span>
+          Marcelo Augusto<span className="text-accent">.</span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -49,17 +52,17 @@ export function Nav() {
             rel="noreferrer"
             className="rounded-full border border-border-strong px-4 py-1.5 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
           >
-            Résumé
+            {t.nav.resume}
           </a>
+          <LanguageToggle />
         </div>
 
-        <button
-          className="md:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+          <LanguageToggle />
+          <button onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </nav>
 
       {open && (
@@ -81,7 +84,7 @@ export function Nav() {
               rel="noreferrer"
               className="text-sm font-medium text-accent"
             >
-              Résumé →
+              {t.nav.resume} →
             </a>
           </div>
         </div>

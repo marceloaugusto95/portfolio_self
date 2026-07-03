@@ -3,7 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { LanguageProvider } from "@/components/language-provider";
 import { site } from "@/content/site";
+import { dictionary } from "@/content/dictionary";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,11 +18,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${site.name} — ${site.role}`,
-  description: site.tagline,
+  title: `${site.name} — ${dictionary.en.hero.role}`,
+  description: dictionary.en.hero.tagline,
   openGraph: {
-    title: `${site.name} — ${site.role}`,
-    description: site.tagline,
+    title: `${site.name} — ${dictionary.en.hero.role}`,
+    description: dictionary.en.hero.tagline,
     type: "website",
   },
 };
@@ -36,9 +38,11 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full">
-        <Nav />
-        <main>{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <Nav />
+          <main>{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

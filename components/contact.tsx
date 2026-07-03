@@ -1,9 +1,13 @@
+"use client";
+
 import { ArrowUpRight, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./icons";
 import { Reveal } from "./reveal";
 import { site } from "@/content/site";
+import { useLanguage } from "./language-provider";
 
 export function Contact() {
+  const { t } = useLanguage();
   return (
     <section id="contact" className="mx-auto w-full max-w-5xl px-6 py-20 sm:py-28">
       <Reveal>
@@ -11,15 +15,12 @@ export function Contact() {
           <div className="bg-glow absolute inset-0 -z-10 opacity-80" />
 
           <span className="text-sm font-medium uppercase tracking-widest text-accent">
-            Contact
+            {t.contact.eyebrow}
           </span>
           <h2 className="mx-auto mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-            Let&apos;s build something together
+            {t.contact.title}
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted">
-            I&apos;m open to remote full-stack roles and freelance work. The fastest way to reach
-            me is by email.
-          </p>
+          <p className="mx-auto mt-4 max-w-xl text-muted">{t.contact.body}</p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
@@ -35,7 +36,7 @@ export function Contact() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border-strong px-6 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
             >
-              Download résumé
+              {t.contact.downloadResume}
               <ArrowUpRight size={16} />
             </a>
           </div>

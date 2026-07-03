@@ -1,12 +1,15 @@
+"use client";
+
 import { Section } from "./section";
 import { Reveal } from "./reveal";
-import { skills } from "@/content/site";
+import { useLanguage } from "./language-provider";
 
 export function Skills() {
+  const { t } = useLanguage();
   return (
-    <Section id="skills" eyebrow="Toolkit" title="Skills & technologies">
+    <Section id="skills" eyebrow={t.skills.eyebrow} title={t.skills.title}>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {skills.map((group, i) => (
+        {t.skills.groups.map((group, i) => (
           <Reveal key={group.group} delay={i * 0.06}>
             <div className="rounded-2xl border border-border bg-surface p-6">
               <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-accent">
