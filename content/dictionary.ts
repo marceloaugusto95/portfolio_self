@@ -145,16 +145,16 @@ export const dictionary: Record<Lang, Dict> = {
         { group: "Frontend", items: ["React", "React Native", "Expo", "Next.js", "Astro.js", "Responsive UI"] },
         {
           group: "Backend",
-          items: ["Node.js", "REST APIs", "PostgreSQL", "Supabase", "Row-Level Security", "JWT Authentication", "Webhooks"],
+          items: ["Node.js", "REST APIs", "PostgreSQL", "Supabase", "Row-Level Security", "JWT Authentication", "Auth0", "Webhooks"],
         },
-        { group: "DevOps & Tools", items: ["Docker", "Git", "GitHub", "AWS", "Vercel", "CI/CD", "VS Code"] },
+        { group: "DevOps & Tools", items: ["Docker", "Git", "GitHub", "GitHub Actions", "AWS", "Vercel", "CI/CD", "VS Code"] },
         {
           group: "Integrations & Automation",
           items: ["n8n Automation", "WhatsApp Business Cloud API", "Stripe", "Payment Gateways", "Mercado Pago PIX", "Capacitor"],
         },
         {
           group: "AI & LLMs",
-          items: ["Large Language Models (LLMs)", "Local LLMs", "Claude", "Claude Code (CLI)", "Gemini", "Gemini CLI", "Google AI Tools", "Spec-Driven Development"],
+          items: ["Large Language Models (LLMs)", "Local LLMs", "Claude", "Claude API", "Claude Code (CLI)", "Gemini", "Gemini CLI", "Google AI Tools", "Spec-Driven Development"],
         },
         {
           group: "Architecture & Practices",
@@ -254,16 +254,16 @@ export const dictionary: Record<Lang, Dict> = {
         { group: "Frontend", items: ["React", "React Native", "Expo", "Next.js", "Astro.js", "UI Responsiva"] },
         {
           group: "Backend",
-          items: ["Node.js", "REST APIs", "PostgreSQL", "Supabase", "Row-Level Security", "Autenticação JWT", "Webhooks"],
+          items: ["Node.js", "REST APIs", "PostgreSQL", "Supabase", "Row-Level Security", "Autenticação JWT", "Auth0", "Webhooks"],
         },
-        { group: "DevOps e Ferramentas", items: ["Docker", "Git", "GitHub", "AWS", "Vercel", "CI/CD", "VS Code"] },
+        { group: "DevOps e Ferramentas", items: ["Docker", "Git", "GitHub", "GitHub Actions", "AWS", "Vercel", "CI/CD", "VS Code"] },
         {
           group: "Integrações e Automação",
           items: ["Automação n8n", "WhatsApp Business Cloud API", "Stripe", "Gateways de Pagamento", "Mercado Pago PIX", "Capacitor"],
         },
         {
           group: "IA e LLMs",
-          items: ["Modelos de Linguagem (LLMs)", "LLMs Locais", "Claude", "Claude Code (CLI)", "Gemini", "Gemini CLI", "Google AI Tools", "Desenvolvimento Orientado a Especificação"],
+          items: ["Modelos de Linguagem (LLMs)", "LLMs Locais", "Claude", "Claude API", "Claude Code (CLI)", "Gemini", "Gemini CLI", "Google AI Tools", "Desenvolvimento Orientado a Especificação"],
         },
         {
           group: "Arquitetura e Práticas",
