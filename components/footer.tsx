@@ -18,6 +18,9 @@ export function Footer() {
           <a href={site.socials.linkedin} target="_blank" rel="noreferrer" className="hover:text-foreground">
             LinkedIn
           </a>
+          <a href={site.socials.whatsapp} target="_blank" rel="noreferrer" className="hover:text-foreground">
+            WhatsApp
+          </a>
           <a href={`mailto:${site.email}`} className="hover:text-foreground">
             Email
           </a>

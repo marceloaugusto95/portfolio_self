@@ -7,5 +7,6 @@ export const site = {
   socials: {
     github: "https://github.com/marceloaugusto95",
     linkedin: "https://linkedin.com/in/marceloaugustofries",
+    whatsapp: "https://wa.me/5521979436969",
   },
 } as const;

@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUpRight, Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "./icons";
+import { GithubIcon, LinkedinIcon, WhatsappIcon } from "./icons";
 import { Reveal } from "./reveal";
 import { site } from "@/content/site";
 import { useLanguage } from "./language-provider";
@@ -47,6 +47,9 @@ export function Contact() {
             </SocialLink>
             <SocialLink href={site.socials.linkedin} label="LinkedIn">
               <LinkedinIcon size={18} />
+            </SocialLink>
+            <SocialLink href={site.socials.whatsapp} label="WhatsApp">
+              <WhatsappIcon size={18} />
             </SocialLink>
           </div>
         </div>

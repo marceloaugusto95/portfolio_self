@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Mail, MapPin } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "./icons";
+import { GithubIcon, LinkedinIcon, WhatsappIcon } from "./icons";
 import { site } from "@/content/site";
 import { useLanguage } from "./language-provider";
 
@@ -74,6 +74,9 @@ export function Hero() {
               </IconLink>
               <IconLink href={site.socials.linkedin} label="LinkedIn">
                 <LinkedinIcon size={18} />
+              </IconLink>
+              <IconLink href={site.socials.whatsapp} label="WhatsApp">
+                <WhatsappIcon size={18} />
               </IconLink>
               <IconLink href={`mailto:${site.email}`} label="Email">
                 <Mail size={18} />
