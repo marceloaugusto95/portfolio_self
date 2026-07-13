@@ -61,12 +61,6 @@ export function Hero() {
               {t.hero.viewWork}
               <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-border-strong px-6 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
-            >
-              {t.hero.getInTouch}
-            </a>
 
             <div className="ml-1 flex items-center gap-1">
               <IconLink href={site.socials.github} label="GitHub">

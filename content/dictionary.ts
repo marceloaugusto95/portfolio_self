@@ -10,7 +10,6 @@ export type Dict = {
     tagline: string;
     location: string;
     viewWork: string;
-    getInTouch: string;
   };
   about: {
     eyebrow: string;
@@ -73,7 +72,6 @@ export const dictionary: Record<Lang, Dict> = {
         "I build production-ready applications across web, mobile, desktop, and automation. From database design and backend architecture to polished front-ends and live deployment, I handle the whole stack.",
       location: "Brasília, Brazil (GMT-3)",
       viewWork: "View my work",
-      getInTouch: "Get in touch",
     },
     about: {
       eyebrow: "About",
@@ -182,7 +180,6 @@ export const dictionary: Record<Lang, Dict> = {
         "Eu construo aplicações prontas para produção em web, mobile, desktop e automação. Do design de banco de dados e da arquitetura de backend até front-ends caprichados e o deploy em produção, eu cuido de toda a stack.",
       location: "Brasília, Brasil (GMT-3)",
       viewWork: "Ver meu trabalho",
-      getInTouch: "Entrar em contato",
     },
     about: {
       eyebrow: "Sobre",
