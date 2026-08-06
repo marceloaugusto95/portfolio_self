@@ -31,7 +31,7 @@ export function Contact() {
               {site.email}
             </a>
             <a
-              href={site.resumeUrl}
+              href={t.resumeUrl}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border-strong px-6 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"

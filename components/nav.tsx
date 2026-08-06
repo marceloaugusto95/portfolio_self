@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { site } from "@/content/site";
 import { useLanguage } from "./language-provider";
 import { LanguageToggle } from "./language-toggle";
 
@@ -47,7 +46,7 @@ export function Nav() {
             </a>
           ))}
           <a
-            href={site.resumeUrl}
+            href={t.resumeUrl}
             target="_blank"
             rel="noreferrer"
             className="rounded-full border border-border-strong px-4 py-1.5 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
@@ -79,7 +78,7 @@ export function Nav() {
               </a>
             ))}
             <a
-              href={site.resumeUrl}
+              href={t.resumeUrl}
               target="_blank"
               rel="noreferrer"
               className="text-sm font-medium text-accent"

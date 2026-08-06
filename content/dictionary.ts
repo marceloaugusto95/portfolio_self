@@ -31,6 +31,8 @@ export type Dict = {
   contact: { eyebrow: string; title: string; body: string; downloadResume: string };
   footer: { builtWith: string };
   language: { label: string };
+  /** Path under /public to the résumé for this language. */
+  resumeUrl: string;
 };
 
 // Fields that never change between languages — kept here so the two language
@@ -169,6 +171,7 @@ export const dictionary: Record<Lang, Dict> = {
     },
     footer: { builtWith: "Built with Next.js & Tailwind CSS." },
     language: { label: "Language" },
+    resumeUrl: "/Marcelo_Augusto_Fries_Resume.pdf",
   },
 
   pt: {
@@ -277,5 +280,6 @@ export const dictionary: Record<Lang, Dict> = {
     },
     footer: { builtWith: "Feito com Next.js e Tailwind CSS." },
     language: { label: "Idioma" },
+    resumeUrl: "/Marcelo_Augusto_Fries_Curriculo_PT-BR.pdf",
   },
 };
