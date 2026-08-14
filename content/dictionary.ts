@@ -55,6 +55,15 @@ const luckyClover = {
   featured: true,
 };
 
+const barbeariaTech = {
+  slug: "barbearia-tech",
+  status: "Live" as const,
+  tags: ["Next.js 16", "React 19", "TypeScript", "Neon Postgres", "CSS Modules", "Vercel"],
+  // Private repo — demo only.
+  links: [{ label: "Live Demo", href: "https://barbeariatech.vercel.app", type: "demo" as const }],
+  featured: true,
+};
+
 const supportChatbot = {
   slug: "support-chatbot",
   status: "Live" as const,
@@ -119,6 +128,19 @@ export const dictionary: Record<Lang, Dict> = {
             "Backend on Supabase with Row-Level Security and SECURITY DEFINER RPCs for role-based auth at the database level",
             "Custom CPF-based auth flow issuing signed JWTs across all front-ends",
             "Mercado Pago PIX integration with webhook confirmation and scheduled official-results sync",
+          ],
+        },
+        {
+          ...barbeariaTech,
+          title: "Barbearia Tech",
+          tagline: "A white-label booking site for barbershops, landing page to staff dashboard.",
+          description:
+            "A white-label appointment-booking product for barbershops, built on Next.js 16 App Router with server components and Neon Postgres. A single brand config file drives the whole site — name, logo, accent colors, services, units, staff, opening hours and payment methods — so onboarding a new client is a configuration change, not a rewrite.",
+          year: "2026",
+          highlights: [
+            "Four-step booking flow (unit → service → barber/day/time → details) with availability computed server-side from the live schedule",
+            "Staff dashboard with HMAC-signed session cookies, per-barber scoping enforced on the server, and revenue, ticket and cancellation metrics",
+            "Simulated Pix/card checkout with server-side pricing, swappable for a real PSP without touching the front-end contract",
           ],
         },
         {
@@ -228,6 +250,19 @@ export const dictionary: Record<Lang, Dict> = {
             "Backend no Supabase com Row-Level Security e RPCs SECURITY DEFINER para autorização por papel no nível do banco de dados",
             "Fluxo de autenticação próprio baseado em CPF, emitindo JWTs assinados para todos os front-ends",
             "Integração com Mercado Pago PIX, com confirmação via webhook e sincronização agendada dos resultados oficiais",
+          ],
+        },
+        {
+          ...barbeariaTech,
+          title: "Barbearia Tech",
+          tagline: "Um site de agendamento white label para barbearias, da landing ao painel da equipe.",
+          description:
+            "Um produto de agendamento white label para barbearias, construído em Next.js 16 (App Router) com server components e Postgres na Neon. Um único arquivo de configuração de marca comanda o site inteiro — nome, logo, cor de acento, serviços, unidades, profissionais, horários e formas de pagamento — então colocar um novo cliente no ar é mudar configuração, não reescrever código.",
+          year: "2026",
+          highlights: [
+            "Fluxo de agendamento em quatro passos (unidade → serviço → profissional/dia/horário → dados), com disponibilidade calculada no servidor a partir da agenda real",
+            "Painel da equipe com sessão em cookie assinado por HMAC, recorte por barbeiro validado no servidor e indicadores de faturamento, ticket médio e cancelamentos",
+            "Checkout simulado de Pix e cartão com o valor vindo do catálogo no servidor, pronto para trocar por um PSP real sem mexer no contrato do front",
           ],
         },
         {
