@@ -5,6 +5,7 @@ import type { Project } from "@/content/projects";
 const statusStyles: Record<Project["status"], string> = {
   Live: "text-emerald-400 border-emerald-400/30 bg-emerald-400/10",
   "In Development": "text-accent border-accent/30 bg-accent/10",
+  Prototype: "text-amber-400 border-amber-400/30 bg-amber-400/10",
   Completed: "text-muted border-border bg-surface-2",
 };
 

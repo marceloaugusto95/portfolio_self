@@ -57,7 +57,7 @@ const luckyClover = {
 
 const barbeariaTech = {
   slug: "barbearia-tech",
-  status: "Live" as const,
+  status: "Prototype" as const,
   tags: ["Next.js 16", "React 19", "TypeScript", "Neon Postgres", "CSS Modules", "Vercel"],
   // Private repo — demo only.
   links: [{ label: "Live Demo", href: "https://barbeariatech.vercel.app", type: "demo" as const }],
@@ -102,7 +102,7 @@ export const dictionary: Record<Lang, Dict> = {
     projects: {
       eyebrow: "Work",
       title: "Selected projects",
-      status: { Live: "Live", "In Development": "In Development", Completed: "Completed" },
+      status: { Live: "Live", "In Development": "In Development", Prototype: "Prototype", Completed: "Completed" },
       items: [
         {
           ...manaRealm,
@@ -133,9 +133,9 @@ export const dictionary: Record<Lang, Dict> = {
         {
           ...barbeariaTech,
           title: "Barbearia Tech",
-          tagline: "A white-label booking site for barbershops, landing page to staff dashboard.",
+          tagline: "A white-label booking prototype for barbershops, landing page to staff dashboard.",
           description:
-            "A white-label appointment-booking product for barbershops, built on Next.js 16 App Router with server components and Neon Postgres. A single brand config file drives the whole site — name, logo, accent colors, services, units, staff, opening hours and payment methods — so onboarding a new client is a configuration change, not a rewrite.",
+            "A white-label appointment-booking prototype for barbershops, built on Next.js 16 App Router with server components and Neon Postgres. It's a working proof of concept rather than a finished, production-ready product. A single brand config file drives the whole site (name, logo, accent colors, services, units, staff, opening hours and payment methods), so the concept is that onboarding a new client would be a configuration change, not a rewrite.",
           year: "2026",
           highlights: [
             "Four-step booking flow (unit → service → barber/day/time → details) with availability computed server-side from the live schedule",
@@ -224,7 +224,7 @@ export const dictionary: Record<Lang, Dict> = {
     projects: {
       eyebrow: "Projetos",
       title: "Projetos selecionados",
-      status: { Live: "No ar", "In Development": "Em desenvolvimento", Completed: "Concluído" },
+      status: { Live: "No ar", "In Development": "Em desenvolvimento", Prototype: "Protótipo", Completed: "Concluído" },
       items: [
         {
           ...manaRealm,
@@ -255,9 +255,9 @@ export const dictionary: Record<Lang, Dict> = {
         {
           ...barbeariaTech,
           title: "Barbearia Tech",
-          tagline: "Um site de agendamento white label para barbearias, da landing ao painel da equipe.",
+          tagline: "Um protótipo de agendamento white label para barbearias, da landing ao painel da equipe.",
           description:
-            "Um produto de agendamento white label para barbearias, construído em Next.js 16 (App Router) com server components e Postgres na Neon. Um único arquivo de configuração de marca comanda o site inteiro — nome, logo, cor de acento, serviços, unidades, profissionais, horários e formas de pagamento — então colocar um novo cliente no ar é mudar configuração, não reescrever código.",
+            "Um protótipo de agendamento white label para barbearias, construído em Next.js 16 (App Router) com server components e Postgres na Neon. É uma prova de conceito funcional, não um produto finalizado e pronto para produção. Um único arquivo de configuração de marca comanda o site inteiro (nome, logo, cor de acento, serviços, unidades, profissionais, horários e formas de pagamento), então a ideia é que colocar um novo cliente no ar seria mudar configuração, não reescrever código.",
           year: "2026",
           highlights: [
             "Fluxo de agendamento em quatro passos (unidade → serviço → profissional/dia/horário → dados), com disponibilidade calculada no servidor a partir da agenda real",

@@ -9,7 +9,7 @@ export type Project = {
   title: string;
   tagline: string;
   description: string;
-  status: "Live" | "In Development" | "Completed";
+  status: "Live" | "In Development" | "Prototype" | "Completed";
   year: string;
   tags: string[];
   highlights: string[];
