@@ -35,6 +35,16 @@ export type Dict = {
   resumeUrl: string;
 };
 
+// ---------------------------------------------------------------------------
+// Copy budget for project cards (see components/project-card.tsx):
+//   tagline      ~1-2 lines  (<= ~110 chars)
+//   description  ~4 lines    (<= ~240 chars)
+//   highlights   3 items, <= 2 lines each (extras are dropped)
+//   tags         5 shown, the rest collapse into a "+N" chip
+// Longer copy is clamped with an ellipsis rather than stretching the grid, so
+// keep new entries inside these limits to avoid mid-sentence cuts.
+// ---------------------------------------------------------------------------
+
 // Fields that never change between languages — kept here so the two language
 // bundles can't drift apart on slugs, links, or tech tags.
 const manaRealm = {
@@ -135,7 +145,7 @@ export const dictionary: Record<Lang, Dict> = {
           title: "Barbearia Tech",
           tagline: "A white-label booking prototype for barbershops, landing page to staff dashboard.",
           description:
-            "A white-label appointment-booking prototype for barbershops, built on Next.js 16 App Router with server components and Neon Postgres. It's a working proof of concept rather than a finished, production-ready product. A single brand config file drives the whole site (name, logo, accent colors, services, units, staff, opening hours and payment methods), so the concept is that onboarding a new client would be a configuration change, not a rewrite.",
+            "A working proof of concept built on Next.js 16 App Router with server components and Neon Postgres. A single brand config file drives the whole site — name, logo, colors, services, units, staff and hours — so onboarding a new client is a configuration change, not a rewrite.",
           year: "2026",
           highlights: [
             "Four-step booking flow (unit → service → barber/day/time → details) with availability computed server-side from the live schedule",
@@ -244,7 +254,7 @@ export const dictionary: Record<Lang, Dict> = {
           title: "Lucky Clover",
           tagline: "Uma plataforma completa de gestão de loteria, entregue sozinho.",
           description:
-            "Uma plataforma multi-app de gestão de loteria que construí como monorepo abrangendo quatro aplicações: um app web de apostas para o cliente, um app de ponto de venda para revendedores, um painel administrativo e um app Android complementar com impressão térmica de bilhetes.",
+            "Uma plataforma multi-app de gestão de loteria que construí como monorepo com quatro aplicações: um app web de apostas, um app de ponto de venda para revendedores, um painel administrativo e um app Android com impressão térmica de bilhetes.",
           year: "2026",
           highlights: [
             "Backend no Supabase com Row-Level Security e RPCs SECURITY DEFINER para autorização por papel no nível do banco de dados",
@@ -257,7 +267,7 @@ export const dictionary: Record<Lang, Dict> = {
           title: "Barbearia Tech",
           tagline: "Um protótipo de agendamento white label para barbearias, da landing ao painel da equipe.",
           description:
-            "Um protótipo de agendamento white label para barbearias, construído em Next.js 16 (App Router) com server components e Postgres na Neon. É uma prova de conceito funcional, não um produto finalizado e pronto para produção. Um único arquivo de configuração de marca comanda o site inteiro (nome, logo, cor de acento, serviços, unidades, profissionais, horários e formas de pagamento), então a ideia é que colocar um novo cliente no ar seria mudar configuração, não reescrever código.",
+            "Uma prova de conceito funcional em Next.js 16 (App Router) com server components e Postgres na Neon. Um único arquivo de configuração de marca comanda o site inteiro — nome, logo, cores, serviços, unidades, profissionais e horários — então colocar um novo cliente no ar é mudar configuração, não reescrever código.",
           year: "2026",
           highlights: [
             "Fluxo de agendamento em quatro passos (unidade → serviço → profissional/dia/horário → dados), com disponibilidade calculada no servidor a partir da agenda real",
@@ -270,7 +280,7 @@ export const dictionary: Record<Lang, Dict> = {
           title: "Chatbot de Suporte Omnichannel",
           tagline: "Atendimento ao cidadão assistido por IA para um serviço público de saúde.",
           description:
-            "Uma solução de suporte omnichannel construída de ponta a ponta para um serviço público de saúde governamental, integrando um helpdesk open-source com automação de fluxos no n8n e a API WhatsApp Business Cloud para atendimento unificado e multi-atendente.",
+            "Uma solução de suporte omnichannel construída de ponta a ponta para um serviço público de saúde, integrando um helpdesk open-source com automação no n8n e a API WhatsApp Business Cloud para atendimento unificado e multi-atendente.",
           year: "2026",
           highlights: [
             "Triagem e roteamento automáticos de conversas, com notificações ativas baseadas em templates",
