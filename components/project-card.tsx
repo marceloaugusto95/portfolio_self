@@ -1,6 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, Lock } from "lucide-react";
+import { ArrowUpRight, Expand, Lock } from "lucide-react";
 import { GithubIcon } from "./icons";
+import { Lightbox } from "./lightbox";
 import type { Project } from "@/content/projects";
 
 const statusStyles: Record<Project["status"], string> = {
@@ -23,18 +27,34 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
   const tags = project.tags.slice(0, MAX_TAGS);
   const hiddenTags = project.tags.slice(MAX_TAGS);
 
+  const gallery = project.images ?? (project.image ? [project.image] : []);
+  const hero = gallery[0];
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-colors duration-300 hover:border-border-strong">
       {/* Preview — aspect-ratio based so it scales with the column width */}
       <div className="relative aspect-[16/9] shrink-0 overflow-hidden border-b border-border bg-surface-2">
-        {project.image ? (
-          <Image
-            src={project.image}
-            alt={`${project.title} screenshot`}
-            fill
-            sizes="(min-width: 640px) 50vw, 100vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-          />
+        {hero ? (
+          <button
+            type="button"
+            onClick={() => setLightboxIndex(0)}
+            aria-label={`View ${project.title} screenshots`}
+            className="group/preview absolute inset-0 block cursor-zoom-in"
+          >
+            <Image
+              src={hero}
+              alt={`${project.title} screenshot`}
+              fill
+              sizes="(min-width: 640px) 50vw, 100vw"
+              className="object-cover object-top transition-transform duration-500 group-hover/preview:scale-[1.03]"
+            />
+            <div className="absolute inset-0 bg-background/0 transition-colors duration-300 group-hover/preview:bg-background/20" />
+            <span className="absolute bottom-2 right-2 inline-flex items-center gap-1.5 rounded-full border border-border-strong bg-background/70 px-2.5 py-1 text-xs font-medium text-foreground/90 backdrop-blur-sm">
+              <Expand size={13} />
+              {gallery.length > 1 ? `${gallery.length} shots` : "View"}
+            </span>
+          </button>
         ) : (
           // Intentional "app window" placeholder until a real screenshot is added.
           <div className="absolute inset-0 flex flex-col bg-surface-2">
@@ -129,6 +149,14 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
           )}
         </div>
       </div>
+
+      <Lightbox
+        images={gallery}
+        title={project.title}
+        index={lightboxIndex}
+        onClose={() => setLightboxIndex(null)}
+        onIndex={setLightboxIndex}
+      />
     </article>
   );
 }

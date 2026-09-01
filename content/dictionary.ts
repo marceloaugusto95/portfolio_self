@@ -53,6 +53,11 @@ const manaRealm = {
   status: "In Development" as const,
   tags: ["JavaScript", "HTML5 Canvas", "CSS3", "Game Dev"],
   links: [{ label: "Live Demo", href: "https://manarealm.vercel.app/", type: "demo" as const }],
+  images: [
+    "/screenshots/manaprint1.png",
+    "/screenshots/manaprint2.png",
+    "/screenshots/manaprint3.png",
+  ],
   featured: true,
 };
 
@@ -62,6 +67,14 @@ const luckyClover = {
   tags: ["Next.js", "Supabase", "PostgreSQL", "Capacitor", "Vercel"],
   links: [
     { label: "GitHub", href: "https://github.com/marceloaugusto95/luckyclover", type: "github" as const },
+  ],
+  // White-label demo screenshots (no real client data); admin dashboard leads.
+  images: [
+    "/screenshots/luckyprint5.png",
+    "/screenshots/luckyprint1.png",
+    "/screenshots/luckyprint2.png",
+    "/screenshots/luckyprint3.png",
+    "/screenshots/luckyprint4.png",
   ],
   featured: true,
 };
@@ -124,6 +137,7 @@ export const dictionary: Record<Lang, Dict> = {
             "A multi-app lottery management platform I built as a monorepo spanning four applications: a customer-facing betting web app, a point-of-sale app for resellers, an admin dashboard, and a companion Android app with thermal ticket printing.",
           year: "2026",
           highlights: [
+            "In production: 3,000+ bets processed and ~225 monthly active clients",
             "Backend on Supabase with Row-Level Security and SECURITY DEFINER RPCs for role-based auth at the database level",
             "Custom CPF-based auth flow issuing signed JWTs across all front-ends",
             "Mercado Pago PIX integration with webhook confirmation and scheduled official-results sync",
@@ -248,6 +262,7 @@ export const dictionary: Record<Lang, Dict> = {
             "Uma plataforma multi-app de gestão de loteria que construí como monorepo com quatro aplicações: um app web de apostas, um app de ponto de venda para revendedores, um painel administrativo e um app Android com impressão térmica de bilhetes.",
           year: "2026",
           highlights: [
+            "Em produção: 3.000+ apostas processadas e ~225 clientes ativos por mês",
             "Backend no Supabase com Row-Level Security e RPCs SECURITY DEFINER para autorização por papel no nível do banco de dados",
             "Fluxo de autenticação próprio baseado em CPF, emitindo JWTs assinados para todos os front-ends",
             "Integração com Mercado Pago PIX, com confirmação via webhook e sincronização agendada dos resultados oficiais",
