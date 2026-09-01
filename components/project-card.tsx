@@ -36,14 +36,20 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
             className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
-          <>
-            <div className="bg-glow absolute inset-0 opacity-60" />
-            <div className="absolute inset-0 flex items-center justify-center p-4">
-              <span className="line-clamp-2 text-balance text-center font-mono text-xl font-semibold tracking-tight text-foreground/80 break-words sm:text-2xl">
+          // Intentional "app window" placeholder until a real screenshot is added.
+          <div className="absolute inset-0 flex flex-col bg-surface-2">
+            <div className="flex items-center gap-1.5 border-b border-border/60 px-3 py-2">
+              <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
+              <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
+              <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
+              <span className="ml-2 h-3 flex-1 rounded-full bg-foreground/[0.06]" />
+            </div>
+            <div className="bg-glow relative flex flex-1 items-center justify-center overflow-hidden p-4 opacity-90">
+              <span className="line-clamp-2 text-balance text-center font-mono text-xl font-semibold tracking-tight text-foreground/70 break-words sm:text-2xl">
                 {project.title}
               </span>
             </div>
-          </>
+          </div>
         )}
       </div>
 
@@ -63,7 +69,7 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
         <p className="line-clamp-2 min-h-[2.75rem] text-sm font-medium text-foreground/90">
           {project.tagline}
         </p>
-        <p className="mt-2 line-clamp-4 min-h-[5.75rem] text-sm leading-relaxed text-muted">
+        <p className="mt-2 line-clamp-4 min-h-[6.25rem] text-[15px] leading-relaxed text-muted">
           {project.description}
         </p>
 

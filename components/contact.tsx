@@ -9,7 +9,7 @@ import { useLanguage } from "./language-provider";
 export function Contact() {
   const { t } = useLanguage();
   return (
-    <section id="contact" className="mx-auto w-full max-w-5xl px-6 py-20 sm:py-28">
+    <section id="contact" className="mx-auto w-full max-w-5xl px-6 py-14 sm:py-20">
       <Reveal>
         <div className="relative overflow-hidden rounded-3xl border border-border bg-surface px-6 py-16 text-center sm:px-16">
           <div className="bg-glow absolute inset-0 -z-10 opacity-80" />

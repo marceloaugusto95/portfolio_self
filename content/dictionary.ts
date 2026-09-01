@@ -6,6 +6,7 @@ export type Dict = {
   nav: { about: string; projects: string; skills: string; contact: string; resume: string };
   hero: {
     available: string;
+    greeting: string;
     role: string;
     tagline: string;
     location: string;
@@ -88,6 +89,7 @@ export const dictionary: Record<Lang, Dict> = {
     nav: { about: "About", projects: "Projects", skills: "Skills", contact: "Contact", resume: "Résumé" },
     hero: {
       available: "Available for remote full-stack roles",
+      greeting: "Hi, I'm",
       role: "Full-Stack Developer",
       tagline:
         "I build production-ready applications across web, mobile, desktop, and automation. From database design and backend architecture to polished front-ends and live deployment, I handle the whole stack.",
@@ -115,19 +117,6 @@ export const dictionary: Record<Lang, Dict> = {
       status: { Live: "Live", "In Development": "In Development", Prototype: "Prototype", Completed: "Completed" },
       items: [
         {
-          ...manaRealm,
-          title: "Mana Realm",
-          tagline: "A browser-based game built from scratch, no frameworks.",
-          description:
-            "A browser-based game I designed and developed from the ground up in vanilla JavaScript, HTML5, and CSS3. I handle the game logic, rendering, and UI entirely on my own.",
-          year: "Since 2025",
-          highlights: [
-            "Custom game loop, rendering, and UI written from scratch",
-            "Zero frameworks, pure vanilla JS for full control over performance",
-            "Expected release: late 2026",
-          ],
-        },
-        {
           ...luckyClover,
           title: "Lucky Clover",
           tagline: "A full lottery management platform, shipped solo.",
@@ -138,6 +127,19 @@ export const dictionary: Record<Lang, Dict> = {
             "Backend on Supabase with Row-Level Security and SECURITY DEFINER RPCs for role-based auth at the database level",
             "Custom CPF-based auth flow issuing signed JWTs across all front-ends",
             "Mercado Pago PIX integration with webhook confirmation and scheduled official-results sync",
+          ],
+        },
+        {
+          ...manaRealm,
+          title: "Mana Realm",
+          tagline: "A browser-based game built from scratch, no frameworks.",
+          description:
+            "A browser-based game I designed and developed from the ground up in vanilla JavaScript, HTML5, and CSS3. I handle the game logic, rendering, and UI entirely on my own.",
+          year: "Since 2025",
+          highlights: [
+            "Custom game loop, rendering, and UI written from scratch",
+            "Zero frameworks, pure vanilla JS for full control over performance",
+            "Expected release: late 2026",
           ],
         },
         {
@@ -210,6 +212,7 @@ export const dictionary: Record<Lang, Dict> = {
     nav: { about: "Sobre", projects: "Projetos", skills: "Habilidades", contact: "Contato", resume: "Currículo" },
     hero: {
       available: "Disponível para vagas full-stack remotas",
+      greeting: "Olá, sou o",
       role: "Desenvolvedor Full-Stack",
       tagline:
         "Eu construo aplicações prontas para produção em web, mobile, desktop e automação. Do design de banco de dados e da arquitetura de backend até front-ends caprichados e o deploy em produção, eu cuido de toda a stack.",
@@ -237,19 +240,6 @@ export const dictionary: Record<Lang, Dict> = {
       status: { Live: "No ar", "In Development": "Em desenvolvimento", Prototype: "Protótipo", Completed: "Concluído" },
       items: [
         {
-          ...manaRealm,
-          title: "Mana Realm",
-          tagline: "Um jogo de navegador feito do zero, sem frameworks.",
-          description:
-            "Um jogo de navegador que projetei e desenvolvi do zero em JavaScript puro, HTML5 e CSS3. Cuido sozinho de toda a lógica do jogo, da renderização e da interface.",
-          year: "Desde 2025",
-          highlights: [
-            "Game loop, renderização e interface escritos do zero",
-            "Zero frameworks, JavaScript puro para controle total de performance",
-            "Lançamento previsto: fim de 2026",
-          ],
-        },
-        {
           ...luckyClover,
           title: "Lucky Clover",
           tagline: "Uma plataforma completa de gestão de loteria, entregue sozinho.",
@@ -260,6 +250,19 @@ export const dictionary: Record<Lang, Dict> = {
             "Backend no Supabase com Row-Level Security e RPCs SECURITY DEFINER para autorização por papel no nível do banco de dados",
             "Fluxo de autenticação próprio baseado em CPF, emitindo JWTs assinados para todos os front-ends",
             "Integração com Mercado Pago PIX, com confirmação via webhook e sincronização agendada dos resultados oficiais",
+          ],
+        },
+        {
+          ...manaRealm,
+          title: "Mana Realm",
+          tagline: "Um jogo de navegador feito do zero, sem frameworks.",
+          description:
+            "Um jogo de navegador que projetei e desenvolvi do zero em JavaScript puro, HTML5 e CSS3. Cuido sozinho de toda a lógica do jogo, da renderização e da interface.",
+          year: "Desde 2025",
+          highlights: [
+            "Game loop, renderização e interface escritos do zero",
+            "Zero frameworks, JavaScript puro para controle total de performance",
+            "Lançamento previsto: fim de 2026",
           ],
         },
         {

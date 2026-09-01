@@ -18,12 +18,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://marceloaugustofries.vercel.app"),
   title: `${site.name} — ${dictionary.en.hero.role}`,
   description: dictionary.en.hero.tagline,
   openGraph: {
     title: `${site.name} — ${dictionary.en.hero.role}`,
     description: dictionary.en.hero.tagline,
+    url: "/",
+    siteName: site.name,
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${dictionary.en.hero.role}`,
+    description: dictionary.en.hero.tagline,
   },
 };
 
