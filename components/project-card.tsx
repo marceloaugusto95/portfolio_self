@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, Expand, Lock } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Expand, Lock } from "lucide-react";
 import { GithubIcon } from "./icons";
 import { Lightbox } from "./lightbox";
+import { useLanguage } from "./language-provider";
 import type { Project } from "@/content/projects";
 
 const statusStyles: Record<Project["status"], string> = {
@@ -23,9 +24,18 @@ const MAX_HIGHLIGHTS = 3;
 const MAX_TAGS = 5;
 
 export function ProjectCard({ project, statusLabel }: { project: Project; statusLabel: string }) {
-  const highlights = project.highlights.slice(0, MAX_HIGHLIGHTS);
+  const { t } = useLanguage();
+  const [expanded, setExpanded] = useState(false);
+
+  const highlights = expanded ? project.highlights : project.highlights.slice(0, MAX_HIGHLIGHTS);
   const tags = project.tags.slice(0, MAX_TAGS);
   const hiddenTags = project.tags.slice(MAX_TAGS);
+
+  // Show the toggle only when something is actually clamped/hidden.
+  const hasMore =
+    project.highlights.length > MAX_HIGHLIGHTS ||
+    project.description.length > 180 ||
+    project.highlights.some((h) => h.length > 88);
 
   const gallery = project.images ?? (project.image ? [project.image] : []);
   const hero = gallery[0];
@@ -85,23 +95,43 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
           </span>
         </div>
 
-        {/* Fixed-height copy slots keep the highlights aligned across cards */}
-        <p className="line-clamp-2 min-h-[2.75rem] text-sm font-medium text-foreground/90">
+        {/* Collapsed: fixed-height slots keep highlights aligned across cards.
+            Expanded: full copy is revealed so nothing is hidden mid-sentence. */}
+        <p className="line-clamp-2 min-h-[2.75rem] text-[15px] font-medium text-foreground/90">
           {project.tagline}
         </p>
-        <p className="mt-2 line-clamp-4 min-h-[6.25rem] text-[15px] leading-relaxed text-muted">
+        <p
+          className={`mt-2 text-[15px] leading-relaxed text-muted ${
+            expanded ? "" : "line-clamp-4 min-h-[6.25rem]"
+          }`}
+        >
           {project.description}
         </p>
 
         {highlights.length > 0 && (
           <ul className="mt-4 space-y-1.5">
             {highlights.map((h) => (
-              <li key={h} className="flex gap-2 text-sm text-muted">
+              <li key={h} className="flex gap-2 text-[15px] text-muted">
                 <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
-                <span className="line-clamp-2 min-w-0">{h}</span>
+                <span className={expanded ? "min-w-0" : "line-clamp-2 min-w-0"}>{h}</span>
               </li>
             ))}
           </ul>
+        )}
+
+        {hasMore && (
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            aria-expanded={expanded}
+            className="mt-3 inline-flex w-fit items-center gap-1 text-sm font-medium text-accent transition-colors hover:text-foreground"
+          >
+            {expanded ? t.projects.readLess : t.projects.readMore}
+            <ChevronDown
+              size={15}
+              className={`transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
+            />
+          </button>
         )}
 
         {/* Pinned to the bottom so links line up row to row */}

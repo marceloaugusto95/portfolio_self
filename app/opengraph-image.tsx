@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { readFileSync } from "fs";
 import { join } from "path";
+import sharp from "sharp";
 import { site } from "@/content/site";
 import { dictionary } from "@/content/dictionary";
 
@@ -9,13 +10,14 @@ export const runtime = "nodejs";
 
 export const alt = `${site.name} — ${dictionary.en.hero.role}`;
 export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+// Served as JPEG (via sharp) — a photographic OG card is far lighter than PNG.
+export const contentType = "image/jpeg";
 
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
   const portrait = readFileSync(join(process.cwd(), "public/me.jpg"));
   const portraitSrc = `data:image/jpeg;base64,${portrait.toString("base64")}`;
 
-  return new ImageResponse(
+  const png = new ImageResponse(
     (
       <div
         style={{
@@ -97,4 +99,15 @@ export default function OpengraphImage() {
     ),
     { ...size },
   );
+
+  const jpeg = await sharp(Buffer.from(await png.arrayBuffer()))
+    .jpeg({ quality: 86, mozjpeg: true })
+    .toBuffer();
+
+  return new Response(new Uint8Array(jpeg), {
+    headers: {
+      "Content-Type": "image/jpeg",
+      "Cache-Control": "public, max-age=31536000, immutable",
+    },
+  });
 }

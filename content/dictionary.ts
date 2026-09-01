@@ -3,7 +3,7 @@ import type { Project, ProjectLink } from "./projects";
 export type Lang = "en" | "pt";
 
 export type Dict = {
-  nav: { about: string; projects: string; skills: string; contact: string; resume: string };
+  nav: { about: string; experience: string; projects: string; skills: string; contact: string; resume: string };
   hero: {
     available: string;
     greeting: string;
@@ -18,10 +18,19 @@ export type Dict = {
     paragraphs: string[];
     facts: { label: string; value: string }[];
   };
+  experience: {
+    eyebrow: string;
+    title: string;
+    items: { role: string; org: string; meta: string; period: string; points: string[] }[];
+    educationLabel: string;
+    education: { degree: string; school: string };
+  };
   projects: {
     eyebrow: string;
     title: string;
     status: Record<Project["status"], string>;
+    readMore: string;
+    readLess: string;
     items: Project[];
   };
   skills: {
@@ -105,7 +114,7 @@ const supportChatbot = {
 
 export const dictionary: Record<Lang, Dict> = {
   en: {
-    nav: { about: "About", projects: "Projects", skills: "Skills", contact: "Contact", resume: "Résumé" },
+    nav: { about: "About", experience: "Experience", projects: "Projects", skills: "Skills", contact: "Contact", resume: "Résumé" },
     hero: {
       available: "Available for remote full-stack roles",
       greeting: "Hi, I'm",
@@ -130,10 +139,43 @@ export const dictionary: Record<Lang, Dict> = {
         { label: "Languages", value: "English · Portuguese" },
       ],
     },
+    experience: {
+      eyebrow: "Career",
+      title: "Experience",
+      items: [
+        {
+          role: "Freelance Full-Stack Developer",
+          org: "Self-Employed",
+          meta: "Remote",
+          period: "Nov 2024 – Present",
+          points: [
+            "Serve small-business and public-sector clients with no in-house engineering team, shipping every project solo from requirements to deployment and support.",
+            "Standardized delivery on a spec-driven workflow (TypeScript, React, Next.js, Node.js, PostgreSQL) with monorepo, Docker and CI/CD — keeping apps in live operation without an ops team.",
+          ],
+        },
+        {
+          role: "Full-Stack Developer",
+          org: "Pública Assessoria em Gestão Empresarial",
+          meta: "Contract · Brasília (Hybrid)",
+          period: "Feb 2026 – Present",
+          points: [
+            "Sole developer for a consultancy with no internal engineering team, turning business requirements into full-stack business-management software.",
+            "Own systems design through delivery; solutions run in day-to-day operational use, documented so non-technical staff operate them independently.",
+          ],
+        },
+      ],
+      educationLabel: "Education",
+      education: {
+        degree: "Associate Degree — Systems Analysis and Development",
+        school: "Senac · 2024",
+      },
+    },
     projects: {
       eyebrow: "Work",
       title: "Selected projects",
       status: { Live: "Live", "In Development": "In Development", Prototype: "Prototype", Completed: "Completed" },
+      readMore: "Read more",
+      readLess: "Show less",
       items: [
         {
           ...luckyClover,
@@ -183,6 +225,7 @@ export const dictionary: Record<Lang, Dict> = {
             "An omnichannel support solution built end-to-end for a government public-health service, integrating an open-source helpdesk with n8n workflow automation and the WhatsApp Business Cloud API for unified, multi-agent conversation handling.",
           year: "2026",
           highlights: [
+            "Now serves 10,000+ residents through a single LGPD-compliant multi-agent queue",
             "Automated conversation triage and routing with template-based outbound notifications",
             "Compliant messaging (approved templates, opt-in handling) and LGPD data-privacy",
             "Deployed on self-managed, containerized cloud infrastructure",
@@ -230,7 +273,7 @@ export const dictionary: Record<Lang, Dict> = {
   },
 
   pt: {
-    nav: { about: "Sobre", projects: "Projetos", skills: "Habilidades", contact: "Contato", resume: "Currículo" },
+    nav: { about: "Sobre", experience: "Experiência", projects: "Projetos", skills: "Habilidades", contact: "Contato", resume: "Currículo" },
     hero: {
       available: "Disponível para vagas full-stack remotas",
       greeting: "Olá, sou o",
@@ -255,10 +298,43 @@ export const dictionary: Record<Lang, Dict> = {
         { label: "Idiomas", value: "Inglês · Português" },
       ],
     },
+    experience: {
+      eyebrow: "Carreira",
+      title: "Experiência",
+      items: [
+        {
+          role: "Desenvolvedor Full-Stack Freelancer",
+          org: "Autônomo",
+          meta: "Remoto",
+          period: "Nov 2024 – Presente",
+          points: [
+            "Atendo clientes de pequeno porte e do setor público sem equipe interna de engenharia, entregando cada projeto sozinho, do levantamento de requisitos ao deploy e suporte.",
+            "Padronizei a entrega em um fluxo orientado a especificação (TypeScript, React, Next.js, Node.js, PostgreSQL) com monorepo, Docker e CI/CD — mantendo as aplicações em operação sem equipe de ops.",
+          ],
+        },
+        {
+          role: "Desenvolvedor Full-Stack",
+          org: "Pública Assessoria em Gestão Empresarial",
+          meta: "Contrato · Brasília (Híbrido)",
+          period: "Fev 2026 – Presente",
+          points: [
+            "Desenvolvedor único de uma consultoria sem equipe interna de engenharia, transformando requisitos de negócio em software de gestão full-stack.",
+            "Cuido do systems design até a entrega; as soluções estão em uso operacional diário, documentadas para que equipes não técnicas as operem de forma independente.",
+          ],
+        },
+      ],
+      educationLabel: "Formação",
+      education: {
+        degree: "Tecnólogo — Análise e Desenvolvimento de Sistemas",
+        school: "Senac · 2024",
+      },
+    },
     projects: {
       eyebrow: "Projetos",
       title: "Projetos selecionados",
       status: { Live: "No ar", "In Development": "Em desenvolvimento", Prototype: "Protótipo", Completed: "Concluído" },
+      readMore: "Ver mais",
+      readLess: "Ver menos",
       items: [
         {
           ...luckyClover,
@@ -308,6 +384,7 @@ export const dictionary: Record<Lang, Dict> = {
             "Uma solução de suporte omnichannel construída de ponta a ponta para um serviço público de saúde, integrando um helpdesk open-source com automação no n8n e a API WhatsApp Business Cloud para atendimento unificado e multi-atendente.",
           year: "2026",
           highlights: [
+            "Atende 10.000+ cidadãos em uma única fila multi-atendente em conformidade com a LGPD",
             "Triagem e roteamento automáticos de conversas, com notificações ativas baseadas em templates",
             "Mensageria em conformidade (templates aprovados, gestão de opt-in) e privacidade de dados conforme a LGPD",
             "Implantado em infraestrutura de nuvem containerizada e autogerenciada",
