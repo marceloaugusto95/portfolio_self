@@ -54,9 +54,9 @@ const manaRealm = {
   tags: ["JavaScript", "HTML5 Canvas", "CSS3", "Game Dev"],
   links: [{ label: "Live Demo", href: "https://manarealm.vercel.app/", type: "demo" as const }],
   images: [
-    "/screenshots/manaprint1.png",
-    "/screenshots/manaprint2.png",
-    "/screenshots/manaprint3.png",
+    "/screenshots/manaprint1.webp",
+    "/screenshots/manaprint2.webp",
+    "/screenshots/manaprint3.webp",
   ],
   featured: true,
 };
@@ -70,11 +70,11 @@ const luckyClover = {
   ],
   // White-label demo screenshots (no real client data); admin dashboard leads.
   images: [
-    "/screenshots/luckyprint5.png",
-    "/screenshots/luckyprint1.png",
-    "/screenshots/luckyprint2.png",
-    "/screenshots/luckyprint3.png",
-    "/screenshots/luckyprint4.png",
+    "/screenshots/luckyprint5.webp",
+    "/screenshots/luckyprint1.webp",
+    "/screenshots/luckyprint2.webp",
+    "/screenshots/luckyprint3.webp",
+    "/screenshots/luckyprint4.webp",
   ],
   featured: true,
 };
@@ -85,6 +85,12 @@ const barbeariaTech = {
   tags: ["Next.js 16", "React 19", "TypeScript", "Neon Postgres", "CSS Modules", "Vercel"],
   // Private repo — demo only.
   links: [{ label: "Live Demo", href: "https://barbeariatech.vercel.app", type: "demo" as const }],
+  images: [
+    "/screenshots/barbprint1.webp",
+    "/screenshots/barbprint2.webp",
+    "/screenshots/barbprint3.webp",
+    "/screenshots/barbprint4.webp",
+  ],
   featured: true,
 };
 
