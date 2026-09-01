@@ -175,24 +175,25 @@ export const dictionary: Record<Lang, Dict> = {
       eyebrow: "Toolkit",
       title: "Skills & technologies",
       groups: [
-        { group: "Languages", items: ["JavaScript", "TypeScript", "Python", "SQL", "HTML5", "CSS3"] },
-        { group: "Frontend", items: ["React", "React Native", "Expo", "Next.js", "Astro.js", "Responsive UI"] },
         {
-          group: "Backend",
-          items: ["Node.js", "REST APIs", "PostgreSQL", "Supabase", "Row-Level Security", "JWT Authentication", "Auth0", "Webhooks"],
-        },
-        { group: "DevOps & Tools", items: ["Docker", "Git", "GitHub", "GitHub Actions", "AWS", "Vercel", "CI/CD", "VS Code"] },
-        {
-          group: "Integrations & Automation",
-          items: ["n8n Automation", "WhatsApp Business Cloud API", "Stripe", "Payment Gateways", "Mercado Pago PIX", "Capacitor"],
+          group: "Core stack",
+          items: ["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL", "Supabase", "Tailwind CSS"],
         },
         {
-          group: "AI & LLMs",
-          items: ["Large Language Models (LLMs)", "Local LLMs", "Claude", "Claude API", "Claude Code (CLI)", "Gemini", "Gemini CLI", "Google AI Tools", "Spec-Driven Development"],
+          group: "Backend & infrastructure",
+          items: ["REST APIs", "Row-Level Security", "JWT Authentication", "Auth0", "Webhooks", "Docker", "AWS", "Vercel", "CI/CD", "GitHub Actions"],
         },
         {
-          group: "Architecture & Practices",
-          items: ["Full-Stack Development", "Software Design", "Monorepo Architecture", "Game Design", "UX Design", "Image Editing"],
+          group: "Cross-platform & integrations",
+          items: ["React Native", "Expo", "Capacitor", "WhatsApp Business Cloud API", "n8n", "Stripe", "Mercado Pago PIX"],
+        },
+        {
+          group: "AI-assisted development",
+          items: ["Claude", "Claude Code (CLI)", "Claude API", "Gemini", "Local LLMs", "Spec-Driven Development"],
+        },
+        {
+          group: "Foundations & practices",
+          items: ["Python", "Astro.js", "Full-Stack Development", "Software Design", "Monorepo Architecture", "UX Design", "Game Design"],
         },
         { group: "Languages (Spoken)", items: ["English", "Portuguese"] },
       ],
@@ -298,24 +299,25 @@ export const dictionary: Record<Lang, Dict> = {
       eyebrow: "Ferramentas",
       title: "Habilidades e tecnologias",
       groups: [
-        { group: "Linguagens", items: ["JavaScript", "TypeScript", "Python", "SQL", "HTML5", "CSS3"] },
-        { group: "Frontend", items: ["React", "React Native", "Expo", "Next.js", "Astro.js", "UI Responsiva"] },
         {
-          group: "Backend",
-          items: ["Node.js", "REST APIs", "PostgreSQL", "Supabase", "Row-Level Security", "Autenticação JWT", "Auth0", "Webhooks"],
-        },
-        { group: "DevOps e Ferramentas", items: ["Docker", "Git", "GitHub", "GitHub Actions", "AWS", "Vercel", "CI/CD", "VS Code"] },
-        {
-          group: "Integrações e Automação",
-          items: ["Automação n8n", "WhatsApp Business Cloud API", "Stripe", "Gateways de Pagamento", "Mercado Pago PIX", "Capacitor"],
+          group: "Stack principal",
+          items: ["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL", "Supabase", "Tailwind CSS"],
         },
         {
-          group: "IA e LLMs",
-          items: ["Modelos de Linguagem (LLMs)", "LLMs Locais", "Claude", "Claude API", "Claude Code (CLI)", "Gemini", "Gemini CLI", "Google AI Tools", "Desenvolvimento Orientado a Especificação"],
+          group: "Backend e infraestrutura",
+          items: ["REST APIs", "Row-Level Security", "Autenticação JWT", "Auth0", "Webhooks", "Docker", "AWS", "Vercel", "CI/CD", "GitHub Actions"],
         },
         {
-          group: "Arquitetura e Práticas",
-          items: ["Desenvolvimento Full-Stack", "Design de Software", "Arquitetura Monorepo", "Game Design", "UX Design", "Edição de Imagem"],
+          group: "Multiplataforma e integrações",
+          items: ["React Native", "Expo", "Capacitor", "WhatsApp Business Cloud API", "n8n", "Stripe", "Mercado Pago PIX"],
+        },
+        {
+          group: "Desenvolvimento assistido por IA",
+          items: ["Claude", "Claude Code (CLI)", "Claude API", "Gemini", "LLMs Locais", "Desenvolvimento Orientado a Especificação"],
+        },
+        {
+          group: "Fundamentos e práticas",
+          items: ["Python", "Astro.js", "Desenvolvimento Full-Stack", "Design de Software", "Arquitetura Monorepo", "UX Design", "Game Design"],
         },
         { group: "Idiomas", items: ["Inglês", "Português"] },
       ],
