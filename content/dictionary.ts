@@ -120,7 +120,7 @@ export const dictionary: Record<Lang, Dict> = {
       greeting: "Hi, I'm",
       role: "Full-Stack Developer",
       tagline:
-        "I build production-ready applications across web, mobile, desktop, and automation. From database design and backend architecture to polished front-ends and live deployment, I handle the whole stack.",
+        "I ship production software for small businesses and public-sector teams with no in-house engineers, owning every project solo from requirements and systems design through deployment and support. Web, mobile, desktop, and the automation that ties them together.",
       location: "Brasília, Brazil (GMT-3)",
       viewWork: "View my work",
     },
@@ -144,16 +144,6 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Experience",
       items: [
         {
-          role: "Freelance Full-Stack Developer",
-          org: "Self-Employed",
-          meta: "Remote",
-          period: "Nov 2024 – Present",
-          points: [
-            "Serve small-business and public-sector clients with no in-house engineering team, shipping every project solo from requirements to deployment and support.",
-            "Standardized delivery on a spec-driven workflow (TypeScript, React, Next.js, Node.js, PostgreSQL) with monorepo, Docker and CI/CD — keeping apps in live operation without an ops team.",
-          ],
-        },
-        {
           role: "Full-Stack Developer",
           org: "Pública Assessoria em Gestão Empresarial",
           meta: "Contract · Brasília (Hybrid)",
@@ -161,6 +151,16 @@ export const dictionary: Record<Lang, Dict> = {
           points: [
             "Sole developer for a consultancy with no internal engineering team, turning business requirements into full-stack business-management software.",
             "Own systems design through delivery; solutions run in day-to-day operational use, documented so non-technical staff operate them independently.",
+          ],
+        },
+        {
+          role: "Freelance Full-Stack Developer",
+          org: "Self-Employed",
+          meta: "Remote",
+          period: "Nov 2024 – Present",
+          points: [
+            "Serve small-business and public-sector clients with no in-house engineering team, shipping every project solo from requirements to deployment and support.",
+            "Standardized delivery on a spec-driven workflow (TypeScript, React, Next.js, Node.js, PostgreSQL) with monorepo, Docker and CI/CD — keeping apps in live operation without an ops team.",
           ],
         },
       ],
@@ -279,7 +279,7 @@ export const dictionary: Record<Lang, Dict> = {
       greeting: "Olá, sou o",
       role: "Desenvolvedor Full-Stack",
       tagline:
-        "Eu construo aplicações prontas para produção em web, mobile, desktop e automação. Do design de banco de dados e da arquitetura de backend até front-ends caprichados e o deploy em produção, eu cuido de toda a stack.",
+        "Entrego software em produção para pequenas empresas e órgãos do setor público sem equipe interna de engenharia, assumindo cada projeto sozinho, do levantamento de requisitos e do systems design ao deploy e ao suporte. Web, mobile, desktop e a automação que conecta tudo.",
       location: "Brasília, Brasil (GMT-3)",
       viewWork: "Ver meu trabalho",
     },
@@ -303,16 +303,6 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Experiência",
       items: [
         {
-          role: "Desenvolvedor Full-Stack Freelancer",
-          org: "Autônomo",
-          meta: "Remoto",
-          period: "Nov 2024 – Presente",
-          points: [
-            "Atendo clientes de pequeno porte e do setor público sem equipe interna de engenharia, entregando cada projeto sozinho, do levantamento de requisitos ao deploy e suporte.",
-            "Padronizei a entrega em um fluxo orientado a especificação (TypeScript, React, Next.js, Node.js, PostgreSQL) com monorepo, Docker e CI/CD — mantendo as aplicações em operação sem equipe de ops.",
-          ],
-        },
-        {
           role: "Desenvolvedor Full-Stack",
           org: "Pública Assessoria em Gestão Empresarial",
           meta: "Contrato · Brasília (Híbrido)",
@@ -320,6 +310,16 @@ export const dictionary: Record<Lang, Dict> = {
           points: [
             "Desenvolvedor único de uma consultoria sem equipe interna de engenharia, transformando requisitos de negócio em software de gestão full-stack.",
             "Cuido do systems design até a entrega; as soluções estão em uso operacional diário, documentadas para que equipes não técnicas as operem de forma independente.",
+          ],
+        },
+        {
+          role: "Desenvolvedor Full-Stack Freelancer",
+          org: "Autônomo",
+          meta: "Remoto",
+          period: "Nov 2024 – Presente",
+          points: [
+            "Atendo clientes de pequeno porte e do setor público sem equipe interna de engenharia, entregando cada projeto sozinho, do levantamento de requisitos ao deploy e suporte.",
+            "Padronizei a entrega em um fluxo orientado a especificação (TypeScript, React, Next.js, Node.js, PostgreSQL) com monorepo, Docker e CI/CD — mantendo as aplicações em operação sem equipe de ops.",
           ],
         },
       ],
