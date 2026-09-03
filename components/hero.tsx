@@ -40,7 +40,7 @@ export function Hero() {
             variants={item}
             className="max-w-3xl text-4xl font-semibold leading-[1.1] tracking-tight sm:text-6xl"
           >
-            {t.hero.greeting} {site.name.split(" ").slice(0, 2).join(" ")} —{" "}
+            {site.name} —{" "}
             <span className="gradient-text">{t.hero.role}</span>
           </motion.h1>
 

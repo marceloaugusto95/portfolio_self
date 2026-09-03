@@ -6,7 +6,6 @@ export type Dict = {
   nav: { about: string; experience: string; projects: string; skills: string; contact: string; resume: string };
   hero: {
     available: string;
-    greeting: string;
     role: string;
     tagline: string;
     location: string;
@@ -49,10 +48,10 @@ export type Dict = {
 // Copy budget for project cards (see components/project-card.tsx):
 //   tagline      ~1-2 lines  (<= ~110 chars)
 //   description  ~4 lines    (<= ~240 chars)
-//   highlights   3 items, <= 2 lines each (extras are dropped)
+//   highlights   3 shown collapsed, <= 2 lines each (all shown on expand)
 //   tags         5 shown, the rest collapse into a "+N" chip
-// Longer copy is clamped with an ellipsis rather than stretching the grid, so
-// keep new entries inside these limits to avoid mid-sentence cuts.
+// Collapsed cards clamp longer copy; the "Read more" toggle reveals the full
+// description and every highlight, so nothing stays permanently hidden.
 // ---------------------------------------------------------------------------
 
 // Fields that never change between languages — kept here so the two language
@@ -117,19 +116,18 @@ export const dictionary: Record<Lang, Dict> = {
     nav: { about: "About", experience: "Experience", projects: "Projects", skills: "Skills", contact: "Contact", resume: "Résumé" },
     hero: {
       available: "Available for remote full-stack roles",
-      greeting: "Hi, I'm",
       role: "Full-Stack Developer",
       tagline:
-        "I ship production software for small businesses and public-sector teams with no in-house engineers, owning every project solo from requirements and systems design through deployment and support. Web, mobile, desktop, and the automation that ties them together.",
+        "End-to-end delivery of production software for small businesses and public-sector teams without in-house engineering: requirements, systems design, implementation, deployment and ongoing support. Coverage spans web, mobile, desktop and the automation layer that connects them.",
       location: "Brasília, Brazil (GMT-3)",
-      viewWork: "View my work",
+      viewWork: "View projects",
     },
     about: {
       eyebrow: "About",
-      title: "A bit about me",
+      title: "Profile",
       paragraphs: [
-        "I'm a full-stack developer who owns projects from the ground up: architecture, backend, front-end, and deployment. I'm not tied to a single platform. I build for the web, mobile, and desktop, and I write the automation and integration workflows that tie them together, always picking the right stack for the problem instead of forcing everything through one.",
-        "I've shipped multiple projects across different domains, from a multi-app lottery platform spanning web and Android to an omnichannel customer-support system, and I'm currently building a browser-based game solo. I work spec-first and care about maintainable, production-ready code. I'm fluent in English and available across US and European business hours.",
+        "Full-stack developer with end-to-end ownership of the delivery cycle: architecture, backend, front-end and deployment. Work is not tied to a single platform, covering web, mobile and desktop alongside the automation and integration workflows that connect them, with the stack selected per problem rather than imposed by default.",
+        "Delivered projects span distinct domains, from a multi-app lottery platform covering web and Android to an omnichannel customer-support system, alongside a browser and desktop game currently in development. Delivery follows a spec-driven workflow with an emphasis on maintainable, production-ready code. Professional working proficiency in English, with availability across US and European business hours.",
       ],
       facts: [
         { label: "Based in", value: "Brasília, Brazil" },
@@ -149,8 +147,8 @@ export const dictionary: Record<Lang, Dict> = {
           meta: "Contract · Brasília (Hybrid)",
           period: "Feb 2026 – Present",
           points: [
-            "Sole developer for a consultancy with no internal engineering team, turning business requirements into full-stack business-management software.",
-            "Own systems design through delivery; solutions run in day-to-day operational use, documented so non-technical staff operate them independently.",
+            "Sole developer for a consultancy without an internal engineering team, converting business requirements into full-stack business-management software (TypeScript, React, Node.js, PostgreSQL).",
+            "Ownership of systems design through delivery, with solutions in day-to-day operational use and documentation that allows non-technical staff to operate them independently.",
           ],
         },
         {
@@ -159,8 +157,8 @@ export const dictionary: Record<Lang, Dict> = {
           meta: "Remote",
           period: "Nov 2024 – Present",
           points: [
-            "Serve small-business and public-sector clients with no in-house engineering team, shipping every project solo from requirements to deployment and support.",
-            "Standardized delivery on a spec-driven workflow (TypeScript, React, Next.js, Node.js, PostgreSQL) with monorepo, Docker and CI/CD — keeping apps in live operation without an ops team.",
+            "Delivery for small-business and public-sector clients without in-house engineering teams, covering requirements, systems design, implementation, deployment and post-launch support.",
+            "Delivery standardized on a spec-driven workflow (TypeScript, React, Next.js, Node.js, PostgreSQL) with monorepo architecture, Docker and CI/CD, keeping applications in live operation without a dedicated ops team.",
           ],
         },
       ],
@@ -180,9 +178,9 @@ export const dictionary: Record<Lang, Dict> = {
         {
           ...luckyClover,
           title: "Lucky Clover",
-          tagline: "A full lottery management platform, shipped solo.",
+          tagline: "Complete lottery management platform, delivered end-to-end.",
           description:
-            "A multi-app lottery management platform I built as a monorepo spanning four applications: a customer-facing betting web app, a point-of-sale app for resellers, an admin dashboard, and a companion Android app with thermal ticket printing.",
+            "Multi-app lottery management platform built as a monorepo spanning four applications: a customer-facing betting web app, a point-of-sale app for resellers, an admin dashboard and a companion Android app with thermal ticket printing.",
           year: "2026",
           highlights: [
             "In production: 3,000+ bets processed and ~225 monthly active clients",
@@ -194,9 +192,9 @@ export const dictionary: Record<Lang, Dict> = {
         {
           ...manaRealm,
           title: "Mana Realm",
-          tagline: "A browser-based game built from scratch, no frameworks.",
+          tagline: "Browser-based game built from scratch, without engine or frameworks.",
           description:
-            "A browser-based game I designed and developed from the ground up in vanilla JavaScript, HTML5, and CSS3. I handle the game logic, rendering, and UI entirely on my own.",
+            "Browser-based game developed from the ground up in vanilla JavaScript, HTML5 and CSS3. Game logic, rendering and interface are built and maintained solo, with no engine or framework dependencies.",
           year: "Since 2025",
           highlights: [
             "Custom game loop, rendering, and UI written from scratch",
@@ -207,9 +205,9 @@ export const dictionary: Record<Lang, Dict> = {
         {
           ...barbeariaTech,
           title: "Barbearia Tech",
-          tagline: "A white-label booking prototype for barbershops, landing page to staff dashboard.",
+          tagline: "White-label booking prototype for barbershops, from landing page to staff dashboard.",
           description:
-            "A working proof of concept built on Next.js 16 App Router with server components and Neon Postgres. A single brand config file drives the whole site — name, logo, colors, services, units, staff and hours — so onboarding a new client is a configuration change, not a rewrite.",
+            "Working proof of concept built on Next.js 16 App Router with server components and Neon Postgres. A single brand configuration file drives the entire site (name, logo, colors, services, units, staff and hours), so onboarding a new client becomes a configuration change rather than a rewrite.",
           year: "2026",
           highlights: [
             "Four-step booking flow (unit → service → barber/day/time → details) with availability computed server-side from the live schedule",
@@ -222,7 +220,7 @@ export const dictionary: Record<Lang, Dict> = {
           title: "Omnichannel Support Chatbot",
           tagline: "AI-assisted citizen support for a public health service.",
           description:
-            "An omnichannel support solution built end-to-end for a government public-health service, integrating an open-source helpdesk with n8n workflow automation and the WhatsApp Business Cloud API for unified, multi-agent conversation handling.",
+            "Omnichannel support solution delivered end-to-end for a government public-health service, integrating an open-source helpdesk with n8n workflow automation and the WhatsApp Business Cloud API for unified, multi-agent conversation handling.",
           year: "2026",
           highlights: [
             "Now serves 10,000+ residents through a single LGPD-compliant multi-agent queue",
@@ -263,8 +261,8 @@ export const dictionary: Record<Lang, Dict> = {
     },
     contact: {
       eyebrow: "Contact",
-      title: "Let's build something together",
-      body: "I'm open to remote full-stack roles and freelance work. The fastest way to reach me is by email.",
+      title: "Open to new projects and roles",
+      body: "Available for remote full-stack roles and freelance engagements. Email is the fastest channel for a first contact.",
       downloadResume: "Download résumé",
     },
     footer: { builtWith: "Built with Next.js & Tailwind CSS." },
@@ -276,19 +274,18 @@ export const dictionary: Record<Lang, Dict> = {
     nav: { about: "Sobre", experience: "Experiência", projects: "Projetos", skills: "Habilidades", contact: "Contato", resume: "Currículo" },
     hero: {
       available: "Disponível para vagas full-stack remotas",
-      greeting: "Olá, sou o",
       role: "Desenvolvedor Full-Stack",
       tagline:
-        "Entrego software em produção para pequenas empresas e órgãos do setor público sem equipe interna de engenharia, assumindo cada projeto sozinho, do levantamento de requisitos e do systems design ao deploy e ao suporte. Web, mobile, desktop e a automação que conecta tudo.",
+        "Entrega end-to-end de software em produção para pequenas empresas e órgãos do setor público sem equipe interna de engenharia: levantamento de requisitos, systems design, implementação, deploy e suporte contínuo. A atuação abrange web, mobile, desktop e a camada de automação que conecta essas frentes.",
       location: "Brasília, Brasil (GMT-3)",
-      viewWork: "Ver meu trabalho",
+      viewWork: "Ver projetos",
     },
     about: {
       eyebrow: "Sobre",
-      title: "Um pouco sobre mim",
+      title: "Perfil",
       paragraphs: [
-        "Sou um desenvolvedor full-stack que assume os projetos do começo ao fim: arquitetura, backend, front-end e deploy. Não me prendo a uma única plataforma. Construo para web, mobile e desktop, e escrevo os fluxos de automação e integração que conectam tudo, sempre escolhendo a stack certa para o problema em vez de forçar tudo por um único caminho.",
-        "Já entreguei diversos projetos em diferentes domínios, de uma plataforma de loteria multi-app que abrange web e Android a um sistema de suporte ao cliente omnichannel, e atualmente estou desenvolvendo um jogo de navegador sozinho. Trabalho com foco em especificação e me importo com um código sustentável e pronto para produção. Sou fluente em inglês e disponível nos horários comerciais dos EUA e da Europa.",
+        "Desenvolvedor full-stack com atuação end-to-end no ciclo de entrega: arquitetura, backend, front-end e deploy. O trabalho não se limita a uma única plataforma, abrangendo web, mobile e desktop, além dos fluxos de automação e integração que conectam essas frentes, com a stack definida a partir do problema e não de um padrão fixo.",
+        "Os projetos entregues abrangem domínios distintos, de uma plataforma de loteria multi-app em web e Android a um sistema de suporte omnichannel, além de um jogo para navegador e desktop em desenvolvimento. A entrega segue um fluxo orientado a especificação, com ênfase em código sustentável e pronto para produção. Inglês em nível profissional e disponibilidade nos horários comerciais dos EUA e da Europa.",
       ],
       facts: [
         { label: "Baseado em", value: "Brasília, Brasil" },
@@ -308,8 +305,8 @@ export const dictionary: Record<Lang, Dict> = {
           meta: "Contrato · Brasília (Híbrido)",
           period: "Fev 2026 – Presente",
           points: [
-            "Desenvolvedor único de uma consultoria sem equipe interna de engenharia, transformando requisitos de negócio em software de gestão full-stack.",
-            "Cuido do systems design até a entrega; as soluções estão em uso operacional diário, documentadas para que equipes não técnicas as operem de forma independente.",
+            "Desenvolvedor único de uma consultoria sem equipe interna de engenharia, com a conversão de requisitos de negócio em software de gestão full-stack (TypeScript, React, Node.js, PostgreSQL).",
+            "Responsabilidade pelo systems design até a entrega, com soluções em uso operacional diário e documentação que permite a operação por equipes não técnicas.",
           ],
         },
         {
@@ -318,8 +315,8 @@ export const dictionary: Record<Lang, Dict> = {
           meta: "Remoto",
           period: "Nov 2024 – Presente",
           points: [
-            "Atendo clientes de pequeno porte e do setor público sem equipe interna de engenharia, entregando cada projeto sozinho, do levantamento de requisitos ao deploy e suporte.",
-            "Padronizei a entrega em um fluxo orientado a especificação (TypeScript, React, Next.js, Node.js, PostgreSQL) com monorepo, Docker e CI/CD — mantendo as aplicações em operação sem equipe de ops.",
+            "Atendimento a clientes de pequeno porte e do setor público sem equipe interna de engenharia, com entrega integral de cada projeto: requisitos, systems design, implementação, deploy e suporte pós-lançamento.",
+            "Padronização da entrega em um fluxo orientado a especificação (TypeScript, React, Next.js, Node.js, PostgreSQL) com arquitetura monorepo, Docker e CI/CD, mantendo as aplicações em operação sem equipe dedicada de ops.",
           ],
         },
       ],
@@ -339,9 +336,9 @@ export const dictionary: Record<Lang, Dict> = {
         {
           ...luckyClover,
           title: "Lucky Clover",
-          tagline: "Uma plataforma completa de gestão de loteria, entregue sozinho.",
+          tagline: "Plataforma completa de gestão de loteria, entregue de ponta a ponta.",
           description:
-            "Uma plataforma multi-app de gestão de loteria que construí como monorepo com quatro aplicações: um app web de apostas, um app de ponto de venda para revendedores, um painel administrativo e um app Android com impressão térmica de bilhetes.",
+            "Plataforma multi-app de gestão de loteria construída como monorepo com quatro aplicações: app web de apostas, app de ponto de venda para revendedores, painel administrativo e app Android com impressão térmica de bilhetes.",
           year: "2026",
           highlights: [
             "Em produção: 3.000+ apostas processadas e ~225 clientes ativos por mês",
@@ -353,9 +350,9 @@ export const dictionary: Record<Lang, Dict> = {
         {
           ...manaRealm,
           title: "Mana Realm",
-          tagline: "Um jogo de navegador feito do zero, sem frameworks.",
+          tagline: "Jogo de navegador desenvolvido do zero, sem engine ou frameworks.",
           description:
-            "Um jogo de navegador que projetei e desenvolvi do zero em JavaScript puro, HTML5 e CSS3. Cuido sozinho de toda a lógica do jogo, da renderização e da interface.",
+            "Jogo de navegador desenvolvido do zero em JavaScript puro, HTML5 e CSS3. Lógica de jogo, renderização e interface são construídas e mantidas de forma individual, sem engine ou frameworks.",
           year: "Desde 2025",
           highlights: [
             "Game loop, renderização e interface escritos do zero",
@@ -366,9 +363,9 @@ export const dictionary: Record<Lang, Dict> = {
         {
           ...barbeariaTech,
           title: "Barbearia Tech",
-          tagline: "Um protótipo de agendamento white label para barbearias, da landing ao painel da equipe.",
+          tagline: "Protótipo de agendamento white label para barbearias, da landing ao painel da equipe.",
           description:
-            "Uma prova de conceito funcional em Next.js 16 (App Router) com server components e Postgres na Neon. Um único arquivo de configuração de marca comanda o site inteiro — nome, logo, cores, serviços, unidades, profissionais e horários — então colocar um novo cliente no ar é mudar configuração, não reescrever código.",
+            "Prova de conceito funcional em Next.js 16 (App Router) com server components e Postgres na Neon. Um único arquivo de configuração de marca controla todo o site (nome, logo, cores, serviços, unidades, profissionais e horários), de modo que a entrada de um novo cliente se torna mudança de configuração, e não reescrita de código.",
           year: "2026",
           highlights: [
             "Fluxo de agendamento em quatro passos (unidade → serviço → profissional/dia/horário → dados), com disponibilidade calculada no servidor a partir da agenda real",
@@ -381,7 +378,7 @@ export const dictionary: Record<Lang, Dict> = {
           title: "Chatbot de Suporte Omnichannel",
           tagline: "Atendimento ao cidadão assistido por IA para um serviço público de saúde.",
           description:
-            "Uma solução de suporte omnichannel construída de ponta a ponta para um serviço público de saúde, integrando um helpdesk open-source com automação no n8n e a API WhatsApp Business Cloud para atendimento unificado e multi-atendente.",
+            "Solução de suporte omnichannel entregue de ponta a ponta para um serviço público de saúde, integrando um helpdesk open-source com automação no n8n e a API WhatsApp Business Cloud para atendimento unificado e multi-atendente.",
           year: "2026",
           highlights: [
             "Atende 10.000+ cidadãos em uma única fila multi-atendente em conformidade com a LGPD",
@@ -422,8 +419,8 @@ export const dictionary: Record<Lang, Dict> = {
     },
     contact: {
       eyebrow: "Contato",
-      title: "Vamos construir algo juntos",
-      body: "Estou aberto a vagas full-stack remotas e trabalhos freelancer. A forma mais rápida de falar comigo é por e-mail.",
+      title: "Aberto a novos projetos e oportunidades",
+      body: "Disponível para vagas full-stack remotas e trabalhos freelancer. O e-mail é o canal mais rápido para o primeiro contato.",
       downloadResume: "Baixar currículo",
     },
     footer: { builtWith: "Feito com Next.js e Tailwind CSS." },
