@@ -147,7 +147,7 @@ export const dictionary: Record<Lang, Dict> = {
           meta: "Contract · Brasília (Hybrid)",
           period: "Feb 2026 – Present",
           points: [
-            "Sole developer for a consultancy without an internal engineering team, converting business requirements into full-stack business-management software (TypeScript, React, Node.js, PostgreSQL).",
+            "Sole developer for a consultancy without an internal engineering team, converting business requirements into full-stack business-management software.",
             "Ownership of systems design through delivery, with solutions in day-to-day operational use and documentation that allows non-technical staff to operate them independently.",
           ],
         },
@@ -158,7 +158,7 @@ export const dictionary: Record<Lang, Dict> = {
           period: "Nov 2024 – Present",
           points: [
             "Delivery for small-business and public-sector clients without in-house engineering teams, covering requirements, systems design, implementation, deployment and post-launch support.",
-            "Delivery standardized on a spec-driven workflow (TypeScript, React, Next.js, Node.js, PostgreSQL) with monorepo architecture, Docker and CI/CD, keeping applications in live operation without a dedicated ops team.",
+            "Delivery standardized on a spec-driven workflow with monorepo architecture, containerization and automated CI/CD, keeping applications in live operation without a dedicated ops team.",
           ],
         },
       ],
@@ -305,7 +305,7 @@ export const dictionary: Record<Lang, Dict> = {
           meta: "Contrato · Brasília (Híbrido)",
           period: "Fev 2026 – Presente",
           points: [
-            "Desenvolvedor único de uma consultoria sem equipe interna de engenharia, com a conversão de requisitos de negócio em software de gestão full-stack (TypeScript, React, Node.js, PostgreSQL).",
+            "Desenvolvedor único de uma consultoria sem equipe interna de engenharia, com a conversão de requisitos de negócio em software de gestão full-stack.",
             "Responsabilidade pelo systems design até a entrega, com soluções em uso operacional diário e documentação que permite a operação por equipes não técnicas.",
           ],
         },
@@ -316,7 +316,7 @@ export const dictionary: Record<Lang, Dict> = {
           period: "Nov 2024 – Presente",
           points: [
             "Atendimento a clientes de pequeno porte e do setor público sem equipe interna de engenharia, com entrega integral de cada projeto: requisitos, systems design, implementação, deploy e suporte pós-lançamento.",
-            "Padronização da entrega em um fluxo orientado a especificação (TypeScript, React, Next.js, Node.js, PostgreSQL) com arquitetura monorepo, Docker e CI/CD, mantendo as aplicações em operação sem equipe dedicada de ops.",
+            "Padronização da entrega em um fluxo orientado a especificação, com arquitetura monorepo, containerização e CI/CD automatizado, mantendo as aplicações em operação sem equipe dedicada de ops.",
           ],
         },
       ],
