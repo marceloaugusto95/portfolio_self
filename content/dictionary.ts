@@ -108,6 +108,11 @@ const supportChatbot = {
   tags: ["n8n", "WhatsApp Cloud API", "LLMs", "Docker"],
   // Confidential client (government health service) — no public link, see per-language `note`.
   links: [] as ProjectLink[],
+  // Client data redacted (NDA): names, phone numbers and avatar initials are masked.
+  images: [
+    "/screenshots/chatprint1.webp",
+    "/screenshots/chatprint2.webp",
+  ],
   featured: true,
 };
 
