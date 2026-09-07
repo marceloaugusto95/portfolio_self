@@ -238,7 +238,7 @@ export const dictionary: Record<Lang, Dict> = {
       groups: [
         {
           group: "Core stack",
-          items: ["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL", "Supabase", "Tailwind CSS"],
+          items: ["TypeScript", "JavaScript", "Python", "React", "Next.js", "Astro.js", "Node.js", "PostgreSQL", "Supabase", "Tailwind CSS"],
         },
         {
           group: "Backend & infrastructure",
@@ -254,7 +254,7 @@ export const dictionary: Record<Lang, Dict> = {
         },
         {
           group: "Foundations & practices",
-          items: ["Python", "Astro.js", "Full-Stack Development", "Software Design", "Monorepo Architecture", "UX Design", "Game Design"],
+          items: ["Full-Stack Development", "Software Design", "Monorepo Architecture", "UX Design", "Game Design"],
         },
         { group: "Languages (Spoken)", items: ["English", "Portuguese"] },
       ],
@@ -396,7 +396,7 @@ export const dictionary: Record<Lang, Dict> = {
       groups: [
         {
           group: "Stack principal",
-          items: ["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL", "Supabase", "Tailwind CSS"],
+          items: ["TypeScript", "JavaScript", "Python", "React", "Next.js", "Astro.js", "Node.js", "PostgreSQL", "Supabase", "Tailwind CSS"],
         },
         {
           group: "Backend e infraestrutura",
@@ -412,7 +412,7 @@ export const dictionary: Record<Lang, Dict> = {
         },
         {
           group: "Fundamentos e práticas",
-          items: ["Python", "Astro.js", "Desenvolvimento Full-Stack", "Design de Software", "Arquitetura Monorepo", "UX Design", "Game Design"],
+          items: ["Desenvolvimento Full-Stack", "Design de Software", "Arquitetura Monorepo", "UX Design", "Game Design"],
         },
         { group: "Idiomas", items: ["Inglês", "Português"] },
       ],
