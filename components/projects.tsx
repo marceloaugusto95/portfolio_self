@@ -15,7 +15,7 @@ const MAX_STAGGER = 0.24;
 export function Projects() {
   const { t } = useLanguage();
   return (
-    <Section id="projects" eyebrow={t.projects.eyebrow} title={t.projects.title}>
+    <Section id="projects" number="03" eyebrow={t.projects.eyebrow} title={t.projects.title}>
       {/*
         `auto-rows-fr` makes every row as tall as its tallest card, so the grid
         stays on a regular rhythm regardless of how many projects exist or how

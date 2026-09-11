@@ -19,7 +19,7 @@ export function Hero() {
       <div className="bg-glow absolute inset-0 -z-10" />
       <div className="bg-grid absolute inset-0 -z-10" />
 
-      <div className="mx-auto grid min-h-[92vh] max-w-5xl grid-cols-1 items-center gap-10 px-6 py-24 sm:gap-12 sm:py-28 md:grid-cols-[1.1fr_0.9fr] md:gap-16 md:py-32">
+      <div className="mx-auto grid min-h-[92vh] max-w-5xl grid-cols-1 items-center gap-10 px-6 py-24 sm:gap-12 sm:py-28 md:grid-cols-[1.15fr_0.85fr] md:gap-14 md:py-32">
         <motion.div
           initial="hidden"
           animate="show"
@@ -27,53 +27,61 @@ export function Hero() {
         >
           <motion.div
             variants={item}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-sm text-muted"
+            className="mb-7 inline-flex items-center gap-2.5 border border-border bg-surface px-3 py-1.5"
           >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping bg-accent opacity-60" />
+              <span className="relative inline-flex h-1.5 w-1.5 bg-accent" />
             </span>
-            {t.hero.available}
+            <span className="mono-label text-muted">{t.hero.available}</span>
           </motion.div>
 
-          <motion.h1
-            variants={item}
-            className="max-w-3xl text-4xl font-semibold leading-[1.1] tracking-tight sm:text-6xl"
-          >
-            {site.name} —{" "}
-            <span className="gradient-text">{t.hero.role}</span>
+          {/* The role is the statement; the name sits above it as metadata.
+              Setting the full name in Archivo Black wrapped to five lines and
+              pushed everything else below the fold. */}
+          <motion.h1 variants={item}>
+            <span className="mono-label block text-muted">{site.name}</span>
+            <span className="display mt-3 block text-[2.6rem] text-accent sm:text-[3.5rem] md:text-[4.25rem]">
+              {t.hero.role}
+            </span>
           </motion.h1>
 
-          <motion.p variants={item} className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+          <motion.p
+            variants={item}
+            className="mt-7 max-w-xl text-[17px] leading-relaxed text-muted"
+          >
             {t.hero.tagline}
           </motion.p>
 
-          <motion.div variants={item} className="mt-6 flex items-center gap-2 text-sm text-muted">
-            <MapPin size={16} className="text-accent" />
-            {t.hero.location}
+          <motion.div variants={item} className="mt-6 flex items-center gap-2">
+            <MapPin size={14} className="text-accent" />
+            <span className="mono-label text-muted">{t.hero.location}</span>
           </motion.div>
 
-          <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-4">
+          <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-3">
             <a
               href="#projects"
-              className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2 bg-accent px-6 py-3.5 text-background transition-colors hover:bg-white"
             >
-              {t.hero.viewWork}
-              <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <span className="mono-label">{t.hero.viewWork}</span>
+              <ArrowUpRight
+                size={16}
+                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
             </a>
 
-            <div className="ml-1 flex items-center gap-1">
+            <div className="flex items-center">
               <IconLink href={site.socials.github} label="GitHub">
-                <GithubIcon size={18} />
+                <GithubIcon size={17} />
               </IconLink>
               <IconLink href={site.socials.linkedin} label="LinkedIn">
-                <LinkedinIcon size={18} />
+                <LinkedinIcon size={17} />
               </IconLink>
               <IconLink href={site.socials.whatsapp} label="WhatsApp">
-                <WhatsappIcon size={18} />
+                <WhatsappIcon size={17} />
               </IconLink>
               <IconLink href={`mailto:${site.email}`} label="Email">
-                <Mail size={18} />
+                <Mail size={17} />
               </IconLink>
             </div>
           </motion.div>
@@ -85,16 +93,15 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
           className="relative mx-auto w-full max-w-[17rem] sm:max-w-xs md:max-w-none"
         >
-          {/* Soft accent glow behind the portrait */}
-          <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-tr from-accent/25 via-accent-2/10 to-transparent blur-2xl" />
-          <div className="overflow-hidden rounded-3xl border border-border-strong bg-surface shadow-2xl shadow-black/40">
+          {/* Offset cyan rule instead of a soft glow — sharper, more graphic */}
+          <div className="absolute -bottom-3 -right-3 h-full w-full border-b-2 border-r-2 border-accent" />
+          <div className="relative overflow-hidden border border-border-strong bg-surface">
             <Image
               src="/me.jpg"
               alt={`${site.name}, ${t.hero.role}`}
               width={690}
               height={1206}
               priority
-              sizes="(max-width: 768px) 20rem, 28rem"
               className="aspect-[2/3] w-full object-cover object-bottom"
             />
           </div>
@@ -119,7 +126,7 @@ function IconLink({
       target="_blank"
       rel="noreferrer"
       aria-label={label}
-      className="rounded-full p-2.5 text-muted transition-colors hover:bg-surface hover:text-foreground"
+      className="border border-transparent p-3 text-muted transition-colors hover:border-border hover:text-accent"
     >
       {children}
     </a>

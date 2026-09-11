@@ -32,16 +32,16 @@ export function Nav() {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
-        <a href="#top" className="text-sm font-semibold tracking-tight">
+        <a href="#top" className="display text-base tracking-tight">
           Marcelo Augusto<span className="text-accent">.</span>
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-7 md:flex">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-muted transition-colors hover:text-foreground"
+              className="mono-label text-muted transition-colors hover:text-accent"
             >
               {l.label}
             </a>
@@ -50,7 +50,7 @@ export function Nav() {
             href={t.resumeUrl}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-border-strong px-4 py-1.5 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+            className="mono-label border border-border-strong px-3.5 py-2 transition-colors hover:border-accent hover:text-accent"
           >
             {t.nav.resume}
           </a>
@@ -73,7 +73,7 @@ export function Nav() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-sm text-muted transition-colors hover:text-foreground"
+                className="mono-label text-muted transition-colors hover:text-accent"
               >
                 {l.label}
               </a>
@@ -82,7 +82,7 @@ export function Nav() {
               href={t.resumeUrl}
               target="_blank"
               rel="noreferrer"
-              className="text-sm font-medium text-accent"
+              className="mono-label text-accent"
             >
               {t.nav.resume} →
             </a>

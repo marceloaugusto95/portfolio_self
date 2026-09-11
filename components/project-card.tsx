@@ -42,7 +42,7 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-colors duration-300 hover:border-border-strong">
+    <article className="group relative flex h-full flex-col overflow-hidden border border-border bg-surface transition-colors duration-300 hover:border-border-strong">
       {/* Preview — aspect-ratio based so it scales with the column width */}
       <div className="relative aspect-[16/9] shrink-0 overflow-hidden border-b border-border bg-surface-2">
         {hero ? (
@@ -60,7 +60,7 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
               className="object-cover object-top transition-transform duration-500 group-hover/preview:scale-[1.03]"
             />
             <div className="absolute inset-0 bg-background/0 transition-colors duration-300 group-hover/preview:bg-background/20" />
-            <span className="absolute bottom-2 right-2 inline-flex items-center gap-1.5 rounded-full border border-border-strong bg-background/70 px-2.5 py-1 text-xs font-medium text-foreground/90 backdrop-blur-sm">
+            <span className="mono-label absolute bottom-2 right-2 inline-flex items-center gap-1.5 border border-border-strong bg-background/80 px-2.5 py-1.5 text-foreground/90 backdrop-blur-sm">
               <Expand size={13} />
               {gallery.length > 1 ? `${gallery.length} shots` : "View"}
             </span>
@@ -69,13 +69,13 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
           // Intentional "app window" placeholder until a real screenshot is added.
           <div className="absolute inset-0 flex flex-col bg-surface-2">
             <div className="flex items-center gap-1.5 border-b border-border/60 px-3 py-2">
-              <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
-              <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
-              <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
-              <span className="ml-2 h-3 flex-1 rounded-full bg-foreground/[0.06]" />
+              <span className="h-2.5 w-2.5 bg-foreground/15" />
+              <span className="h-2.5 w-2.5 bg-foreground/15" />
+              <span className="h-2.5 w-2.5 bg-foreground/15" />
+              <span className="ml-2 h-3 flex-1 bg-foreground/[0.06]" />
             </div>
             <div className="bg-glow relative flex flex-1 items-center justify-center overflow-hidden p-4 opacity-90">
-              <span className="line-clamp-2 text-balance text-center font-mono text-xl font-semibold tracking-tight text-foreground/70 break-words sm:text-2xl">
+              <span className="display line-clamp-2 text-balance text-center text-xl text-foreground/70 break-words sm:text-2xl">
                 {project.title}
               </span>
             </div>
@@ -85,11 +85,11 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
 
       <div className="flex flex-1 flex-col p-6">
         <div className="mb-3 flex items-start justify-between gap-3">
-          <h3 className="line-clamp-2 min-w-0 text-lg font-semibold tracking-tight">
+          <h3 className="display line-clamp-2 min-w-0 text-xl sm:text-2xl">
             {project.title}
           </h3>
           <span
-            className={`mt-0.5 shrink-0 rounded-full border px-2.5 py-0.5 text-xs font-medium whitespace-nowrap ${statusStyles[project.status]}`}
+            className={`mono-label mt-1 shrink-0 border px-2.5 py-1 whitespace-nowrap ${statusStyles[project.status]}`}
           >
             {statusLabel}
           </span>
@@ -112,7 +112,7 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
           <ul className="mt-4 space-y-1.5">
             {highlights.map((h) => (
               <li key={h} className="flex gap-2 text-[15px] text-muted">
-                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                <span className="mt-2.5 h-1 w-1 shrink-0 bg-accent" />
                 <span className={expanded ? "min-w-0" : "line-clamp-2 min-w-0"}>{h}</span>
               </li>
             ))}
@@ -124,7 +124,7 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
             type="button"
             onClick={() => setExpanded((v) => !v)}
             aria-expanded={expanded}
-            className="mt-3 inline-flex w-fit items-center gap-1 text-sm font-medium text-accent transition-colors hover:text-foreground"
+            className="mono-label mt-4 inline-flex w-fit items-center gap-1.5 text-accent transition-colors hover:text-foreground"
           >
             {expanded ? t.projects.readLess : t.projects.readMore}
             <ChevronDown
@@ -140,7 +140,7 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
             {tags.map((t) => (
               <span
                 key={t}
-                className="rounded-md border border-border bg-surface-2 px-2 py-0.5 text-xs text-muted"
+                className="border border-border bg-surface-2 px-2 py-0.5 font-mono text-[12px] text-muted"
               >
                 {t}
               </span>
@@ -148,7 +148,7 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
             {hiddenTags.length > 0 && (
               <span
                 title={hiddenTags.join(", ")}
-                className="rounded-md border border-border bg-surface-2 px-2 py-0.5 text-xs text-muted"
+                className="border border-border bg-surface-2 px-2 py-0.5 font-mono text-[12px] text-muted"
               >
                 +{hiddenTags.length}
               </span>
@@ -163,14 +163,14 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-accent"
+                  className="mono-label inline-flex items-center gap-1.5 text-muted transition-colors hover:text-accent"
                 >
                   {link.type === "github" ? <GithubIcon size={15} /> : <ArrowUpRight size={15} />}
                   {link.label}
                 </a>
               ))}
               {project.note && (
-                <span className="inline-flex items-center gap-1.5 text-sm text-muted">
+                <span className="mono-label inline-flex items-center gap-1.5 text-muted">
                   <Lock size={14} className="text-accent" />
                   {project.note}
                 </span>

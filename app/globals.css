@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ */
-/*  Design tokens — dark-mode-first                                    */
+/*  Design tokens — black / cyan / white, dark-mode-first              */
+/*  One accent only: cyan does all the emphasis work.                  */
 /* ------------------------------------------------------------------ */
 :root {
-  --background: #08080b;
-  --surface: #0f0f14;
-  --surface-2: #16161d;
-  --foreground: #ededf2;
-  --muted: #9a9aa7;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.14);
+  --background: #000000;
+  --surface: #0a0a0a;
+  --surface-2: #121212;
+  --foreground: #ffffff;
+  --muted: #8f8f8f;
+  --border: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.28);
   --accent: #22d3ee;
-  --accent-2: #2dd4bf;
-  --accent-soft: rgba(34, 211, 238, 0.14);
+  --accent-2: #06b6d4;
+  --accent-soft: rgba(34, 211, 238, 0.18);
 }
 
 @theme inline {
@@ -26,8 +27,9 @@
   --color-border-strong: var(--border-strong);
   --color-accent: var(--accent);
   --color-accent-2: var(--accent-2);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-archivo);
+  --font-display: var(--font-archivo-black);
+  --font-mono: var(--font-plex-mono);
 }
 
 * {
@@ -47,20 +49,43 @@ body {
 }
 
 ::selection {
-  background: var(--accent-soft);
-  color: var(--foreground);
+  background: var(--accent);
+  color: #000;
 }
 
-/* Ambient background glow */
+/* ------------------------------------------------------------------ */
+/*  Type roles                                                         */
+/* ------------------------------------------------------------------ */
+
+/* Massive statement headlines. Archivo Black is heavy enough that it
+   needs negative tracking and tight leading to stay readable. */
+.display {
+  font-family: var(--font-display), Impact, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+/* Eyebrows, section numbers, dates, tags — anything that reads as
+   metadata rather than prose. */
+.mono-label {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Ambient cyan glow */
 .bg-glow {
   background-image:
-    radial-gradient(60% 50% at 50% -10%, rgba(34, 211, 238, 0.18), transparent 70%),
-    radial-gradient(40% 40% at 90% 10%, rgba(45, 212, 191, 0.10), transparent 70%);
+    radial-gradient(60% 50% at 50% -10%, rgba(34, 211, 238, 0.16), transparent 70%),
+    radial-gradient(40% 40% at 90% 10%, rgba(6, 182, 212, 0.10), transparent 70%);
 }
 
 /* Subtle dotted grid */
 .bg-grid {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
   background-size: 28px 28px;
   mask-image: radial-gradient(70% 60% at 50% 0%, #000 40%, transparent 100%);
 }
@@ -78,6 +103,5 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   background: var(--surface-2);
-  border-radius: 999px;
   border: 2px solid var(--background);
 }

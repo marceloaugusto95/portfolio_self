@@ -15,7 +15,7 @@ export function LanguageToggle({ className }: { className?: string }) {
     <div
       role="group"
       aria-label={t.language.label}
-      className={`inline-flex items-center rounded-full border border-border p-0.5 text-xs font-medium ${className ?? ""}`}
+      className={`inline-flex items-center border border-border p-0.5 text-xs font-medium ${className ?? ""}`}
     >
       {options.map((opt) => {
         const active = lang === opt.value;
@@ -25,7 +25,7 @@ export function LanguageToggle({ className }: { className?: string }) {
             type="button"
             onClick={() => setLang(opt.value)}
             aria-pressed={active}
-            className={`rounded-full px-2.5 py-1 transition-colors ${
+            className={`px-2.5 py-1 transition-colors ${
               active ? "bg-foreground text-background" : "text-muted hover:text-foreground"
             }`}
           >

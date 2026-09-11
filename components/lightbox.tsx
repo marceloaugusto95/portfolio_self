@@ -51,7 +51,7 @@ export function Lightbox({ images, title, index, onClose, onIndex }: LightboxPro
       <button
         onClick={onClose}
         aria-label="Close"
-        className="absolute right-4 top-4 rounded-full border border-border-strong bg-surface/80 p-2 text-muted transition-colors hover:text-foreground"
+        className="absolute right-4 top-4 border border-border-strong bg-surface/80 p-2 text-muted transition-colors hover:text-foreground"
       >
         <X size={20} />
       </button>
@@ -64,7 +64,7 @@ export function Lightbox({ images, title, index, onClose, onIndex }: LightboxPro
               go(-1);
             }}
             aria-label="Previous screenshot"
-            className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-border-strong bg-surface/80 p-2 text-muted transition-colors hover:text-foreground sm:left-4"
+            className="absolute left-2 top-1/2 -translate-y-1/2 border border-border-strong bg-surface/80 p-2 text-muted transition-colors hover:text-foreground sm:left-4"
           >
             <ChevronLeft size={24} />
           </button>
@@ -74,7 +74,7 @@ export function Lightbox({ images, title, index, onClose, onIndex }: LightboxPro
               go(1);
             }}
             aria-label="Next screenshot"
-            className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-border-strong bg-surface/80 p-2 text-muted transition-colors hover:text-foreground sm:right-4"
+            className="absolute right-2 top-1/2 -translate-y-1/2 border border-border-strong bg-surface/80 p-2 text-muted transition-colors hover:text-foreground sm:right-4"
           >
             <ChevronRight size={24} />
           </button>
@@ -89,7 +89,7 @@ export function Lightbox({ images, title, index, onClose, onIndex }: LightboxPro
         <img
           src={images[index]}
           alt={`${title} screenshot ${index + 1} of ${images.length}`}
-          className="max-h-[80vh] w-auto max-w-full rounded-lg border border-border object-contain shadow-2xl"
+          className="max-h-[80vh] w-auto max-w-full border border-border object-contain shadow-2xl"
         />
         <figcaption className="text-xs text-muted">
           {title} · {index + 1} / {images.length}
