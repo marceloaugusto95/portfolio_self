@@ -84,20 +84,6 @@ const barbeariaTech = {
   featured: true,
 };
 
-const supportChatbot = {
-  slug: "support-chatbot",
-  status: "Live" as const,
-  tags: ["n8n", "WhatsApp Cloud API", "LLMs", "Docker"],
-  // Confidential client (government health service) — no public link, see per-language `note`.
-  links: [] as ProjectLink[],
-  // Client data redacted (NDA): names, phone numbers and avatar initials are masked.
-  images: [
-    "/screenshots/chatprint1.webp",
-    "/screenshots/chatprint2.webp",
-  ],
-  featured: true,
-};
-
 export const dictionary: Record<Lang, Dict> = {
   en: {
     nav: { about: "About", experience: "Experience", projects: "Projects", skills: "Skills", contact: "Contact", resume: "Résumé" },
@@ -114,7 +100,7 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Profile",
       paragraphs: [
         "Full-stack developer with end-to-end ownership of the delivery cycle: architecture, backend, front-end and deployment. Work is not tied to a single platform, covering web, mobile and desktop alongside the automation and integration workflows that connect them, with the stack selected per problem rather than imposed by default.",
-        "Delivered projects span distinct domains, from an omnichannel support platform for a public-health service to business-management software and a white-label booking product, alongside a browser and desktop game currently in development. Delivery follows a spec-driven workflow with an emphasis on maintainable, production-ready code. Professional working proficiency in English, with availability across US and European business hours.",
+        "Delivered projects span distinct domains, from business-management software and automation workflows for private and public-sector clients to a white-label booking product, alongside a browser and desktop game currently in development. Delivery follows a spec-driven workflow with an emphasis on maintainable, production-ready code. Professional working proficiency in English, with availability across US and European business hours.",
       ],
       facts: [
         { label: "Based in", value: "Brasília, Brazil" },
@@ -162,21 +148,6 @@ export const dictionary: Record<Lang, Dict> = {
       readMore: "Read more",
       readLess: "Show less",
       items: [
-        {
-          ...supportChatbot,
-          title: "Omnichannel Support Chatbot",
-          tagline: "AI-assisted citizen support for a public health service.",
-          description:
-            "Omnichannel support solution delivered end-to-end for a government public-health service, integrating an open-source helpdesk with n8n workflow automation and the WhatsApp Business Cloud API for unified, multi-agent conversation handling.",
-          year: "2026",
-          highlights: [
-            "Now serves 10,000+ residents through a single LGPD-compliant multi-agent queue",
-            "Automated conversation triage and routing with template-based outbound notifications",
-            "Compliant messaging (approved templates, opt-in handling) and LGPD data-privacy",
-            "Deployed on self-managed, containerized cloud infrastructure",
-          ],
-          note: "Confidential — under NDA",
-        },
         {
           ...barbeariaTech,
           title: "Barbearia Tech",
@@ -258,7 +229,7 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Perfil",
       paragraphs: [
         "Desenvolvedor full-stack com atuação end-to-end no ciclo de entrega: arquitetura, backend, front-end e deploy. O trabalho não se limita a uma única plataforma, abrangendo web, mobile e desktop, além dos fluxos de automação e integração que conectam essas frentes, com a stack definida a partir do problema e não de um padrão fixo.",
-        "Os projetos entregues abrangem domínios distintos, de uma plataforma de atendimento omnichannel para um serviço público de saúde a software de gestão empresarial e um produto de agendamento white label, além de um jogo para navegador e desktop em desenvolvimento. A entrega segue um fluxo orientado a especificação, com ênfase em código sustentável e pronto para produção. Inglês em nível profissional e disponibilidade nos horários comerciais dos EUA e da Europa.",
+        "Os projetos entregues abrangem domínios distintos, de software de gestão e fluxos de automação para clientes privados e do setor público a um produto de agendamento white label, além de um jogo para navegador e desktop em desenvolvimento. A entrega segue um fluxo orientado a especificação, com ênfase em código sustentável e pronto para produção. Inglês em nível profissional e disponibilidade nos horários comerciais dos EUA e da Europa.",
       ],
       facts: [
         { label: "Baseado em", value: "Brasília, Brasil" },
@@ -306,21 +277,6 @@ export const dictionary: Record<Lang, Dict> = {
       readMore: "Ver mais",
       readLess: "Ver menos",
       items: [
-        {
-          ...supportChatbot,
-          title: "Chatbot de Suporte Omnichannel",
-          tagline: "Atendimento ao cidadão assistido por IA para um serviço público de saúde.",
-          description:
-            "Solução de suporte omnichannel entregue de ponta a ponta para um serviço público de saúde, integrando um helpdesk open-source com automação no n8n e a API WhatsApp Business Cloud para atendimento unificado e multi-atendente.",
-          year: "2026",
-          highlights: [
-            "Atende 10.000+ cidadãos em uma única fila multi-atendente em conformidade com a LGPD",
-            "Triagem e roteamento automáticos de conversas, com notificações ativas baseadas em templates",
-            "Mensageria em conformidade (templates aprovados, gestão de opt-in) e privacidade de dados conforme a LGPD",
-            "Implantado em infraestrutura de nuvem containerizada e autogerenciada",
-          ],
-          note: "Confidencial — sob NDA",
-        },
         {
           ...barbeariaTech,
           title: "Barbearia Tech",
