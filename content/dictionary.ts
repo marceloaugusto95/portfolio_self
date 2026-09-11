@@ -69,24 +69,6 @@ const manaRealm = {
   featured: true,
 };
 
-const luckyClover = {
-  slug: "lucky-clover",
-  status: "Live" as const,
-  tags: ["Next.js", "Supabase", "PostgreSQL", "Capacitor", "Vercel"],
-  links: [
-    { label: "GitHub", href: "https://github.com/marceloaugusto95/luckyclover", type: "github" as const },
-  ],
-  // White-label demo screenshots (no real client data); admin dashboard leads.
-  images: [
-    "/screenshots/luckyprint5.webp",
-    "/screenshots/luckyprint1.webp",
-    "/screenshots/luckyprint2.webp",
-    "/screenshots/luckyprint3.webp",
-    "/screenshots/luckyprint4.webp",
-  ],
-  featured: true,
-};
-
 const barbeariaTech = {
   slug: "barbearia-tech",
   status: "Prototype" as const,
@@ -132,7 +114,7 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Profile",
       paragraphs: [
         "Full-stack developer with end-to-end ownership of the delivery cycle: architecture, backend, front-end and deployment. Work is not tied to a single platform, covering web, mobile and desktop alongside the automation and integration workflows that connect them, with the stack selected per problem rather than imposed by default.",
-        "Delivered projects span distinct domains, from a multi-app lottery platform covering web and Android to an omnichannel customer-support system, alongside a browser and desktop game currently in development. Delivery follows a spec-driven workflow with an emphasis on maintainable, production-ready code. Professional working proficiency in English, with availability across US and European business hours.",
+        "Delivered projects span distinct domains, from an omnichannel support platform for a public-health service to business-management software and a white-label booking product, alongside a browser and desktop game currently in development. Delivery follows a spec-driven workflow with an emphasis on maintainable, production-ready code. Professional working proficiency in English, with availability across US and European business hours.",
       ],
       facts: [
         { label: "Based in", value: "Brasília, Brazil" },
@@ -181,31 +163,19 @@ export const dictionary: Record<Lang, Dict> = {
       readLess: "Show less",
       items: [
         {
-          ...luckyClover,
-          title: "Lucky Clover",
-          tagline: "Complete lottery management platform, delivered end-to-end.",
+          ...supportChatbot,
+          title: "Omnichannel Support Chatbot",
+          tagline: "AI-assisted citizen support for a public health service.",
           description:
-            "Multi-app lottery management platform built as a monorepo spanning four applications: a customer-facing betting web app, a point-of-sale app for resellers, an admin dashboard and a companion Android app with thermal ticket printing.",
+            "Omnichannel support solution delivered end-to-end for a government public-health service, integrating an open-source helpdesk with n8n workflow automation and the WhatsApp Business Cloud API for unified, multi-agent conversation handling.",
           year: "2026",
           highlights: [
-            "In production: 3,000+ bets processed and ~225 monthly active clients",
-            "Backend on Supabase with Row-Level Security and SECURITY DEFINER RPCs for role-based auth at the database level",
-            "Custom CPF-based auth flow issuing signed JWTs across all front-ends",
-            "Mercado Pago PIX integration with webhook confirmation and scheduled official-results sync",
+            "Now serves 10,000+ residents through a single LGPD-compliant multi-agent queue",
+            "Automated conversation triage and routing with template-based outbound notifications",
+            "Compliant messaging (approved templates, opt-in handling) and LGPD data-privacy",
+            "Deployed on self-managed, containerized cloud infrastructure",
           ],
-        },
-        {
-          ...manaRealm,
-          title: "Mana Realm",
-          tagline: "Browser-based game built from scratch, without engine or frameworks.",
-          description:
-            "Browser-based game developed from the ground up in vanilla JavaScript, HTML5 and CSS3. Game logic, rendering and interface are built and maintained solo, with no engine or framework dependencies.",
-          year: "Since 2025",
-          highlights: [
-            "Custom game loop, rendering, and UI written from scratch",
-            "Zero frameworks, pure vanilla JS for full control over performance",
-            "Expected release: late 2026",
-          ],
+          note: "Confidential — under NDA",
         },
         {
           ...barbeariaTech,
@@ -221,19 +191,17 @@ export const dictionary: Record<Lang, Dict> = {
           ],
         },
         {
-          ...supportChatbot,
-          title: "Omnichannel Support Chatbot",
-          tagline: "AI-assisted citizen support for a public health service.",
+          ...manaRealm,
+          title: "Mana Realm",
+          tagline: "Browser-based game built from scratch, without engine or frameworks.",
           description:
-            "Omnichannel support solution delivered end-to-end for a government public-health service, integrating an open-source helpdesk with n8n workflow automation and the WhatsApp Business Cloud API for unified, multi-agent conversation handling.",
-          year: "2026",
+            "Browser-based game developed from the ground up in vanilla JavaScript, HTML5 and CSS3. Game logic, rendering and interface are built and maintained solo, with no engine or framework dependencies.",
+          year: "Since 2025",
           highlights: [
-            "Now serves 10,000+ residents through a single LGPD-compliant multi-agent queue",
-            "Automated conversation triage and routing with template-based outbound notifications",
-            "Compliant messaging (approved templates, opt-in handling) and LGPD data-privacy",
-            "Deployed on self-managed, containerized cloud infrastructure",
+            "Custom game loop, rendering, and UI written from scratch",
+            "Zero frameworks, pure vanilla JS for full control over performance",
+            "Expected release: late 2026",
           ],
-          note: "Confidential — under NDA",
         },
       ],
     },
@@ -290,7 +258,7 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Perfil",
       paragraphs: [
         "Desenvolvedor full-stack com atuação end-to-end no ciclo de entrega: arquitetura, backend, front-end e deploy. O trabalho não se limita a uma única plataforma, abrangendo web, mobile e desktop, além dos fluxos de automação e integração que conectam essas frentes, com a stack definida a partir do problema e não de um padrão fixo.",
-        "Os projetos entregues abrangem domínios distintos, de uma plataforma de loteria multi-app em web e Android a um sistema de suporte omnichannel, além de um jogo para navegador e desktop em desenvolvimento. A entrega segue um fluxo orientado a especificação, com ênfase em código sustentável e pronto para produção. Inglês em nível profissional e disponibilidade nos horários comerciais dos EUA e da Europa.",
+        "Os projetos entregues abrangem domínios distintos, de uma plataforma de atendimento omnichannel para um serviço público de saúde a software de gestão empresarial e um produto de agendamento white label, além de um jogo para navegador e desktop em desenvolvimento. A entrega segue um fluxo orientado a especificação, com ênfase em código sustentável e pronto para produção. Inglês em nível profissional e disponibilidade nos horários comerciais dos EUA e da Europa.",
       ],
       facts: [
         { label: "Baseado em", value: "Brasília, Brasil" },
@@ -339,31 +307,19 @@ export const dictionary: Record<Lang, Dict> = {
       readLess: "Ver menos",
       items: [
         {
-          ...luckyClover,
-          title: "Lucky Clover",
-          tagline: "Plataforma completa de gestão de loteria, entregue de ponta a ponta.",
+          ...supportChatbot,
+          title: "Chatbot de Suporte Omnichannel",
+          tagline: "Atendimento ao cidadão assistido por IA para um serviço público de saúde.",
           description:
-            "Plataforma multi-app de gestão de loteria construída como monorepo com quatro aplicações: app web de apostas, app de ponto de venda para revendedores, painel administrativo e app Android com impressão térmica de bilhetes.",
+            "Solução de suporte omnichannel entregue de ponta a ponta para um serviço público de saúde, integrando um helpdesk open-source com automação no n8n e a API WhatsApp Business Cloud para atendimento unificado e multi-atendente.",
           year: "2026",
           highlights: [
-            "Em produção: 3.000+ apostas processadas e ~225 clientes ativos por mês",
-            "Backend no Supabase com Row-Level Security e RPCs SECURITY DEFINER para autorização por papel no nível do banco de dados",
-            "Fluxo de autenticação próprio baseado em CPF, emitindo JWTs assinados para todos os front-ends",
-            "Integração com Mercado Pago PIX, com confirmação via webhook e sincronização agendada dos resultados oficiais",
+            "Atende 10.000+ cidadãos em uma única fila multi-atendente em conformidade com a LGPD",
+            "Triagem e roteamento automáticos de conversas, com notificações ativas baseadas em templates",
+            "Mensageria em conformidade (templates aprovados, gestão de opt-in) e privacidade de dados conforme a LGPD",
+            "Implantado em infraestrutura de nuvem containerizada e autogerenciada",
           ],
-        },
-        {
-          ...manaRealm,
-          title: "Mana Realm",
-          tagline: "Jogo de navegador desenvolvido do zero, sem engine ou frameworks.",
-          description:
-            "Jogo de navegador desenvolvido do zero em JavaScript puro, HTML5 e CSS3. Lógica de jogo, renderização e interface são construídas e mantidas de forma individual, sem engine ou frameworks.",
-          year: "Desde 2025",
-          highlights: [
-            "Game loop, renderização e interface escritos do zero",
-            "Zero frameworks, JavaScript puro para controle total de performance",
-            "Lançamento previsto: fim de 2026",
-          ],
+          note: "Confidencial — sob NDA",
         },
         {
           ...barbeariaTech,
@@ -379,19 +335,17 @@ export const dictionary: Record<Lang, Dict> = {
           ],
         },
         {
-          ...supportChatbot,
-          title: "Chatbot de Suporte Omnichannel",
-          tagline: "Atendimento ao cidadão assistido por IA para um serviço público de saúde.",
+          ...manaRealm,
+          title: "Mana Realm",
+          tagline: "Jogo de navegador desenvolvido do zero, sem engine ou frameworks.",
           description:
-            "Solução de suporte omnichannel entregue de ponta a ponta para um serviço público de saúde, integrando um helpdesk open-source com automação no n8n e a API WhatsApp Business Cloud para atendimento unificado e multi-atendente.",
-          year: "2026",
+            "Jogo de navegador desenvolvido do zero em JavaScript puro, HTML5 e CSS3. Lógica de jogo, renderização e interface são construídas e mantidas de forma individual, sem engine ou frameworks.",
+          year: "Desde 2025",
           highlights: [
-            "Atende 10.000+ cidadãos em uma única fila multi-atendente em conformidade com a LGPD",
-            "Triagem e roteamento automáticos de conversas, com notificações ativas baseadas em templates",
-            "Mensageria em conformidade (templates aprovados, gestão de opt-in) e privacidade de dados conforme a LGPD",
-            "Implantado em infraestrutura de nuvem containerizada e autogerenciada",
+            "Game loop, renderização e interface escritos do zero",
+            "Zero frameworks, JavaScript puro para controle total de performance",
+            "Lançamento previsto: fim de 2026",
           ],
-          note: "Confidencial — sob NDA",
         },
       ],
     },
