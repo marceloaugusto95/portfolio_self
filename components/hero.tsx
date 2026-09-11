@@ -41,7 +41,7 @@ export function Hero() {
               pushed everything else below the fold. */}
           <motion.h1 variants={item}>
             <span className="mono-label block text-muted">{site.name}</span>
-            <span className="display mt-3 block text-[2.6rem] text-accent sm:text-[3.5rem] md:text-[4.25rem]">
+            <span className="display mt-3 block text-[2.6rem] text-foreground sm:text-[3.5rem] md:text-[4.25rem]">
               {t.hero.role}
             </span>
           </motion.h1>
