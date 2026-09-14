@@ -72,7 +72,7 @@ const citizenService = {
 
 const tabletManagement = {
   slug: "work-tablet-management",
-  status: "In Development" as const,
+  status: "Live" as const,
   // Confidential client work (NDA) — no link, no screenshots.
   links: [] as ProjectLink[],
   featured: true,
@@ -299,23 +299,23 @@ export const dictionary: Record<Lang, Dict> = {
         },
         {
           group: "Frontend & apps",
-          items: ["React", "Next.js", "Astro", "Vite", "Tailwind CSS", "Zustand", "Android (Kotlin)", "Room", "WorkManager", "NW.js"],
+          items: ["React", "Next.js", "Astro", "Vite", "Tailwind CSS", "Zustand", "React Native", "Expo", "Capacitor", "Android (Kotlin)", "Room", "WorkManager", "NW.js"],
         },
         {
           group: "Integrations & automation",
-          items: ["WhatsApp Business Cloud API", "Chatwoot", "n8n", "Android Management API", "Cloud Pub/Sub", "Mercado Pago Pix", "Webhooks", "Steamworks"],
+          items: ["WhatsApp Business Cloud API", "Chatwoot", "n8n", "Android Management API", "Cloud Pub/Sub", "Mercado Pago Pix", "Stripe", "Webhooks", "Steamworks"],
         },
         {
           group: "Infrastructure & DevOps",
-          items: ["Docker", "Docker Compose", "Linux", "Nginx", "Cloudflare", "S3-Compatible Storage", "GitHub Actions", "CI/CD", "Vercel", "Backup & Restore"],
+          items: ["Docker", "Docker Compose", "Linux", "Nginx", "Cloudflare", "S3-Compatible Storage", "AWS", "GitHub Actions", "CI/CD", "Vercel", "Backup & Restore"],
         },
         {
           group: "Security",
-          items: ["JWT & Refresh Tokens", "RBAC", "Row-Level Security", "HMAC / OIDC Verification", "Rate Limiting", "Audit Logging"],
+          items: ["Auth0", "JWT & Refresh Tokens", "RBAC", "Row-Level Security", "HMAC / OIDC Verification", "Rate Limiting", "Audit Logging"],
         },
         {
           group: "AI-assisted engineering",
-          items: ["Claude Code", "Claude API", "Spec-Driven Development"],
+          items: ["Claude Code", "Claude API", "Gemini", "Local LLMs", "Spec-Driven Development"],
         },
         { group: "Languages (Spoken)", items: ["English", "Portuguese"] },
       ],
@@ -501,23 +501,23 @@ export const dictionary: Record<Lang, Dict> = {
         },
         {
           group: "Frontend e aplicativos",
-          items: ["React", "Next.js", "Astro", "Vite", "Tailwind CSS", "Zustand", "Android (Kotlin)", "Room", "WorkManager", "NW.js"],
+          items: ["React", "Next.js", "Astro", "Vite", "Tailwind CSS", "Zustand", "React Native", "Expo", "Capacitor", "Android (Kotlin)", "Room", "WorkManager", "NW.js"],
         },
         {
           group: "Integrações e automação",
-          items: ["WhatsApp Business Cloud API", "Chatwoot", "n8n", "Android Management API", "Cloud Pub/Sub", "Mercado Pago Pix", "Webhooks", "Steamworks"],
+          items: ["WhatsApp Business Cloud API", "Chatwoot", "n8n", "Android Management API", "Cloud Pub/Sub", "Mercado Pago Pix", "Stripe", "Webhooks", "Steamworks"],
         },
         {
           group: "Infraestrutura e DevOps",
-          items: ["Docker", "Docker Compose", "Linux", "Nginx", "Cloudflare", "Armazenamento S3", "GitHub Actions", "CI/CD", "Vercel", "Backup e Restauração"],
+          items: ["Docker", "Docker Compose", "Linux", "Nginx", "Cloudflare", "Armazenamento S3", "AWS", "GitHub Actions", "CI/CD", "Vercel", "Backup e Restauração"],
         },
         {
           group: "Segurança",
-          items: ["JWT e Refresh Tokens", "RBAC", "Row-Level Security", "Verificação HMAC / OIDC", "Rate Limiting", "Logs de Auditoria"],
+          items: ["Auth0", "JWT e Refresh Tokens", "RBAC", "Row-Level Security", "Verificação HMAC / OIDC", "Rate Limiting", "Logs de Auditoria"],
         },
         {
           group: "Engenharia assistida por IA",
-          items: ["Claude Code", "Claude API", "Desenvolvimento Orientado a Especificação"],
+          items: ["Claude Code", "Claude API", "Gemini", "LLMs Locais", "Desenvolvimento Orientado a Especificação"],
         },
         { group: "Idiomas", items: ["Inglês", "Português"] },
       ],
