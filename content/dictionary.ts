@@ -307,7 +307,7 @@ export const dictionary: Record<Lang, Dict> = {
         },
         {
           group: "Infrastructure & DevOps",
-          items: ["Docker", "Docker Compose", "Linux", "Nginx", "Cloudflare", "S3-Compatible Storage", "AWS", "GitHub Actions", "CI/CD", "Vercel", "Backup & Restore"],
+          items: ["Docker", "Docker Compose", "Linux", "Nginx", "Cloudflare", "S3-Compatible Storage", "AWS", "Google Cloud (GCP)", "GitHub Actions", "CI/CD", "Vercel", "Backup & Restore"],
         },
         {
           group: "Security",
@@ -509,7 +509,7 @@ export const dictionary: Record<Lang, Dict> = {
         },
         {
           group: "Infraestrutura e DevOps",
-          items: ["Docker", "Docker Compose", "Linux", "Nginx", "Cloudflare", "Armazenamento S3", "AWS", "GitHub Actions", "CI/CD", "Vercel", "Backup e Restauração"],
+          items: ["Docker", "Docker Compose", "Linux", "Nginx", "Cloudflare", "Armazenamento S3", "AWS", "Google Cloud (GCP)", "GitHub Actions", "CI/CD", "Vercel", "Backup e Restauração"],
         },
         {
           group: "Segurança",
