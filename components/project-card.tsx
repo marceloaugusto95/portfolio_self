@@ -17,19 +17,16 @@ const statusStyles: Record<Project["status"], string> = {
 
 /**
  * Every card renders into the same fixed slots so a new project can't push the
- * grid out of shape: overflowing copy is clamped, extra tags collapse into a
- * "+N" chip, and the links row is pinned to the bottom of the card.
+ * grid out of shape: overflowing copy is clamped and the links row is pinned
+ * to the bottom of the card. Tech stacks live in the Skills section, not here.
  */
 const MAX_HIGHLIGHTS = 3;
-const MAX_TAGS = 5;
 
 export function ProjectCard({ project, statusLabel }: { project: Project; statusLabel: string }) {
   const { t } = useLanguage();
   const [expanded, setExpanded] = useState(false);
 
   const highlights = expanded ? project.highlights : project.highlights.slice(0, MAX_HIGHLIGHTS);
-  const tags = project.tags.slice(0, MAX_TAGS);
-  const hiddenTags = project.tags.slice(MAX_TAGS);
 
   // Show the toggle only when something is actually clamped/hidden.
   const hasMore =
@@ -85,7 +82,7 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
 
       <div className="flex flex-1 flex-col p-6">
         <div className="mb-3 flex items-start justify-between gap-3">
-          <h3 className="display line-clamp-2 min-w-0 text-xl sm:text-2xl">
+          <h3 className="display line-clamp-3 min-w-0 text-xl sm:text-2xl">
             {project.title}
           </h3>
           <span
@@ -136,27 +133,8 @@ export function ProjectCard({ project, statusLabel }: { project: Project; status
 
         {/* Pinned to the bottom so links line up row to row */}
         <div className="mt-auto pt-5">
-          <div className="flex flex-wrap gap-2">
-            {tags.map((t) => (
-              <span
-                key={t}
-                className="border border-border bg-surface-2 px-2 py-0.5 font-mono text-[12px] text-muted"
-              >
-                {t}
-              </span>
-            ))}
-            {hiddenTags.length > 0 && (
-              <span
-                title={hiddenTags.join(", ")}
-                className="border border-border bg-surface-2 px-2 py-0.5 font-mono text-[12px] text-muted"
-              >
-                +{hiddenTags.length}
-              </span>
-            )}
-          </div>
-
           {(project.links.length > 0 || project.note) && (
-            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-border pt-4">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-border pt-4">
               {project.links.map((link) => (
                 <a
                   key={link.label}

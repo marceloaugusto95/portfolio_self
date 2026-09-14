@@ -4,7 +4,7 @@ A personal developer portfolio: a clean, modern, single-page site that showcases
 who I am and the projects I've built. Built to present my work professionally to
 visitors, recruiters, and collaborators.
 
-**Owner:** Marcelo Augusto Fries — Full-Stack Developer, Brasília, Brazil.
+**Owner:** Marcelo Augusto Fries — Forward Deployed Engineer, Brasília, Brazil.
 
 The site is a single page composed of five sections:
 **Hero → About → Projects → Skills → Contact.**

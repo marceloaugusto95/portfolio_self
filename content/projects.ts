@@ -11,7 +11,6 @@ export type Project = {
   description: string;
   status: "Live" | "In Development" | "Prototype" | "Completed";
   year: string;
-  tags: string[];
   highlights: string[];
   links: ProjectLink[];
   /** Optional footer note, e.g. for confidential / NDA projects with no public link. */

@@ -70,7 +70,7 @@ export default async function OpengraphImage() {
             {dictionary.en.hero.role}
           </div>
           <div style={{ fontSize: 26, color: "#9a9aa7", marginTop: 28, maxWidth: 560, lineHeight: 1.4 }}>
-            Production-ready apps across web, mobile, desktop &amp; automation.
+            Turning real-world problems into software that works.
           </div>
         </div>
 

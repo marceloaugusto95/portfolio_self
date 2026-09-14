@@ -49,30 +49,38 @@ export type Dict = {
 //   tagline      ~1-2 lines  (<= ~110 chars)
 //   description  ~4 lines    (<= ~240 chars)
 //   highlights   3 shown collapsed, <= 2 lines each (all shown on expand)
-//   tags         5 shown, the rest collapse into a "+N" chip
 // Collapsed cards clamp longer copy; the "Read more" toggle reveals the full
 // description and every highlight, so nothing stays permanently hidden.
+//
+// Card copy is written for non-technical readers: no languages, frameworks or
+// jargon. The tech stack lives only in the Skills section.
+//
+// NDA projects: describe the problem and outcome in generic terms only — no
+// client or agency names, sector specifics, screenshots, links or identifying
+// metrics.
 // ---------------------------------------------------------------------------
 
 // Fields that never change between languages — kept here so the two language
-// bundles can't drift apart on slugs, links, or tech tags.
-const manaRealm = {
-  slug: "mana-realm",
+// bundles can't drift apart on slugs, links, or screenshots.
+const citizenService = {
+  slug: "citizen-service-whatsapp",
+  status: "Live" as const,
+  // Confidential client work (NDA) — no link, no screenshots.
+  links: [] as ProjectLink[],
+  featured: true,
+};
+
+const tabletManagement = {
+  slug: "work-tablet-management",
   status: "In Development" as const,
-  tags: ["JavaScript", "HTML5 Canvas", "CSS3", "Game Dev"],
-  links: [{ label: "Live Demo", href: "https://manarealm.vercel.app/", type: "demo" as const }],
-  images: [
-    "/screenshots/manaprint1.webp",
-    "/screenshots/manaprint2.webp",
-    "/screenshots/manaprint3.webp",
-  ],
+  // Confidential client work (NDA) — no link, no screenshots.
+  links: [] as ProjectLink[],
   featured: true,
 };
 
 const barbeariaTech = {
   slug: "barbearia-tech",
   status: "Prototype" as const,
-  tags: ["Next.js 16", "React 19", "TypeScript", "Neon Postgres", "CSS Modules", "Vercel"],
   // Private repo — demo only.
   links: [{ label: "Live Demo", href: "https://barbeariatech.vercel.app", type: "demo" as const }],
   images: [
@@ -84,14 +92,50 @@ const barbeariaTech = {
   featured: true,
 };
 
+const luckyClover = {
+  slug: "lucky-clover",
+  status: "Completed" as const,
+  // Private repo. Screenshots come from the demo edition (no real customer data).
+  links: [] as ProjectLink[],
+  images: [
+    "/screenshots/luckyprint5.webp",
+    "/screenshots/luckyprint1.webp",
+    "/screenshots/luckyprint2.webp",
+    "/screenshots/luckyprint3.webp",
+    "/screenshots/luckyprint4.webp",
+  ],
+  featured: true,
+};
+
+const manaRealm = {
+  slug: "mana-realm",
+  status: "In Development" as const,
+  links: [{ label: "Live Demo", href: "https://manarealm.vercel.app/", type: "demo" as const }],
+  images: [
+    "/screenshots/manaprint1.webp",
+    "/screenshots/manaprint2.webp",
+    "/screenshots/manaprint3.webp",
+  ],
+  featured: true,
+};
+
+const engineeringPortfolio = {
+  slug: "structural-engineering-portfolio",
+  status: "In Development" as const,
+  links: [] as ProjectLink[],
+  // Home page only — the other pages carry the client's personal contact details.
+  images: ["/screenshots/daniprint1.webp"],
+  featured: false,
+};
+
 export const dictionary: Record<Lang, Dict> = {
   en: {
     nav: { about: "About", experience: "Experience", projects: "Projects", skills: "Skills", contact: "Contact", resume: "Résumé" },
     hero: {
-      available: "Available for remote full-stack roles",
-      role: "Full-Stack Developer",
+      available: "Available for remote roles & freelance projects",
+      role: "Forward Deployed Engineer",
       tagline:
-        "End-to-end delivery of production software for small businesses and public-sector teams without in-house engineering: requirements, systems design, implementation, deployment and ongoing support. Coverage spans web, mobile, desktop and the automation layer that connects them.",
+        "Working side by side with organizations that have no tech team: understanding how they really operate, then building, launching and supporting the software that solves their problems. Websites, mobile, desktop and the automations that connect them.",
       location: "Brasília, Brazil (GMT-3)",
       viewWork: "View projects",
     },
@@ -99,13 +143,13 @@ export const dictionary: Record<Lang, Dict> = {
       eyebrow: "About",
       title: "Profile",
       paragraphs: [
-        "Full-stack developer with end-to-end ownership of the delivery cycle: architecture, backend, front-end and deployment. Work is not tied to a single platform, covering web, mobile and desktop alongside the automation and integration workflows that connect them, with the stack selected per problem rather than imposed by default.",
-        "Delivered projects span distinct domains, from business-management software and automation workflows for private and public-sector clients to a white-label booking product, alongside a browser and desktop game currently in development. Delivery follows a spec-driven workflow with an emphasis on maintainable, production-ready code. Professional working proficiency in English, with availability across US and European business hours.",
+        "A Forward Deployed Engineer works directly alongside the client instead of from a distance: learning how the operation runs day to day, spotting where things get stuck, and turning that into software people actually use. Every project is handled solo and end to end, from the first conversation to launch, training and ongoing support.",
+        "Work so far includes a WhatsApp service channel and a work-tablet management platform for public-sector organizations, an online booking website for barbershops, a sales and payments system with its own apps for customers, resellers and administrators, a portfolio website for a structural engineering professional, and an action game for browser and desktop. Each delivery comes with clear, simple guides so non-technical teams can run it on their own. Professional working proficiency in English, with availability across US and European business hours.",
       ],
       facts: [
         { label: "Based in", value: "Brasília, Brazil" },
         { label: "Age", value: "30 years old" },
-        { label: "Focus", value: "Full-stack · multi-platform" },
+        { label: "Focus", value: "Forward deployed · end-to-end delivery" },
         { label: "Availability", value: "Remote · US & EU hours" },
         { label: "Languages", value: "English · Portuguese" },
       ],
@@ -115,23 +159,24 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Experience",
       items: [
         {
-          role: "Full-Stack Developer",
+          role: "Forward Deployed Engineer",
           org: "Pública Assessoria em Gestão Empresarial",
           meta: "Contract · Brasília (Hybrid)",
           period: "Feb 2026 – Present",
           points: [
-            "Sole developer for a consultancy without an internal engineering team, converting business requirements into full-stack business-management software.",
-            "Ownership of systems design through delivery, with solutions in day-to-day operational use and documentation that allows non-technical staff to operate them independently.",
+            "Sole engineer at a consultancy that serves public-sector organizations, working directly with client teams to understand their daily routines and turn their problems into working software.",
+            "Delivered a WhatsApp citizen-service channel and a work-tablet management platform, from the first meetings through launch and support.",
+            "Every system comes with simple guides so non-technical staff can run it independently. Project details are confidential under NDA.",
           ],
         },
         {
-          role: "Freelance Full-Stack Developer",
+          role: "Forward Deployed Engineer",
           org: "Self-Employed",
-          meta: "Remote",
+          meta: "Freelance · Remote",
           period: "Nov 2024 – Present",
           points: [
-            "Delivery for small-business and public-sector clients without in-house engineering teams, covering requirements, systems design, implementation, deployment and post-launch support.",
-            "Delivery standardized on a spec-driven workflow with monorepo architecture, containerization and automated CI/CD, keeping applications in live operation without a dedicated ops team.",
+            "Hands-on work with small businesses and independent professionals that have no tech team, from understanding the need to launching and supporting the solution.",
+            "Delivered an online booking website for barbershops, a sales and payments system for a lottery-pool business, and a portfolio website for a structural engineering professional.",
           ],
         },
       ],
@@ -149,29 +194,89 @@ export const dictionary: Record<Lang, Dict> = {
       readLess: "Show less",
       items: [
         {
-          ...barbeariaTech,
-          title: "Barbearia Tech",
-          tagline: "White-label booking prototype for barbershops, from landing page to staff dashboard.",
+          ...citizenService,
+          title: "Citizen Service on WhatsApp",
+          tagline: "A single official WhatsApp channel where a public organization serves and informs the people it attends.",
           description:
-            "Working proof of concept built on Next.js 16 App Router with server components and Neon Postgres. A single brand configuration file drives the entire site (name, logo, colors, services, units, staff and hours), so onboarding a new client becomes a configuration change rather than a rewrite.",
+            "Contact with the public was spread across dozens of separate channels. They were brought together into one official WhatsApp number, where an automated assistant greets each person and sends them to the right team, and staff reply from one shared inbox.",
           year: "2026",
           highlights: [
-            "Four-step booking flow (unit → service → barber/day/time → details) with availability computed server-side from the live schedule",
-            "Staff dashboard with HMAC-signed session cookies, per-barber scoping enforced on the server, and revenue, ticket and cancellation metrics",
-            "Simulated Pix/card checkout with server-side pricing, swappable for a real PSP without touching the front-end contract",
+            "Automated assistant that answers first and passes the chat to a person when needed",
+            "Reminders sent in bulk from a simple spreadsheet upload, about 8x faster after tuning",
+            "People can read the privacy notice, opt out or ask for their data to be deleted",
+            "Runs on privately managed servers, with guides so the team can operate it independently",
+          ],
+          note: "Confidential — under NDA",
+        },
+        {
+          ...tabletManagement,
+          title: "Work Tablet Management",
+          tagline: "A control center to set up, lock down and look after a fleet of work tablets from a single screen.",
+          description:
+            "Built for organizations that hand out tablets to their field teams. A new tablet is ready after scanning a QR code, stays locked to the apps the job needs, and can be managed remotely. Location is recorded only during working hours, protecting employee privacy.",
+          year: "2026",
+          highlights: [
+            "New tablets set up by simply scanning a QR code, with no manual configuration",
+            "Lost device? Lock, restart or erase it remotely from a web dashboard",
+            "Location tracked only during work hours, with an activity log no one can alter",
+            "Stress-tested with 50 simulated tablets sending 150,000 location points with zero errors",
+          ],
+          note: "Confidential — under NDA",
+        },
+        {
+          ...barbeariaTech,
+          title: "Barbearia Tech",
+          tagline: "An online booking website for barbershops that each shop can launch under its own brand.",
+          description:
+            "A ready-to-brand booking site: each barbershop plugs in its name, logo, colors, services and team, and gets its own website without new development. Customers book in a few taps, and the shop follows appointments and earnings in a private dashboard.",
+          year: "2026",
+          highlights: [
+            "Booking in four simple steps: location, service, barber and time, then contact details",
+            "Only shows times that are truly available for each barber",
+            "Staff dashboard with revenue, average spend and cancellations; each barber sees only their own schedule",
+            "Payment step ready for Pix and card, prepared to connect to a real payment provider",
+          ],
+        },
+        {
+          ...luckyClover,
+          title: "Lucky Clover",
+          tagline: "A sales platform for a lottery pool, with its own app for customers, resellers and administrators.",
+          description:
+            "Customers pick their numbers and pay instantly by Pix. Resellers sell in person and print tickets straight from handheld card machines. Administrators manage draws, prices and reports, while prizes are worked out automatically from the official results.",
+          year: "2026",
+          highlights: [
+            "Pix payments confirmed automatically, with no manual checking",
+            "Paper tickets printed on the card-machine terminals resellers already use",
+            "Winners and prize amounts calculated automatically from the official draw",
+            "Security review that closed loopholes before they could be exploited",
+            "Demo edition prepared with all real customer data and credentials removed",
           ],
         },
         {
           ...manaRealm,
           title: "Mana Realm",
-          tagline: "Browser-based game built from scratch, without engine or frameworks.",
+          tagline: "A fast-paced wizard action game, playable in the browser and on Windows, macOS and Linux.",
           description:
-            "Browser-based game developed from the ground up in vanilla JavaScript, HTML5 and CSS3. Game logic, rendering and interface are built and maintained solo, with no engine or framework dependencies.",
+            "An action game designed and built entirely solo: gameplay, visuals, menus and performance. Players pick one of 8 wizards and fight through waves of enemies, using keyboard and mouse or a game controller.",
           year: "Since 2025",
           highlights: [
-            "Custom game loop, rendering, and UI written from scratch",
-            "Zero frameworks, pure vanilla JS for full control over performance",
+            "8 playable wizards, 32 spells and 50 achievements to unlock",
+            "Available in 6 languages, with full game controller support",
+            "Tuned to run smoothly even on modest computers",
             "Expected release: late 2026",
+          ],
+        },
+        {
+          ...engineeringPortfolio,
+          title: "Engineering Portfolio",
+          tagline: "A portfolio website for a structural design engineer to showcase work and attract new clients.",
+          description:
+            "A clean, fast website for an engineer specialized in structural design and 3D building models. It presents the professional's background, featured projects and simple ways to get in touch, with a blueprint-inspired look that fits the field.",
+          year: "2026",
+          highlights: [
+            "Four clear pages: home, about, projects and contact",
+            "Looks and works well on phones, tablets and computers",
+            "Subtle background motion that follows the visitor's cursor",
           ],
         },
       ],
@@ -181,24 +286,36 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Skills & technologies",
       groups: [
         {
-          group: "Core stack",
-          items: ["TypeScript", "JavaScript", "Python", "React", "Next.js", "Astro.js", "Node.js", "PostgreSQL", "Supabase", "Tailwind CSS"],
+          group: "Client delivery",
+          items: ["Customer Discovery", "Requirements Gathering", "Solution Architecture", "Third-Party Integrations", "Self-Hosted Deployment", "Data Privacy (LGPD)", "Production Troubleshooting", "Documentation & Handover"],
         },
         {
-          group: "Backend & infrastructure",
-          items: ["REST APIs", "Row-Level Security", "JWT Authentication", "Auth0", "Webhooks", "Docker", "AWS", "Vercel", "CI/CD", "GitHub Actions"],
+          group: "Programming languages",
+          items: ["TypeScript", "JavaScript", "SQL", "Python", "Kotlin", "Bash", "HTML5", "CSS3"],
         },
         {
-          group: "Cross-platform & integrations",
-          items: ["React Native", "Expo", "Capacitor", "WhatsApp Business Cloud API", "n8n", "Stripe", "Mercado Pago PIX"],
+          group: "Backend & data",
+          items: ["Node.js", "Fastify", "REST APIs", "Zod", "PostgreSQL", "TimescaleDB", "Redis", "BullMQ", "Supabase", "Neon"],
         },
         {
-          group: "AI-assisted development",
-          items: ["Claude", "Claude Code (CLI)", "Claude API", "Gemini", "Local LLMs", "Spec-Driven Development"],
+          group: "Frontend & apps",
+          items: ["React", "Next.js", "Astro", "Vite", "Tailwind CSS", "Zustand", "Android (Kotlin)", "Room", "WorkManager", "NW.js"],
         },
         {
-          group: "Foundations & practices",
-          items: ["Full-Stack Development", "Software Design", "Monorepo Architecture", "UX Design", "Game Design"],
+          group: "Integrations & automation",
+          items: ["WhatsApp Business Cloud API", "Chatwoot", "n8n", "Android Management API", "Cloud Pub/Sub", "Mercado Pago Pix", "Webhooks", "Steamworks"],
+        },
+        {
+          group: "Infrastructure & DevOps",
+          items: ["Docker", "Docker Compose", "Linux", "Nginx", "Cloudflare", "S3-Compatible Storage", "GitHub Actions", "CI/CD", "Vercel", "Backup & Restore"],
+        },
+        {
+          group: "Security",
+          items: ["JWT & Refresh Tokens", "RBAC", "Row-Level Security", "HMAC / OIDC Verification", "Rate Limiting", "Audit Logging"],
+        },
+        {
+          group: "AI-assisted engineering",
+          items: ["Claude Code", "Claude API", "Spec-Driven Development"],
         },
         { group: "Languages (Spoken)", items: ["English", "Portuguese"] },
       ],
@@ -206,7 +323,7 @@ export const dictionary: Record<Lang, Dict> = {
     contact: {
       eyebrow: "Contact",
       title: "Open to new projects and roles",
-      body: "Available for remote full-stack roles and freelance engagements. Email is the fastest channel for a first contact.",
+      body: "Available for remote Forward Deployed Engineer roles and freelance projects. Email is the fastest way to get in touch.",
       downloadResume: "Download résumé",
     },
     footer: { builtWith: "Built with Next.js & Tailwind CSS." },
@@ -217,10 +334,10 @@ export const dictionary: Record<Lang, Dict> = {
   pt: {
     nav: { about: "Sobre", experience: "Experiência", projects: "Projetos", skills: "Habilidades", contact: "Contato", resume: "Currículo" },
     hero: {
-      available: "Disponível para vagas full-stack remotas",
-      role: "Desenvolvedor Full-Stack",
+      available: "Disponível para vagas remotas e projetos freelancer",
+      role: "Forward Deployed Engineer",
       tagline:
-        "Entrega end-to-end de software em produção para pequenas empresas e órgãos do setor público sem equipe interna de engenharia: levantamento de requisitos, systems design, implementação, deploy e suporte contínuo. A atuação abrange web, mobile, desktop e a camada de automação que conecta essas frentes.",
+        "Atuação lado a lado com organizações que não têm equipe de tecnologia: entender como elas realmente funcionam e, a partir disso, criar, colocar no ar e dar suporte ao software que resolve seus problemas. Sites, aplicativos, sistemas para computador e as automações que conectam tudo isso.",
       location: "Brasília, Brasil (GMT-3)",
       viewWork: "Ver projetos",
     },
@@ -228,13 +345,13 @@ export const dictionary: Record<Lang, Dict> = {
       eyebrow: "Sobre",
       title: "Perfil",
       paragraphs: [
-        "Desenvolvedor full-stack com atuação end-to-end no ciclo de entrega: arquitetura, backend, front-end e deploy. O trabalho não se limita a uma única plataforma, abrangendo web, mobile e desktop, além dos fluxos de automação e integração que conectam essas frentes, com a stack definida a partir do problema e não de um padrão fixo.",
-        "Os projetos entregues abrangem domínios distintos, de software de gestão e fluxos de automação para clientes privados e do setor público a um produto de agendamento white label, além de um jogo para navegador e desktop em desenvolvimento. A entrega segue um fluxo orientado a especificação, com ênfase em código sustentável e pronto para produção. Inglês em nível profissional e disponibilidade nos horários comerciais dos EUA e da Europa.",
+        "Um Forward Deployed Engineer trabalha junto do cliente, e não à distância: entende como a operação funciona no dia a dia, identifica onde as coisas travam e transforma isso em software que as pessoas realmente usam. Cada projeto é conduzido de forma individual e completa, da primeira conversa ao lançamento, treinamento e suporte contínuo.",
+        "Os trabalhos incluem um canal de atendimento via WhatsApp e uma plataforma de gestão de tablets corporativos para organizações do setor público, um site de agendamento online para barbearias, um sistema de vendas e pagamentos com aplicativos próprios para clientes, revendedores e administradores, um site de portfólio para a área de engenharia estrutural e um jogo de ação para navegador e computador. Cada entrega vem com guias claros e simples, para que equipes sem conhecimento técnico operem tudo com autonomia. Inglês em nível profissional e disponibilidade nos horários comerciais dos EUA e da Europa.",
       ],
       facts: [
         { label: "Baseado em", value: "Brasília, Brasil" },
         { label: "Idade", value: "30 anos" },
-        { label: "Foco", value: "Full-stack · multiplataforma" },
+        { label: "Foco", value: "Forward deployed · entrega de ponta a ponta" },
         { label: "Disponibilidade", value: "Remoto · horário EUA e Europa" },
         { label: "Idiomas", value: "Inglês · Português" },
       ],
@@ -244,23 +361,24 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Experiência",
       items: [
         {
-          role: "Desenvolvedor Full-Stack",
+          role: "Forward Deployed Engineer",
           org: "Pública Assessoria em Gestão Empresarial",
           meta: "Contrato · Brasília (Híbrido)",
           period: "Fev 2026 – Presente",
           points: [
-            "Desenvolvedor único de uma consultoria sem equipe interna de engenharia, com a conversão de requisitos de negócio em software de gestão full-stack.",
-            "Responsabilidade pelo systems design até a entrega, com soluções em uso operacional diário e documentação que permite a operação por equipes não técnicas.",
+            "Único engenheiro de uma consultoria que atende organizações do setor público, trabalhando diretamente com as equipes dos clientes para entender sua rotina e transformar seus problemas em software funcionando.",
+            "Entrega de um canal de atendimento ao cidadão via WhatsApp e de uma plataforma de gestão de tablets corporativos, das primeiras reuniões ao lançamento e suporte.",
+            "Todo sistema vem com guias simples, para que equipes sem conhecimento técnico o operem com autonomia. Detalhes dos projetos são confidenciais, sob NDA.",
           ],
         },
         {
-          role: "Desenvolvedor Full-Stack Freelancer",
+          role: "Forward Deployed Engineer",
           org: "Autônomo",
-          meta: "Remoto",
+          meta: "Freelancer · Remoto",
           period: "Nov 2024 – Presente",
           points: [
-            "Atendimento a clientes de pequeno porte e do setor público sem equipe interna de engenharia, com entrega integral de cada projeto: requisitos, systems design, implementação, deploy e suporte pós-lançamento.",
-            "Padronização da entrega em um fluxo orientado a especificação, com arquitetura monorepo, containerização e CI/CD automatizado, mantendo as aplicações em operação sem equipe dedicada de ops.",
+            "Trabalho próximo a pequenas empresas e profissionais independentes sem equipe de tecnologia, do entendimento da necessidade ao lançamento e suporte da solução.",
+            "Entrega de um site de agendamento online para barbearias, um sistema de vendas e pagamentos para um bolão de loteria e um site de portfólio para a área de engenharia estrutural.",
           ],
         },
       ],
@@ -278,29 +396,89 @@ export const dictionary: Record<Lang, Dict> = {
       readLess: "Ver menos",
       items: [
         {
-          ...barbeariaTech,
-          title: "Barbearia Tech",
-          tagline: "Protótipo de agendamento white label para barbearias, da landing ao painel da equipe.",
+          ...citizenService,
+          title: "Atendimento ao Cidadão via WhatsApp",
+          tagline: "Um único canal oficial de WhatsApp para uma organização pública atender e informar a população.",
           description:
-            "Prova de conceito funcional em Next.js 16 (App Router) com server components e Postgres na Neon. Um único arquivo de configuração de marca controla todo o site (nome, logo, cores, serviços, unidades, profissionais e horários), de modo que a entrada de um novo cliente se torna mudança de configuração, e não reescrita de código.",
+            "O contato com o público estava espalhado por dezenas de canais diferentes. Tudo foi reunido em um único número oficial de WhatsApp, onde um assistente automático recebe cada pessoa e a direciona para a equipe certa, e os atendentes respondem a partir de uma caixa de entrada compartilhada.",
           year: "2026",
           highlights: [
-            "Fluxo de agendamento em quatro passos (unidade → serviço → profissional/dia/horário → dados), com disponibilidade calculada no servidor a partir da agenda real",
-            "Painel da equipe com sessão em cookie assinado por HMAC, recorte por barbeiro validado no servidor e indicadores de faturamento, ticket médio e cancelamentos",
-            "Checkout simulado de Pix e cartão com o valor vindo do catálogo no servidor, pronto para trocar por um PSP real sem mexer no contrato do front",
+            "Assistente automático que responde primeiro e passa a conversa para uma pessoa quando necessário",
+            "Lembretes enviados em massa a partir de uma planilha, cerca de 8x mais rápido após ajustes",
+            "O cidadão pode ler o aviso de privacidade, deixar de receber mensagens ou pedir a exclusão dos dados",
+            "Roda em servidores de gestão privada, com guias para que a equipe opere com autonomia",
+          ],
+          note: "Confidencial — sob NDA",
+        },
+        {
+          ...tabletManagement,
+          title: "Gestão de Tablets Corporativos",
+          tagline: "Uma central para configurar, bloquear e acompanhar uma frota de tablets de trabalho em uma única tela.",
+          description:
+            "Feita para organizações que entregam tablets às suas equipes de campo. Um tablet novo fica pronto ao ler um QR code, permanece restrito aos aplicativos do trabalho e pode ser gerenciado à distância. A localização é registrada apenas no horário de expediente, protegendo a privacidade dos funcionários.",
+          year: "2026",
+          highlights: [
+            "Tablets novos configurados apenas lendo um QR code, sem ajustes manuais",
+            "Perdeu o aparelho? Bloqueie, reinicie ou apague à distância pelo painel web",
+            "Localização registrada só no expediente, com um histórico de ações que ninguém consegue alterar",
+            "Testada com 50 tablets simulados enviando 150 mil pontos de localização, sem nenhum erro",
+          ],
+          note: "Confidencial — sob NDA",
+        },
+        {
+          ...barbeariaTech,
+          title: "Barbearia Tech",
+          tagline: "Um site de agendamento online para barbearias, que cada negócio pode lançar com a própria marca.",
+          description:
+            "Um site de agendamento pronto para personalizar: cada barbearia insere nome, logo, cores, serviços e equipe e ganha o próprio site sem novo desenvolvimento. O cliente agenda em poucos toques, e a barbearia acompanha horários e faturamento em um painel privado.",
+          year: "2026",
+          highlights: [
+            "Agendamento em quatro passos simples: unidade, serviço, barbeiro e horário, e depois os dados",
+            "Mostra apenas os horários realmente livres de cada barbeiro",
+            "Painel da equipe com faturamento, ticket médio e cancelamentos; cada barbeiro vê só a própria agenda",
+            "Etapa de pagamento pronta para Pix e cartão, preparada para conectar a um provedor real",
+          ],
+        },
+        {
+          ...luckyClover,
+          title: "Lucky Clover",
+          tagline: "Uma plataforma de vendas para bolão de loteria, com aplicativo próprio para clientes, revendedores e administradores.",
+          description:
+            "O cliente escolhe seus números e paga na hora via Pix. Revendedores vendem presencialmente e imprimem o comprovante direto na maquininha de cartão. Administradores gerenciam concursos, preços e relatórios, e os prêmios são calculados automaticamente a partir do resultado oficial.",
+          year: "2026",
+          highlights: [
+            "Pagamentos via Pix confirmados automaticamente, sem conferência manual",
+            "Comprovantes impressos nas maquininhas de cartão que os revendedores já usam",
+            "Ganhadores e valores dos prêmios calculados automaticamente a partir do sorteio oficial",
+            "Revisão de segurança que fechou brechas antes que pudessem ser exploradas",
+            "Versão de demonstração preparada sem nenhum dado real de clientes ou credencial",
           ],
         },
         {
           ...manaRealm,
           title: "Mana Realm",
-          tagline: "Jogo de navegador desenvolvido do zero, sem engine ou frameworks.",
+          tagline: "Um jogo de ação frenético com magos, jogável no navegador e no Windows, macOS e Linux.",
           description:
-            "Jogo de navegador desenvolvido do zero em JavaScript puro, HTML5 e CSS3. Lógica de jogo, renderização e interface são construídas e mantidas de forma individual, sem engine ou frameworks.",
+            "Um jogo de ação idealizado e construído de forma totalmente individual: jogabilidade, visual, menus e desempenho. O jogador escolhe um entre 8 magos e enfrenta ondas de inimigos, usando teclado e mouse ou controle.",
           year: "Desde 2025",
           highlights: [
-            "Game loop, renderização e interface escritos do zero",
-            "Zero frameworks, JavaScript puro para controle total de performance",
+            "8 magos jogáveis, 32 feitiços e 50 conquistas para desbloquear",
+            "Disponível em 6 idiomas, com suporte completo a controle",
+            "Otimizado para rodar bem até em computadores mais simples",
             "Lançamento previsto: fim de 2026",
+          ],
+        },
+        {
+          ...engineeringPortfolio,
+          title: "Portfólio de Engenharia",
+          tagline: "Um site de portfólio para a área de projetos estruturais, feito para mostrar trabalhos e atrair novos clientes.",
+          description:
+            "Um site limpo e rápido para a área de projetos estruturais e modelagem 3D de edificações. Apresenta a trajetória profissional, os projetos em destaque e formas simples de contato, com um visual inspirado em plantas técnicas.",
+          year: "2026",
+          highlights: [
+            "Quatro páginas objetivas: início, sobre, projetos e contato",
+            "Funciona bem em celulares, tablets e computadores",
+            "Fundo com movimento sutil que acompanha o cursor do visitante",
           ],
         },
       ],
@@ -310,24 +488,36 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Habilidades e tecnologias",
       groups: [
         {
-          group: "Stack principal",
-          items: ["TypeScript", "JavaScript", "Python", "React", "Next.js", "Astro.js", "Node.js", "PostgreSQL", "Supabase", "Tailwind CSS"],
+          group: "Entrega ao cliente",
+          items: ["Descoberta com o Cliente", "Levantamento de Requisitos", "Arquitetura de Soluções", "Integrações com Terceiros", "Implantação Self-Hosted", "Privacidade de Dados (LGPD)", "Resolução de Problemas em Produção", "Documentação e Handover"],
         },
         {
-          group: "Backend e infraestrutura",
-          items: ["REST APIs", "Row-Level Security", "Autenticação JWT", "Auth0", "Webhooks", "Docker", "AWS", "Vercel", "CI/CD", "GitHub Actions"],
+          group: "Linguagens de programação",
+          items: ["TypeScript", "JavaScript", "SQL", "Python", "Kotlin", "Bash", "HTML5", "CSS3"],
         },
         {
-          group: "Multiplataforma e integrações",
-          items: ["React Native", "Expo", "Capacitor", "WhatsApp Business Cloud API", "n8n", "Stripe", "Mercado Pago PIX"],
+          group: "Backend e dados",
+          items: ["Node.js", "Fastify", "REST APIs", "Zod", "PostgreSQL", "TimescaleDB", "Redis", "BullMQ", "Supabase", "Neon"],
         },
         {
-          group: "Desenvolvimento assistido por IA",
-          items: ["Claude", "Claude Code (CLI)", "Claude API", "Gemini", "LLMs Locais", "Desenvolvimento Orientado a Especificação"],
+          group: "Frontend e aplicativos",
+          items: ["React", "Next.js", "Astro", "Vite", "Tailwind CSS", "Zustand", "Android (Kotlin)", "Room", "WorkManager", "NW.js"],
         },
         {
-          group: "Fundamentos e práticas",
-          items: ["Desenvolvimento Full-Stack", "Design de Software", "Arquitetura Monorepo", "UX Design", "Game Design"],
+          group: "Integrações e automação",
+          items: ["WhatsApp Business Cloud API", "Chatwoot", "n8n", "Android Management API", "Cloud Pub/Sub", "Mercado Pago Pix", "Webhooks", "Steamworks"],
+        },
+        {
+          group: "Infraestrutura e DevOps",
+          items: ["Docker", "Docker Compose", "Linux", "Nginx", "Cloudflare", "Armazenamento S3", "GitHub Actions", "CI/CD", "Vercel", "Backup e Restauração"],
+        },
+        {
+          group: "Segurança",
+          items: ["JWT e Refresh Tokens", "RBAC", "Row-Level Security", "Verificação HMAC / OIDC", "Rate Limiting", "Logs de Auditoria"],
+        },
+        {
+          group: "Engenharia assistida por IA",
+          items: ["Claude Code", "Claude API", "Desenvolvimento Orientado a Especificação"],
         },
         { group: "Idiomas", items: ["Inglês", "Português"] },
       ],
@@ -335,7 +525,7 @@ export const dictionary: Record<Lang, Dict> = {
     contact: {
       eyebrow: "Contato",
       title: "Aberto a novos projetos e oportunidades",
-      body: "Disponível para vagas full-stack remotas e trabalhos freelancer. O e-mail é o canal mais rápido para o primeiro contato.",
+      body: "Disponível para vagas remotas de Forward Deployed Engineer e projetos freelancer. O e-mail é o canal mais rápido para o primeiro contato.",
       downloadResume: "Baixar currículo",
     },
     footer: { builtWith: "Feito com Next.js e Tailwind CSS." },
