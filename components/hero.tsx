@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Code, Mail, MapPin } from "lucide-react";
 import { GithubIcon, LinkedinIcon, WhatsappIcon } from "./icons";
 import { site } from "@/content/site";
 import { useLanguage } from "./language-provider";
@@ -56,6 +56,11 @@ export function Hero() {
           <motion.div variants={item} className="mt-6 flex items-center gap-2">
             <MapPin size={14} className="text-accent" />
             <span className="mono-label text-muted">{t.hero.location}</span>
+          </motion.div>
+
+          <motion.div variants={item} className="mt-3 flex items-start gap-2">
+            <Code size={14} className="mt-0.5 shrink-0 text-accent" />
+            <span className="mono-label text-muted">{site.coreStack.join(" · ")}</span>
           </motion.div>
 
           <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-3">

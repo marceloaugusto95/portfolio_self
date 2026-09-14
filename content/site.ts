@@ -3,6 +3,8 @@ export const site = {
   name: "Marcelo Augusto Fries",
   email: "marceloaugustofries@outlook.com",
   phone: "+55 61 98616-6969",
+  /** Short core-stack line shown in the hero (same in every language). */
+  coreStack: ["TypeScript", "Node.js", "React", "Next.js", "PostgreSQL", "Docker", "Kotlin"],
   socials: {
     github: "https://github.com/marceloaugusto95",
     linkedin: "https://linkedin.com/in/marceloaugustofries",
