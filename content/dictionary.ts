@@ -132,10 +132,10 @@ export const dictionary: Record<Lang, Dict> = {
   en: {
     nav: { about: "About", experience: "Experience", projects: "Projects", skills: "Skills", contact: "Contact", resume: "Résumé" },
     hero: {
-      available: "Available for remote roles & freelance projects",
-      role: "Forward Deployed Engineer",
+      available: "Available for remote full-stack roles & freelance projects",
+      role: "Full-Stack Software Engineer",
       tagline:
-        "Working side by side with organizations that have no tech team: understanding how they really operate, then building, launching and supporting the software that solves their problems. Websites, mobile, desktop and the automations that connect them.",
+        "Complete software products, from the database and server to the screens people use, for organizations and businesses without a tech team: understanding the need, then building, launching and supporting the solution. Websites, mobile, desktop and the automations that connect them.",
       location: "Brasília, Brazil (GMT-3)",
       viewWork: "View projects",
     },
@@ -143,13 +143,13 @@ export const dictionary: Record<Lang, Dict> = {
       eyebrow: "About",
       title: "Profile",
       paragraphs: [
-        "A Forward Deployed Engineer works directly alongside the client instead of from a distance: learning how the operation runs day to day, spotting where things get stuck, and turning that into software people actually use. Every project is handled solo and end to end, from the first conversation to launch, training and ongoing support.",
+        "A full-stack software engineer builds every layer of a product: the data behind it, the server logic that makes it work, the screens people interact with and the infrastructure it runs on. Every project is handled solo and end to end, from the first conversation with the client to launch, training and ongoing support.",
         "Work so far includes a WhatsApp service channel and a work-tablet management platform for public-sector organizations, an online booking website for barbershops, a sales and payments system with its own apps for customers, resellers and administrators, a portfolio website for a structural engineering professional, and an action game for browser and desktop. Each delivery comes with clear, simple guides so non-technical teams can run it on their own. Professional working proficiency in English, with availability across US and European business hours.",
       ],
       facts: [
         { label: "Based in", value: "Brasília, Brazil" },
         { label: "Age", value: "30 years old" },
-        { label: "Focus", value: "Forward deployed · end-to-end delivery" },
+        { label: "Focus", value: "Full-stack · web, mobile & desktop" },
         { label: "Availability", value: "Remote · US & EU hours" },
         { label: "Languages", value: "English · Portuguese" },
       ],
@@ -159,23 +159,23 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Experience",
       items: [
         {
-          role: "Forward Deployed Engineer",
+          role: "Full-Stack Software Engineer",
           org: "Pública Assessoria em Gestão Empresarial",
           meta: "Contract · Brasília (Hybrid)",
           period: "Feb 2026 – Present",
           points: [
-            "Sole engineer at a consultancy that serves public-sector organizations, working directly with client teams to understand their daily routines and turn their problems into working software.",
+            "Sole software engineer at a consultancy that serves public-sector organizations, designing and building complete systems, from data and servers to the screens staff use every day.",
             "Delivered a WhatsApp citizen-service channel and a work-tablet management platform, from the first meetings through launch and support.",
             "Every system comes with simple guides so non-technical staff can run it independently. Project details are confidential under NDA.",
           ],
         },
         {
-          role: "Forward Deployed Engineer",
+          role: "Full-Stack Software Engineer",
           org: "Self-Employed",
           meta: "Freelance · Remote",
           period: "Nov 2024 – Present",
           points: [
-            "Hands-on work with small businesses and independent professionals that have no tech team, from understanding the need to launching and supporting the solution.",
+            "Complete software for small businesses and independent professionals without a tech team, from understanding the need to launch and ongoing support.",
             "Delivered an online booking website for barbershops, a sales and payments system for a lottery-pool business, and a portfolio website for a structural engineering professional.",
           ],
         },
@@ -286,8 +286,8 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Skills & technologies",
       groups: [
         {
-          group: "Client delivery",
-          items: ["Customer Discovery", "Requirements Gathering", "Solution Architecture", "Third-Party Integrations", "Self-Hosted Deployment", "Data Privacy (LGPD)", "Production Troubleshooting", "Documentation & Handover"],
+          group: "Engineering practice",
+          items: ["Systems Design", "Software Architecture", "Full-Stack Development", "API Design", "Database Modeling", "Monorepo Architecture", "Third-Party Integrations", "Data Privacy (LGPD)", "Production Troubleshooting", "Documentation"],
         },
         {
           group: "Programming languages",
@@ -323,7 +323,7 @@ export const dictionary: Record<Lang, Dict> = {
     contact: {
       eyebrow: "Contact",
       title: "Open to new projects and roles",
-      body: "Available for remote Forward Deployed Engineer roles and freelance projects. Email is the fastest way to get in touch.",
+      body: "Available for remote full-stack software engineering roles and freelance projects. Email is the fastest way to get in touch.",
       downloadResume: "Download résumé",
     },
     footer: { builtWith: "Built with Next.js & Tailwind CSS." },
@@ -334,10 +334,10 @@ export const dictionary: Record<Lang, Dict> = {
   pt: {
     nav: { about: "Sobre", experience: "Experiência", projects: "Projetos", skills: "Habilidades", contact: "Contato", resume: "Currículo" },
     hero: {
-      available: "Disponível para vagas remotas e projetos freelancer",
-      role: "Forward Deployed Engineer",
+      available: "Disponível para vagas full-stack remotas e projetos freelancer",
+      role: "Engenheiro de Software Full-Stack",
       tagline:
-        "Atuação lado a lado com organizações que não têm equipe de tecnologia: entender como elas realmente funcionam e, a partir disso, criar, colocar no ar e dar suporte ao software que resolve seus problemas. Sites, aplicativos, sistemas para computador e as automações que conectam tudo isso.",
+        "Produtos de software completos, do banco de dados e do servidor às telas que as pessoas usam, para organizações e empresas sem equipe de tecnologia: entender a necessidade e, a partir disso, construir, colocar no ar e dar suporte à solução. Sites, aplicativos, sistemas para computador e as automações que conectam tudo isso.",
       location: "Brasília, Brasil (GMT-3)",
       viewWork: "Ver projetos",
     },
@@ -345,13 +345,13 @@ export const dictionary: Record<Lang, Dict> = {
       eyebrow: "Sobre",
       title: "Perfil",
       paragraphs: [
-        "Um Forward Deployed Engineer trabalha junto do cliente, e não à distância: entende como a operação funciona no dia a dia, identifica onde as coisas travam e transforma isso em software que as pessoas realmente usam. Cada projeto é conduzido de forma individual e completa, da primeira conversa ao lançamento, treinamento e suporte contínuo.",
+        "Um engenheiro de software full-stack constrói todas as camadas de um produto: os dados por trás dele, a lógica no servidor que faz tudo funcionar, as telas com que as pessoas interagem e a infraestrutura onde ele roda. Cada projeto é conduzido de forma individual e completa, da primeira conversa com o cliente ao lançamento, treinamento e suporte contínuo.",
         "Os trabalhos incluem um canal de atendimento via WhatsApp e uma plataforma de gestão de tablets corporativos para organizações do setor público, um site de agendamento online para barbearias, um sistema de vendas e pagamentos com aplicativos próprios para clientes, revendedores e administradores, um site de portfólio para a área de engenharia estrutural e um jogo de ação para navegador e computador. Cada entrega vem com guias claros e simples, para que equipes sem conhecimento técnico operem tudo com autonomia. Inglês em nível profissional e disponibilidade nos horários comerciais dos EUA e da Europa.",
       ],
       facts: [
         { label: "Baseado em", value: "Brasília, Brasil" },
         { label: "Idade", value: "30 anos" },
-        { label: "Foco", value: "Forward deployed · entrega de ponta a ponta" },
+        { label: "Foco", value: "Full-stack · web, mobile e desktop" },
         { label: "Disponibilidade", value: "Remoto · horário EUA e Europa" },
         { label: "Idiomas", value: "Inglês · Português" },
       ],
@@ -361,23 +361,23 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Experiência",
       items: [
         {
-          role: "Forward Deployed Engineer",
+          role: "Engenheiro de Software Full-Stack",
           org: "Pública Assessoria em Gestão Empresarial",
           meta: "Contrato · Brasília (Híbrido)",
           period: "Fev 2026 – Presente",
           points: [
-            "Único engenheiro de uma consultoria que atende organizações do setor público, trabalhando diretamente com as equipes dos clientes para entender sua rotina e transformar seus problemas em software funcionando.",
+            "Único engenheiro de software de uma consultoria que atende organizações do setor público, projetando e construindo sistemas completos, dos dados e servidores às telas que as equipes usam no dia a dia.",
             "Entrega de um canal de atendimento ao cidadão via WhatsApp e de uma plataforma de gestão de tablets corporativos, das primeiras reuniões ao lançamento e suporte.",
             "Todo sistema vem com guias simples, para que equipes sem conhecimento técnico o operem com autonomia. Detalhes dos projetos são confidenciais, sob NDA.",
           ],
         },
         {
-          role: "Forward Deployed Engineer",
+          role: "Engenheiro de Software Full-Stack",
           org: "Autônomo",
           meta: "Freelancer · Remoto",
           period: "Nov 2024 – Presente",
           points: [
-            "Trabalho próximo a pequenas empresas e profissionais independentes sem equipe de tecnologia, do entendimento da necessidade ao lançamento e suporte da solução.",
+            "Software completo para pequenas empresas e profissionais independentes sem equipe de tecnologia, do entendimento da necessidade ao lançamento e suporte da solução.",
             "Entrega de um site de agendamento online para barbearias, um sistema de vendas e pagamentos para um bolão de loteria e um site de portfólio para a área de engenharia estrutural.",
           ],
         },
@@ -488,8 +488,8 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Habilidades e tecnologias",
       groups: [
         {
-          group: "Entrega ao cliente",
-          items: ["Descoberta com o Cliente", "Levantamento de Requisitos", "Arquitetura de Soluções", "Integrações com Terceiros", "Implantação Self-Hosted", "Privacidade de Dados (LGPD)", "Resolução de Problemas em Produção", "Documentação e Handover"],
+          group: "Práticas de engenharia",
+          items: ["Systems Design", "Arquitetura de Software", "Desenvolvimento Full-Stack", "Design de APIs", "Modelagem de Dados", "Arquitetura Monorepo", "Integrações com Terceiros", "Privacidade de Dados (LGPD)", "Resolução de Problemas em Produção", "Documentação"],
         },
         {
           group: "Linguagens de programação",
@@ -525,7 +525,7 @@ export const dictionary: Record<Lang, Dict> = {
     contact: {
       eyebrow: "Contato",
       title: "Aberto a novos projetos e oportunidades",
-      body: "Disponível para vagas remotas de Forward Deployed Engineer e projetos freelancer. O e-mail é o canal mais rápido para o primeiro contato.",
+      body: "Disponível para vagas remotas de engenharia de software full-stack e projetos freelancer. O e-mail é o canal mais rápido para o primeiro contato.",
       downloadResume: "Baixar currículo",
     },
     footer: { builtWith: "Feito com Next.js e Tailwind CSS." },
