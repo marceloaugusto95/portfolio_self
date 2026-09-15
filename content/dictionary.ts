@@ -133,7 +133,7 @@ export const dictionary: Record<Lang, Dict> = {
     nav: { about: "About", experience: "Experience", projects: "Projects", skills: "Skills", contact: "Contact", resume: "Résumé" },
     hero: {
       available: "Available for remote full-stack roles & freelance projects",
-      role: "Full-Stack Software Engineer",
+      role: "Full-Stack Developer",
       tagline:
         "Complete software products, from the database and server to the screens people use, for organizations and businesses without a tech team: understanding the need, then building, launching and supporting the solution. Websites, mobile, desktop and the automations that connect them.",
       location: "Brasília, Brazil (GMT-3)",
@@ -143,7 +143,7 @@ export const dictionary: Record<Lang, Dict> = {
       eyebrow: "About",
       title: "Profile",
       paragraphs: [
-        "A full-stack software engineer builds every layer of a product: the data behind it, the server logic that makes it work, the screens people interact with and the infrastructure it runs on. Every project is handled solo and end to end, from the first conversation with the client to launch, training and ongoing support.",
+        "A full-stack developer builds every layer of a product: the data behind it, the server logic that makes it work, the screens people interact with and the infrastructure it runs on. Every project is handled solo and end to end, from the first conversation with the client to launch, training and ongoing support.",
         "Work so far includes a WhatsApp service channel and a work-tablet management platform for public-sector organizations, an online booking website for barbershops, a sales and payments system with its own apps for customers, resellers and administrators, a portfolio website for a structural engineering professional, and an action game for browser and desktop. Each delivery comes with clear, simple guides so non-technical teams can run it on their own. Professional working proficiency in English, with availability across US and European business hours.",
       ],
       facts: [
@@ -159,18 +159,18 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Experience",
       items: [
         {
-          role: "Full-Stack Software Engineer",
+          role: "Full-Stack Developer",
           org: "Pública Assessoria em Gestão Empresarial",
           meta: "Contract · Brasília (Hybrid)",
           period: "Feb 2026 – Present",
           points: [
-            "Sole software engineer at a consultancy that serves public-sector organizations, designing and building complete systems, from data and servers to the screens staff use every day.",
+            "Sole developer at a consultancy that serves public-sector organizations, designing and building complete systems, from data and servers to the screens staff use every day.",
             "Delivered a WhatsApp citizen-service channel and a work-tablet management platform, from the first meetings through launch and support.",
             "Every system comes with simple guides so non-technical staff can run it independently. Project details are confidential under NDA.",
           ],
         },
         {
-          role: "Full-Stack Software Engineer",
+          role: "Full-Stack Developer",
           org: "Self-Employed",
           meta: "Freelance · Remote",
           period: "Nov 2024 – Present",
@@ -286,7 +286,7 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Skills & technologies",
       groups: [
         {
-          group: "Engineering practice",
+          group: "Development practices",
           items: ["Systems Design", "Software Architecture", "Full-Stack Development", "API Design", "Database Modeling", "Monorepo Architecture", "Third-Party Integrations", "Data Privacy (LGPD)", "Production Troubleshooting", "Documentation"],
         },
         {
@@ -314,7 +314,7 @@ export const dictionary: Record<Lang, Dict> = {
           items: ["Auth0", "JWT & Refresh Tokens", "RBAC", "Row-Level Security", "HMAC / OIDC Verification", "Rate Limiting", "Audit Logging"],
         },
         {
-          group: "AI-assisted engineering",
+          group: "AI-assisted development",
           items: ["Claude Code", "Claude API", "Gemini", "Local LLMs", "Spec-Driven Development"],
         },
         { group: "Languages (Spoken)", items: ["English", "Portuguese"] },
@@ -323,7 +323,7 @@ export const dictionary: Record<Lang, Dict> = {
     contact: {
       eyebrow: "Contact",
       title: "Open to new projects and roles",
-      body: "Available for remote full-stack software engineering roles and freelance projects. Email is the fastest way to get in touch.",
+      body: "Available for remote full-stack developer roles and freelance projects. Email is the fastest way to get in touch.",
       downloadResume: "Download résumé",
     },
     footer: { builtWith: "Built with Next.js & Tailwind CSS." },
@@ -335,7 +335,7 @@ export const dictionary: Record<Lang, Dict> = {
     nav: { about: "Sobre", experience: "Experiência", projects: "Projetos", skills: "Habilidades", contact: "Contato", resume: "Currículo" },
     hero: {
       available: "Disponível para vagas full-stack remotas e projetos freelancer",
-      role: "Engenheiro de Software Full-Stack",
+      role: "Desenvolvedor Full-Stack",
       tagline:
         "Produtos de software completos, do banco de dados e do servidor às telas que as pessoas usam, para organizações e empresas sem equipe de tecnologia: entender a necessidade e, a partir disso, construir, colocar no ar e dar suporte à solução. Sites, aplicativos, sistemas para computador e as automações que conectam tudo isso.",
       location: "Brasília, Brasil (GMT-3)",
@@ -345,7 +345,7 @@ export const dictionary: Record<Lang, Dict> = {
       eyebrow: "Sobre",
       title: "Perfil",
       paragraphs: [
-        "Um engenheiro de software full-stack constrói todas as camadas de um produto: os dados por trás dele, a lógica no servidor que faz tudo funcionar, as telas com que as pessoas interagem e a infraestrutura onde ele roda. Cada projeto é conduzido de forma individual e completa, da primeira conversa com o cliente ao lançamento, treinamento e suporte contínuo.",
+        "Um desenvolvedor full-stack constrói todas as camadas de um produto: os dados por trás dele, a lógica no servidor que faz tudo funcionar, as telas com que as pessoas interagem e a infraestrutura onde ele roda. Cada projeto é conduzido de forma individual e completa, da primeira conversa com o cliente ao lançamento, treinamento e suporte contínuo.",
         "Os trabalhos incluem um canal de atendimento via WhatsApp e uma plataforma de gestão de tablets corporativos para organizações do setor público, um site de agendamento online para barbearias, um sistema de vendas e pagamentos com aplicativos próprios para clientes, revendedores e administradores, um site de portfólio para a área de engenharia estrutural e um jogo de ação para navegador e computador. Cada entrega vem com guias claros e simples, para que equipes sem conhecimento técnico operem tudo com autonomia. Inglês em nível profissional e disponibilidade nos horários comerciais dos EUA e da Europa.",
       ],
       facts: [
@@ -361,18 +361,18 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Experiência",
       items: [
         {
-          role: "Engenheiro de Software Full-Stack",
+          role: "Desenvolvedor Full-Stack",
           org: "Pública Assessoria em Gestão Empresarial",
           meta: "Contrato · Brasília (Híbrido)",
           period: "Fev 2026 – Presente",
           points: [
-            "Único engenheiro de software de uma consultoria que atende organizações do setor público, projetando e construindo sistemas completos, dos dados e servidores às telas que as equipes usam no dia a dia.",
+            "Único desenvolvedor de uma consultoria que atende organizações do setor público, projetando e construindo sistemas completos, dos dados e servidores às telas que as equipes usam no dia a dia.",
             "Entrega de um canal de atendimento ao cidadão via WhatsApp e de uma plataforma de gestão de tablets corporativos, das primeiras reuniões ao lançamento e suporte.",
             "Todo sistema vem com guias simples, para que equipes sem conhecimento técnico o operem com autonomia. Detalhes dos projetos são confidenciais, sob NDA.",
           ],
         },
         {
-          role: "Engenheiro de Software Full-Stack",
+          role: "Desenvolvedor Full-Stack",
           org: "Autônomo",
           meta: "Freelancer · Remoto",
           period: "Nov 2024 – Presente",
@@ -488,7 +488,7 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Habilidades e tecnologias",
       groups: [
         {
-          group: "Práticas de engenharia",
+          group: "Práticas de desenvolvimento",
           items: ["Systems Design", "Arquitetura de Software", "Desenvolvimento Full-Stack", "Design de APIs", "Modelagem de Dados", "Arquitetura Monorepo", "Integrações com Terceiros", "Privacidade de Dados (LGPD)", "Resolução de Problemas em Produção", "Documentação"],
         },
         {
@@ -516,7 +516,7 @@ export const dictionary: Record<Lang, Dict> = {
           items: ["Auth0", "JWT e Refresh Tokens", "RBAC", "Row-Level Security", "Verificação HMAC / OIDC", "Rate Limiting", "Logs de Auditoria"],
         },
         {
-          group: "Engenharia assistida por IA",
+          group: "Desenvolvimento assistido por IA",
           items: ["Claude Code", "Claude API", "Gemini", "LLMs Locais", "Desenvolvimento Orientado a Especificação"],
         },
         { group: "Idiomas", items: ["Inglês", "Português"] },
@@ -525,7 +525,7 @@ export const dictionary: Record<Lang, Dict> = {
     contact: {
       eyebrow: "Contato",
       title: "Aberto a novos projetos e oportunidades",
-      body: "Disponível para vagas remotas de engenharia de software full-stack e projetos freelancer. O e-mail é o canal mais rápido para o primeiro contato.",
+      body: "Disponível para vagas remotas de desenvolvedor full-stack e projetos freelancer. O e-mail é o canal mais rápido para o primeiro contato.",
       downloadResume: "Baixar currículo",
     },
     footer: { builtWith: "Feito com Next.js e Tailwind CSS." },
