@@ -92,21 +92,6 @@ const barbeariaTech = {
   featured: true,
 };
 
-const luckyClover = {
-  slug: "lucky-clover",
-  status: "Completed" as const,
-  // Private repo. Screenshots come from the demo edition (no real customer data).
-  links: [] as ProjectLink[],
-  images: [
-    "/screenshots/luckyprint5.webp",
-    "/screenshots/luckyprint1.webp",
-    "/screenshots/luckyprint2.webp",
-    "/screenshots/luckyprint3.webp",
-    "/screenshots/luckyprint4.webp",
-  ],
-  featured: true,
-};
-
 const manaRealm = {
   slug: "mana-realm",
   status: "In Development" as const,
@@ -117,15 +102,6 @@ const manaRealm = {
     "/screenshots/manaprint3.webp",
   ],
   featured: true,
-};
-
-const engineeringPortfolio = {
-  slug: "structural-engineering-portfolio",
-  status: "In Development" as const,
-  links: [] as ProjectLink[],
-  // Home page only — the other pages carry the client's personal contact details.
-  images: ["/screenshots/daniprint1.webp"],
-  featured: false,
 };
 
 export const dictionary: Record<Lang, Dict> = {
@@ -144,7 +120,7 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Profile",
       paragraphs: [
         "A full-stack developer builds every layer of a product: the data behind it, the server logic that makes it work, the screens people interact with and the infrastructure it runs on. Every project is handled solo and end to end, from the first conversation with the client to launch, training and ongoing support.",
-        "Work so far includes a WhatsApp service channel and a work-tablet management platform for public-sector organizations, an online booking website for barbershops, a sales and payments system with its own apps for customers, resellers and administrators, a portfolio website for a structural engineering professional, and an action game for browser and desktop. Each delivery comes with clear, simple guides so non-technical teams can run it on their own. Professional working proficiency in English, with availability across US and European business hours.",
+        "Work so far includes a WhatsApp service channel and a work-tablet management platform for public-sector organizations, an online booking website that barbershops can launch under their own brand, and an action game for browser and desktop. Each delivery comes with clear, simple guides so non-technical teams can run it on their own. Professional working proficiency in English, with availability across US and European business hours.",
       ],
       facts: [
         { label: "Based in", value: "Brasília, Brazil" },
@@ -176,7 +152,8 @@ export const dictionary: Record<Lang, Dict> = {
           period: "Nov 2024 – Present",
           points: [
             "Complete software for small businesses and independent professionals without a tech team, from understanding the need to launch and ongoing support.",
-            "Delivered an online booking website for barbershops, a sales and payments system for a lottery-pool business, and a portfolio website for a structural engineering professional.",
+            "Delivered an online booking website that each barbershop launches under its own brand: customers book in a few taps, and the team follows appointments and earnings in a private dashboard.",
+            "Alongside client work, designed and built an action game for browser and desktop entirely solo, from gameplay and visuals to performance and release.",
           ],
         },
       ],
@@ -238,21 +215,6 @@ export const dictionary: Record<Lang, Dict> = {
           ],
         },
         {
-          ...luckyClover,
-          title: "Lucky Clover",
-          tagline: "A sales platform for a lottery pool, with its own app for customers, resellers and administrators.",
-          description:
-            "Customers pick their numbers and pay instantly by Pix. Resellers sell in person and print tickets straight from handheld card machines. Administrators manage draws, prices and reports, while prizes are worked out automatically from the official results.",
-          year: "2026",
-          highlights: [
-            "Pix payments confirmed automatically, with no manual checking",
-            "Paper tickets printed on the card-machine terminals resellers already use",
-            "Winners and prize amounts calculated automatically from the official draw",
-            "Security review that closed loopholes before they could be exploited",
-            "Demo edition prepared with all real customer data and credentials removed",
-          ],
-        },
-        {
           ...manaRealm,
           title: "Mana Realm",
           tagline: "A fast-paced wizard action game, playable in the browser and on Windows, macOS and Linux.",
@@ -264,19 +226,6 @@ export const dictionary: Record<Lang, Dict> = {
             "Available in 6 languages, with full game controller support",
             "Tuned to run smoothly even on modest computers",
             "Expected release: late 2026",
-          ],
-        },
-        {
-          ...engineeringPortfolio,
-          title: "Engineering Portfolio",
-          tagline: "A portfolio website for a structural design engineer to showcase work and attract new clients.",
-          description:
-            "A clean, fast website for an engineer specialized in structural design and 3D building models. It presents the professional's background, featured projects and simple ways to get in touch, with a blueprint-inspired look that fits the field.",
-          year: "2026",
-          highlights: [
-            "Four clear pages: home, about, projects and contact",
-            "Looks and works well on phones, tablets and computers",
-            "Subtle background motion that follows the visitor's cursor",
           ],
         },
       ],
@@ -346,7 +295,7 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Perfil",
       paragraphs: [
         "Um desenvolvedor full-stack constrói todas as camadas de um produto: os dados por trás dele, a lógica no servidor que faz tudo funcionar, as telas com que as pessoas interagem e a infraestrutura onde ele roda. Cada projeto é conduzido de forma individual e completa, da primeira conversa com o cliente ao lançamento, treinamento e suporte contínuo.",
-        "Os trabalhos incluem um canal de atendimento via WhatsApp e uma plataforma de gestão de tablets corporativos para organizações do setor público, um site de agendamento online para barbearias, um sistema de vendas e pagamentos com aplicativos próprios para clientes, revendedores e administradores, um site de portfólio para a área de engenharia estrutural e um jogo de ação para navegador e computador. Cada entrega vem com guias claros e simples, para que equipes sem conhecimento técnico operem tudo com autonomia. Inglês em nível profissional e disponibilidade nos horários comerciais dos EUA e da Europa.",
+        "Os trabalhos incluem um canal de atendimento via WhatsApp e uma plataforma de gestão de tablets corporativos para organizações do setor público, um site de agendamento online que barbearias lançam com a própria marca e um jogo de ação para navegador e computador. Cada entrega vem com guias claros e simples, para que equipes sem conhecimento técnico operem tudo com autonomia. Inglês em nível profissional e disponibilidade nos horários comerciais dos EUA e da Europa.",
       ],
       facts: [
         { label: "Baseado em", value: "Brasília, Brasil" },
@@ -378,7 +327,8 @@ export const dictionary: Record<Lang, Dict> = {
           period: "Nov 2024 – Presente",
           points: [
             "Software completo para pequenas empresas e profissionais independentes sem equipe de tecnologia, do entendimento da necessidade ao lançamento e suporte da solução.",
-            "Entrega de um site de agendamento online para barbearias, um sistema de vendas e pagamentos para um bolão de loteria e um site de portfólio para a área de engenharia estrutural.",
+            "Entrega de um site de agendamento online que cada barbearia lança com a própria marca: o cliente agenda em poucos toques e a equipe acompanha horários e faturamento em um painel privado.",
+            "Em paralelo ao trabalho com clientes, concepção e desenvolvimento individual de um jogo de ação para navegador e computador, da jogabilidade e do visual ao desempenho e ao lançamento.",
           ],
         },
       ],
@@ -440,21 +390,6 @@ export const dictionary: Record<Lang, Dict> = {
           ],
         },
         {
-          ...luckyClover,
-          title: "Lucky Clover",
-          tagline: "Uma plataforma de vendas para bolão de loteria, com aplicativo próprio para clientes, revendedores e administradores.",
-          description:
-            "O cliente escolhe seus números e paga na hora via Pix. Revendedores vendem presencialmente e imprimem o comprovante direto na maquininha de cartão. Administradores gerenciam concursos, preços e relatórios, e os prêmios são calculados automaticamente a partir do resultado oficial.",
-          year: "2026",
-          highlights: [
-            "Pagamentos via Pix confirmados automaticamente, sem conferência manual",
-            "Comprovantes impressos nas maquininhas de cartão que os revendedores já usam",
-            "Ganhadores e valores dos prêmios calculados automaticamente a partir do sorteio oficial",
-            "Revisão de segurança que fechou brechas antes que pudessem ser exploradas",
-            "Versão de demonstração preparada sem nenhum dado real de clientes ou credencial",
-          ],
-        },
-        {
           ...manaRealm,
           title: "Mana Realm",
           tagline: "Um jogo de ação frenético com magos, jogável no navegador e no Windows, macOS e Linux.",
@@ -466,19 +401,6 @@ export const dictionary: Record<Lang, Dict> = {
             "Disponível em 6 idiomas, com suporte completo a controle",
             "Otimizado para rodar bem até em computadores mais simples",
             "Lançamento previsto: fim de 2026",
-          ],
-        },
-        {
-          ...engineeringPortfolio,
-          title: "Portfólio de Engenharia",
-          tagline: "Um site de portfólio para a área de projetos estruturais, feito para mostrar trabalhos e atrair novos clientes.",
-          description:
-            "Um site limpo e rápido para a área de projetos estruturais e modelagem 3D de edificações. Apresenta a trajetória profissional, os projetos em destaque e formas simples de contato, com um visual inspirado em plantas técnicas.",
-          year: "2026",
-          highlights: [
-            "Quatro páginas objetivas: início, sobre, projetos e contato",
-            "Funciona bem em celulares, tablets e computadores",
-            "Fundo com movimento sutil que acompanha o cursor do visitante",
           ],
         },
       ],
