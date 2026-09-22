@@ -46,9 +46,13 @@ export type Dict = {
 
 // ---------------------------------------------------------------------------
 // Copy budget for project cards (see components/project-card.tsx):
-//   tagline      ~1-2 lines  (<= ~110 chars)
-//   description  ~4 lines    (<= ~240 chars)
+//   tagline      ~1-2 lines  (<= ~115 chars)
+//   description  ~4 lines    (<= ~260 chars)
 //   highlights   3 shown collapsed, <= 2 lines each (all shown on expand)
+//
+// STAR, woven (not labelled): the description carries Situation + Task, and
+// each highlight is Action -> Result. The description budget allows for the
+// extra context that Situation needs.
 // Collapsed cards clamp longer copy; the "Read more" toggle reveals the full
 // description and every highlight, so nothing stays permanently hidden.
 //
@@ -62,8 +66,8 @@ export type Dict = {
 
 // Fields that never change between languages — kept here so the two language
 // bundles can't drift apart on slugs, links, or screenshots.
-const citizenService = {
-  slug: "citizen-service-whatsapp",
+const whatsappChannel = {
+  slug: "whatsapp-service-channel",
   status: "Live" as const,
   // Confidential client work (NDA) — no link, no screenshots.
   links: [] as ProjectLink[],
@@ -120,7 +124,7 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Profile",
       paragraphs: [
         "A full-stack developer builds every layer of a product: the data behind it, the server logic that makes it work, the screens people interact with and the infrastructure it runs on. Every project is handled solo and end to end, from the first conversation with the client to launch, training and ongoing support.",
-        "Work so far includes a WhatsApp service channel and a work-tablet management platform for public-sector organizations, an online booking website that barbershops can launch under their own brand, and an action game for browser and desktop. Each delivery comes with clear, simple guides so non-technical teams can run it on their own. Professional working proficiency in English, with availability across US and European business hours.",
+        "Work so far includes a WhatsApp service channel and a work-tablet management platform delivered under NDA, an online booking website that barbershops can launch under their own brand, and an action game for browser and desktop. Each delivery comes with clear, simple guides so non-technical teams can run it on their own. Professional working proficiency in English, with availability across US and European business hours.",
       ],
       facts: [
         { label: "Based in", value: "Brasília, Brazil" },
@@ -140,9 +144,9 @@ export const dictionary: Record<Lang, Dict> = {
           meta: "Contract · Brasília (Hybrid)",
           period: "Feb 2026 – Present",
           points: [
-            "Sole developer at a consultancy that serves public-sector organizations, designing and building complete systems, from data and servers to the screens staff use every day.",
-            "Delivered a WhatsApp citizen-service channel and a work-tablet management platform, from the first meetings through launch and support.",
-            "Every system comes with simple guides so non-technical staff can run it independently. Project details are confidential under NDA.",
+            "A business consultancy with no in-house tech team needed complete custom systems, and brought in a single developer to own them from the data and servers to the screens the team uses every day.",
+            "Runs each system from the first meetings through launch, training and support, so the company puts new internal tools to work without hiring a tech team.",
+            "Ships every system with simple guides, so non-technical staff keep it running on their own. What was built, how it works and the results it produced are confidential under NDA.",
           ],
         },
         {
@@ -151,9 +155,9 @@ export const dictionary: Record<Lang, Dict> = {
           meta: "Freelance · Remote",
           period: "Nov 2024 – Present",
           points: [
-            "Complete software for small businesses and independent professionals without a tech team, from understanding the need to launch and ongoing support.",
-            "Delivered an online booking website that each barbershop launches under its own brand: customers book in a few taps, and the team follows appointments and earnings in a private dashboard.",
-            "Alongside client work, designed and built an action game for browser and desktop entirely solo, from gameplay and visuals to performance and release.",
+            "Small businesses and independent professionals need complete software but have nobody to build or look after it, so every project is taken on solo, from understanding the need to launch and ongoing support.",
+            "Built an online booking website that each barbershop launches under its own brand, so shops take bookings in a few taps and follow appointments and earnings in a private dashboard instead of a paper diary.",
+            "Alongside client work, designed and built an action game for browser and desktop entirely solo — gameplay, visuals, performance and release — now heading for launch.",
           ],
         },
       ],
@@ -171,17 +175,17 @@ export const dictionary: Record<Lang, Dict> = {
       readLess: "Show less",
       items: [
         {
-          ...citizenService,
-          title: "Citizen Service on WhatsApp",
-          tagline: "A single official WhatsApp channel where a public organization serves and informs the people it attends.",
+          ...whatsappChannel,
+          title: "Service Channel on WhatsApp",
+          tagline: "A single official WhatsApp number where an organization receives, sorts and answers every request in one place.",
           description:
-            "Contact with the public was spread across dozens of separate channels. They were brought together into one official WhatsApp number, where an automated assistant greets each person and sends them to the right team, and staff reply from one shared inbox.",
+            "Contact was spread across separate numbers and personal accounts, and nobody could tell who had already answered what. The job was to bring everything into one official WhatsApp number that sorts each request and puts the whole team in the same inbox.",
           year: "2026",
           highlights: [
-            "Automated assistant that answers first and passes the chat to a person when needed",
-            "Reminders sent in bulk from a simple spreadsheet upload, about 8x faster after tuning",
-            "People can read the privacy notice, opt out or ask for their data to be deleted",
-            "Runs on privately managed servers, with guides so the team can operate it independently",
+            "Built an assistant that answers first and hands the conversation to a person when needed, so nobody waits in line just to be pointed to the right team",
+            "Turned bulk messaging into a simple spreadsheet upload, so the team runs a campaign without asking for technical help",
+            "Added a privacy notice, opt-out and data-deletion requests, so everyone contacted controls what they receive",
+            "Handed over written guides, so the channel keeps running day to day without the developer",
           ],
           note: "Confidential — under NDA",
         },
@@ -190,13 +194,13 @@ export const dictionary: Record<Lang, Dict> = {
           title: "Work Tablet Management",
           tagline: "A control center to set up, lock down and look after a fleet of work tablets from a single screen.",
           description:
-            "Built for organizations that hand out tablets to their field teams. A new tablet is ready after scanning a QR code, stays locked to the apps the job needs, and can be managed remotely. Location is recorded only during working hours, protecting employee privacy.",
+            "Organizations that hand tablets to their teams lose track of where the devices are and what gets installed on them. The job was one screen to set up, limit and look after the whole fleet, without turning a work tablet into a surveillance device.",
           year: "2026",
           highlights: [
-            "New tablets set up by simply scanning a QR code, with no manual configuration",
-            "Lost device? Lock, restart or erase it remotely from a web dashboard",
-            "Location tracked only during work hours, with an activity log no one can alter",
-            "Stress-tested with 50 simulated tablets sending 150,000 location points with zero errors",
+            "Made setup a single QR code scan, so a new tablet reaches the field ready to use with no manual configuration",
+            "Put lock, restart and erase in the dashboard, so a lost device stops being a risk the same day it disappears",
+            "Limited location to working hours and made the activity history impossible to edit, so the team is protected and every action stays accountable",
+            "Load-tested the fleet before launch, so a large rollout keeps reporting without losing data",
           ],
           note: "Confidential — under NDA",
         },
@@ -205,13 +209,13 @@ export const dictionary: Record<Lang, Dict> = {
           title: "Barbearia Tech",
           tagline: "An online booking website for barbershops that each shop can launch under its own brand.",
           description:
-            "A ready-to-brand booking site: each barbershop plugs in its name, logo, colors, services and team, and gets its own website without new development. Customers book in a few taps, and the shop follows appointments and earnings in a private dashboard.",
+            "Most barbershops either take bookings by phone or rent a page on someone else's platform. The job was a booking site each shop can launch under its own brand — name, logo, colors, services and team — without paying for a new build every time.",
           year: "2026",
           highlights: [
-            "Booking in four simple steps: location, service, barber and time, then contact details",
-            "Only shows times that are truly available for each barber",
-            "Staff dashboard with revenue, average spend and cancellations; each barber sees only their own schedule",
-            "Payment step ready for Pix and card, prepared to connect to a real payment provider",
+            "Cut booking to four simple steps — location, service, barber and time — so a customer is done in under a minute",
+            "Offered only the times each barber genuinely has free, so double bookings stop reaching the shop",
+            "Gave the shop a dashboard with revenue, average spend and cancellations, while each barber sees only their own schedule",
+            "Left the payment step ready for Pix and card, so a real provider can be connected without rebuilding the flow",
           ],
         },
         {
@@ -219,12 +223,12 @@ export const dictionary: Record<Lang, Dict> = {
           title: "Mana Realm",
           tagline: "A fast-paced wizard action game, playable in the browser and on Windows, macOS and Linux.",
           description:
-            "An action game designed and built entirely solo: gameplay, visuals, menus and performance. Players pick one of 8 wizards and fight through waves of enemies, using keyboard and mouse or a game controller.",
+            "An action game with no team behind it: gameplay, visuals, menus and performance all fall to one person, and it still has to run in the browser and on Windows, macOS and Linux from one codebase. Players pick one of 8 wizards and fight waves of enemies.",
           year: "Since 2025",
           highlights: [
-            "8 playable wizards, 32 spells and 50 achievements to unlock",
-            "Available in 6 languages, with full game controller support",
-            "Tuned to run smoothly even on modest computers",
+            "Designed 8 playable wizards, 32 spells and 50 achievements, so no two runs play the same way",
+            "Translated the game into 6 languages and added full controller support, so it reaches players well beyond a keyboard",
+            "Rebuilt the heaviest part of the rendering, so the game stays smooth even on modest computers",
             "Expected release: late 2026",
           ],
         },
@@ -295,7 +299,7 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Perfil",
       paragraphs: [
         "Um desenvolvedor full-stack constrói todas as camadas de um produto: os dados por trás dele, a lógica no servidor que faz tudo funcionar, as telas com que as pessoas interagem e a infraestrutura onde ele roda. Cada projeto é conduzido de forma individual e completa, da primeira conversa com o cliente ao lançamento, treinamento e suporte contínuo.",
-        "Os trabalhos incluem um canal de atendimento via WhatsApp e uma plataforma de gestão de tablets corporativos para organizações do setor público, um site de agendamento online que barbearias lançam com a própria marca e um jogo de ação para navegador e computador. Cada entrega vem com guias claros e simples, para que equipes sem conhecimento técnico operem tudo com autonomia. Inglês em nível profissional e disponibilidade nos horários comerciais dos EUA e da Europa.",
+        "Os trabalhos incluem um canal de atendimento via WhatsApp e uma plataforma de gestão de tablets corporativos entregues sob NDA, um site de agendamento online que barbearias lançam com a própria marca e um jogo de ação para navegador e computador. Cada entrega vem com guias claros e simples, para que equipes sem conhecimento técnico operem tudo com autonomia. Inglês em nível profissional e disponibilidade nos horários comerciais dos EUA e da Europa.",
       ],
       facts: [
         { label: "Baseado em", value: "Brasília, Brasil" },
@@ -315,9 +319,9 @@ export const dictionary: Record<Lang, Dict> = {
           meta: "Contrato · Brasília (Híbrido)",
           period: "Fev 2026 – Presente",
           points: [
-            "Único desenvolvedor de uma consultoria que atende organizações do setor público, projetando e construindo sistemas completos, dos dados e servidores às telas que as equipes usam no dia a dia.",
-            "Entrega de um canal de atendimento ao cidadão via WhatsApp e de uma plataforma de gestão de tablets corporativos, das primeiras reuniões ao lançamento e suporte.",
-            "Todo sistema vem com guias simples, para que equipes sem conhecimento técnico o operem com autonomia. Detalhes dos projetos são confidenciais, sob NDA.",
+            "Uma consultoria empresarial sem equipe de tecnologia própria precisava de sistemas sob medida completos e trouxe um único desenvolvedor para assumi-los, dos dados e servidores às telas que a equipe usa no dia a dia.",
+            "Condução de cada sistema das primeiras reuniões ao lançamento, treinamento e suporte, de modo que a empresa passou a colocar novas ferramentas internas em uso sem precisar montar um time técnico.",
+            "Entrega de todo sistema com guias simples, para que equipes sem conhecimento técnico o mantenham no ar com autonomia. O que foi construído, como funciona e os resultados obtidos são confidenciais, sob NDA.",
           ],
         },
         {
@@ -326,9 +330,9 @@ export const dictionary: Record<Lang, Dict> = {
           meta: "Freelancer · Remoto",
           period: "Nov 2024 – Presente",
           points: [
-            "Software completo para pequenas empresas e profissionais independentes sem equipe de tecnologia, do entendimento da necessidade ao lançamento e suporte da solução.",
-            "Entrega de um site de agendamento online que cada barbearia lança com a própria marca: o cliente agenda em poucos toques e a equipe acompanha horários e faturamento em um painel privado.",
-            "Em paralelo ao trabalho com clientes, concepção e desenvolvimento individual de um jogo de ação para navegador e computador, da jogabilidade e do visual ao desempenho e ao lançamento.",
+            "Pequenas empresas e profissionais independentes precisam de software completo, mas não têm quem construa nem quem cuide depois, então cada projeto é assumido de forma individual, do entendimento da necessidade ao lançamento e suporte.",
+            "Construção de um site de agendamento online que cada barbearia lança com a própria marca, de modo que a barbearia recebe agendamentos em poucos toques e acompanha horários e faturamento em um painel privado, no lugar da agenda de papel.",
+            "Em paralelo ao trabalho com clientes, concepção e desenvolvimento individual de um jogo de ação para navegador e computador — jogabilidade, visual, desempenho e publicação —, hoje a caminho do lançamento.",
           ],
         },
       ],
@@ -346,17 +350,17 @@ export const dictionary: Record<Lang, Dict> = {
       readLess: "Ver menos",
       items: [
         {
-          ...citizenService,
-          title: "Atendimento ao Cidadão via WhatsApp",
-          tagline: "Um único canal oficial de WhatsApp para uma organização pública atender e informar a população.",
+          ...whatsappChannel,
+          title: "Canal de Atendimento via WhatsApp",
+          tagline: "Um único número oficial de WhatsApp para receber, organizar e responder todos os contatos em um só lugar.",
           description:
-            "O contato com o público estava espalhado por dezenas de canais diferentes. Tudo foi reunido em um único número oficial de WhatsApp, onde um assistente automático recebe cada pessoa e a direciona para a equipe certa, e os atendentes respondem a partir de uma caixa de entrada compartilhada.",
+            "O contato estava espalhado por números e contas pessoais, e ninguém sabia dizer quem já havia respondido o quê. O desafio era reunir tudo em um único número oficial de WhatsApp, que organiza cada pedido e coloca a equipe inteira na mesma caixa de entrada.",
           year: "2026",
           highlights: [
-            "Assistente automático que responde primeiro e passa a conversa para uma pessoa quando necessário",
-            "Lembretes enviados em massa a partir de uma planilha, cerca de 8x mais rápido após ajustes",
-            "O cidadão pode ler o aviso de privacidade, deixar de receber mensagens ou pedir a exclusão dos dados",
-            "Roda em servidores de gestão privada, com guias para que a equipe opere com autonomia",
+            "Criação de um assistente que responde primeiro e passa a conversa para uma pessoa quando necessário, de modo que ninguém espera na fila só para ser direcionado à equipe certa",
+            "Envios em massa a partir de uma planilha simples, para que a equipe faça uma campanha sem pedir ajuda técnica",
+            "Aviso de privacidade, descadastro e pedido de exclusão de dados, para que quem é contatado controle o que recebe",
+            "Entrega de guias escritos, para que o canal siga funcionando no dia a dia sem o desenvolvedor",
           ],
           note: "Confidencial — sob NDA",
         },
@@ -365,13 +369,13 @@ export const dictionary: Record<Lang, Dict> = {
           title: "Gestão de Tablets Corporativos",
           tagline: "Uma central para configurar, bloquear e acompanhar uma frota de tablets de trabalho em uma única tela.",
           description:
-            "Feita para organizações que entregam tablets às suas equipes de campo. Um tablet novo fica pronto ao ler um QR code, permanece restrito aos aplicativos do trabalho e pode ser gerenciado à distância. A localização é registrada apenas no horário de expediente, protegendo a privacidade dos funcionários.",
+            "Organizações que entregam tablets às equipes perdem de vista onde estão os aparelhos e o que é instalado neles. O desafio era uma única tela para configurar, restringir e acompanhar a frota inteira, sem transformar o tablet de trabalho em vigilância.",
           year: "2026",
           highlights: [
-            "Tablets novos configurados apenas lendo um QR code, sem ajustes manuais",
-            "Perdeu o aparelho? Bloqueie, reinicie ou apague à distância pelo painel web",
-            "Localização registrada só no expediente, com um histórico de ações que ninguém consegue alterar",
-            "Testada com 50 tablets simulados enviando 150 mil pontos de localização, sem nenhum erro",
+            "Configuração reduzida à leitura de um QR code, de modo que um tablet novo chega ao campo pronto para uso, sem ajustes manuais",
+            "Bloqueio, reinicialização e apagamento no painel, de modo que um aparelho perdido deixa de ser risco no mesmo dia",
+            "Localização restrita ao expediente e histórico de ações impossível de alterar, protegendo a equipe sem abrir mão da rastreabilidade",
+            "Teste de carga da frota antes do lançamento, para que uma implantação grande reporte sem perder dados",
           ],
           note: "Confidencial — sob NDA",
         },
@@ -380,13 +384,13 @@ export const dictionary: Record<Lang, Dict> = {
           title: "Barbearia Tech",
           tagline: "Um site de agendamento online para barbearias, que cada negócio pode lançar com a própria marca.",
           description:
-            "Um site de agendamento pronto para personalizar: cada barbearia insere nome, logo, cores, serviços e equipe e ganha o próprio site sem novo desenvolvimento. O cliente agenda em poucos toques, e a barbearia acompanha horários e faturamento em um painel privado.",
+            "A maioria das barbearias agenda por telefone ou aluga uma página na plataforma de outra empresa. O desafio era um site que cada barbearia lança com a própria marca — nome, logo, cores, serviços e equipe — sem pagar por um novo desenvolvimento.",
           year: "2026",
           highlights: [
-            "Agendamento em quatro passos simples: unidade, serviço, barbeiro e horário, e depois os dados",
-            "Mostra apenas os horários realmente livres de cada barbeiro",
-            "Painel da equipe com faturamento, ticket médio e cancelamentos; cada barbeiro vê só a própria agenda",
-            "Etapa de pagamento pronta para Pix e cartão, preparada para conectar a um provedor real",
+            "Agendamento reduzido a quatro passos simples — unidade, serviço, barbeiro e horário —, de modo que o cliente conclui em menos de um minuto",
+            "Exibição apenas dos horários realmente livres de cada barbeiro, de modo que agendamentos duplicados deixam de chegar à barbearia",
+            "Painel com faturamento, ticket médio e cancelamentos para a barbearia, enquanto cada barbeiro vê só a própria agenda",
+            "Etapa de pagamento pronta para Pix e cartão, para que um provedor real seja conectado sem refazer o fluxo",
           ],
         },
         {
@@ -394,12 +398,12 @@ export const dictionary: Record<Lang, Dict> = {
           title: "Mana Realm",
           tagline: "Um jogo de ação frenético com magos, jogável no navegador e no Windows, macOS e Linux.",
           description:
-            "Um jogo de ação idealizado e construído de forma totalmente individual: jogabilidade, visual, menus e desempenho. O jogador escolhe um entre 8 magos e enfrenta ondas de inimigos, usando teclado e mouse ou controle.",
+            "Um jogo de ação sem equipe por trás: jogabilidade, visual, menus e desempenho ficam com uma pessoa só, e ainda assim roda no navegador e no Windows, macOS e Linux a partir do mesmo código. O jogador escolhe um entre 8 magos e enfrenta ondas de inimigos.",
           year: "Desde 2025",
           highlights: [
-            "8 magos jogáveis, 32 feitiços e 50 conquistas para desbloquear",
-            "Disponível em 6 idiomas, com suporte completo a controle",
-            "Otimizado para rodar bem até em computadores mais simples",
+            "Criação de 8 magos jogáveis, 32 feitiços e 50 conquistas, de modo que duas partidas nunca se parecem",
+            "Tradução para 6 idiomas e suporte completo a controle, para alcançar muito mais gente do que só quem joga no teclado",
+            "Reconstrução da parte mais pesada da renderização, para que o jogo continue fluido até em computadores mais simples",
             "Lançamento previsto: fim de 2026",
           ],
         },
